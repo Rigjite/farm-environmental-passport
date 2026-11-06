@@ -1,10 +1,10 @@
 # farm-environmental-passport — Changelog
 
-## v0.3.7 — 2026-11-06 — English and Japanese
+## v0.3.7 — 2026-11-06 — English, Japanese and Russian; first public release
 
 - English editions of both worked examples in force (`examples/*-r7.en.md`, `examples/*-r2.en.md`); the Russian sources stay beside them. Numbers, statuses and conclusions are identical.
 - English figures for all three modules in `examples/figures/en/` (`examples/make_figs_en.py`); Modules 2–3 are computed by executing the unchanged data block of `make_figs2.py`. Series colours are neutral; status is shown by outline and caption.
-- Japanese README (`README.ja.md`); English README gains a quick look at the synthetic farm (answer card, dose table, figure).
+- Japanese and Russian READMEs (`README.ja.md`, `README.ru.md`); English README gains a quick look at the synthetic farm (answer card, dose table, figure).
 - The Russian water text now links to figures that exist in the package; four original Module 2 figures (`fig2_water_map`, `fig2_well_nitrate`, `fig2_stream_tp`, `fig2_vollenweider`) added from the original script.
 - Primary sources for the transfer factor and the milk secretion fraction cited in the Russian PFAS text as well.
 - Tests run on every push (GitHub Actions). Tests: 34/34.

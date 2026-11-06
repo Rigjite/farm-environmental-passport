@@ -1,6 +1,6 @@
 # Farm Environmental Passport
 
-**English** · [日本語](README.ja.md)
+**English** · [日本語](README.ja.md) · [Русский](README.ru.md)
 
 ![version 0.3.7](https://img.shields.io/badge/version-0.3.7_preview-blue)
 [![tests](https://github.com/Rigjite/farm-environmental-passport/actions/workflows/tests.yml/badge.svg)](https://github.com/Rigjite/farm-environmental-passport/actions/workflows/tests.yml)

@@ -6,7 +6,7 @@ This repository is published under three licences, by part:
 
 | Part | Files | Licence |
 |---|---|---|
-| Method description and documentation | `SKILL.md`, `README.md`, `README.ja.md`, `references/`, `assets/`, `examples/*.md`, `tests/*.md` | **CC BY 4.0** — free use, including commercial, with attribution. Full text: `LICENSE`; https://creativecommons.org/licenses/by/4.0/ |
+| Method description and documentation | `SKILL.md`, `README.md`, `README.ja.md`, `README.ru.md`, `references/`, `assets/`, `examples/*.md`, `tests/*.md` | **CC BY 4.0** — free use, including commercial, with attribution. Full text: `LICENSE`; https://creativecommons.org/licenses/by/4.0/ |
 | Indicator catalogue, threshold packs and remote-sensing layer | everything under `core/` | **CC BY-NC 4.0** — free non-commercial use with attribution; commercial use needs a separate written licence from the author. Full text: `LICENSE-CORE`; https://creativecommons.org/licenses/by-nc/4.0/ |
 | Code | `scripts/`, `tests/*.py`, `examples/*.py`, `.github/workflows/` | **Apache License 2.0**. Full text: `LICENSE-CODE` |
 
