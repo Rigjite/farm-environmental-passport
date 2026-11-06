@@ -1,0 +1,12 @@
+{
+  "title": "Farm Environmental Passport — agent skill (preview)",
+  "upload_type": "software",
+  "creators": [
+    {"name": "Baldanova, Rigjita", "orcid": "0009-0009-7891-7007"}
+  ],
+  "description": "<p>An agent skill that builds an independent environmental passport for one specific farm: what enters the farm, what has been measured and by what method, what has never been measured, and which sample to take first. PFAS screening is the first module; the same construction covers water, nutrients, soil, livestock, other contaminants, climate risk, ponds and biodiversity.</p><p><strong>Preview.</strong> The method is demonstrated on a synthetic dairy farm in Delaware County, New York; every laboratory value in the examples is invented and labelled as such, while the thresholds, the structure and the calculations are real. The skill has not yet been validated on a real farm. The passport is screening and expert opinion, not a compliance determination, a laboratory report or medical advice.</p><p>Contents: the skill (SKILL.md), an indicator catalogue of 113 indicators, threshold packs for New York / US federal and the European Union stored with legal status and date, dose scenarios including an infant fed formula prepared with well water and a young child, Monte Carlo uncertainty and value-of-information sampling, a NASA remote-sensing layer, worked examples in English and Russian, READMEs in English, Japanese and Russian, and a test suite (34 tests).</p><p>Method: Baldanova R. (2026). Farm Environmental Passport: a status-and-gap method for screening the environmental pathways of a single farm, with PFAS as the first module. Methods note. Zenodo. https://doi.org/10.5281/zenodo.24017216</p>",
+  "license": "other-open",
+  "notes": "Licences by part: method and documentation — CC BY 4.0 (LICENSE); indicator catalogue, threshold packs and remote-sensing layer in core/ — CC BY-NC 4.0 (LICENSE-CORE); code — Apache-2.0 (LICENSE-CODE). See LICENSE-NOTICE.md.",
+  "keywords": ["PFAS", "biosolids", "farm screening", "dairy", "exposure assessment", "value of information", "environmental monitoring", "agent skill", "digital twin", "New York"],
+  "language": "eng"
+}
