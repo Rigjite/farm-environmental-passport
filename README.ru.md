@@ -7,7 +7,8 @@
 [![Method: CC BY 4.0](https://img.shields.io/badge/method-CC_BY_4.0-lightgrey)](LICENSE)
 [![Core: CC BY-NC 4.0](https://img.shields.io/badge/core-CC_BY--NC_4.0-lightgrey)](LICENSE-CORE)
 [![Code: Apache 2.0](https://img.shields.io/badge/code-Apache_2.0-blue)](LICENSE-CODE)
-[![Methods note DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24017216.svg)](https://doi.org/10.5281/zenodo.24017216)
+[![Skill DOI](https://img.shields.io/badge/skill_DOI-10.5281%2Fzenodo.24023493-blue)](https://doi.org/10.5281/zenodo.24023493)
+[![Methods note DOI](https://img.shields.io/badge/methods_note_DOI-10.5281%2Fzenodo.24017216-blue)](https://doi.org/10.5281/zenodo.24017216)
 
 > Русская версия — перевод английского README. При расхождении действует английский текст.
 
@@ -16,6 +17,8 @@
 > **Статус — предварительная версия (v0.3.7).** Метод показан на **синтетической** молочной ферме в округе Делавэр, штат Нью-Йорк. Все лабораторные значения в `examples/` вымышлены и помечены как синтетические; пороги, структура и расчёты — реальные. **На реальной ферме навык ещё не проверялся** — следующий шаг полевой пилот. Паспорт — это скрининг и экспертное мнение, а не заключение о соответствии нормам, не лабораторный отчёт и не медицинская рекомендация.
 
 **Метод:** Baldanova R. (2026). *Farm Environmental Passport: a status-and-gap method for screening the environmental pathways of a single farm, with PFAS as the first module.* Methods note. Zenodo. https://doi.org/10.5281/zenodo.24017216
+
+**Навык:** Baldanova R. (2026). *Farm Environmental Passport — agent skill (preview)*, v0.3.7. Zenodo. https://doi.org/10.5281/zenodo.24023493
 
 ## Коротко — синтетическая ферма
 

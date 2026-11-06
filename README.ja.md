@@ -7,7 +7,8 @@
 [![Method: CC BY 4.0](https://img.shields.io/badge/method-CC_BY_4.0-lightgrey)](LICENSE)
 [![Core: CC BY-NC 4.0](https://img.shields.io/badge/core-CC_BY--NC_4.0-lightgrey)](LICENSE-CORE)
 [![Code: Apache 2.0](https://img.shields.io/badge/code-Apache_2.0-blue)](LICENSE-CODE)
-[![Methods note DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24017216.svg)](https://doi.org/10.5281/zenodo.24017216)
+[![Skill DOI](https://img.shields.io/badge/skill_DOI-10.5281%2Fzenodo.24023493-blue)](https://doi.org/10.5281/zenodo.24023493)
+[![Methods note DOI](https://img.shields.io/badge/methods_note_DOI-10.5281%2Fzenodo.24017216-blue)](https://doi.org/10.5281/zenodo.24017216)
 
 > この日本語版は英語版 README の翻訳です。内容に違いがある場合は英語版が優先します。
 
@@ -16,6 +17,8 @@
 > **ステータス — プレビュー版（v0.3.7）。** 本手法は、米国ニューヨーク州デラウェア郡の**架空（合成）**の酪農場で実演しています。`examples/` にある分析値はすべて架空であり、その旨を明記しています。基準値、構成、計算は実在のものです。**実在の農場での検証はまだ行っていません**。次の段階は現地パイロットです。パスポートはスクリーニングと専門的見解であり、法令適合の判定、検査機関の報告書、医学的助言ではありません。
 
 **手法論文:** Baldanova R. (2026). *Farm Environmental Passport: a status-and-gap method for screening the environmental pathways of a single farm, with PFAS as the first module.* Methods note. Zenodo. https://doi.org/10.5281/zenodo.24017216
+
+**スキル:** Baldanova R. (2026). *Farm Environmental Passport — agent skill (preview)*, v0.3.7. Zenodo. https://doi.org/10.5281/zenodo.24023493
 
 ## 概要 — 架空の農場
 

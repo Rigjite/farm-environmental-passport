@@ -7,13 +7,16 @@
 [![Method: CC BY 4.0](https://img.shields.io/badge/method-CC_BY_4.0-lightgrey)](LICENSE)
 [![Core: CC BY-NC 4.0](https://img.shields.io/badge/core-CC_BY--NC_4.0-lightgrey)](LICENSE-CORE)
 [![Code: Apache 2.0](https://img.shields.io/badge/code-Apache_2.0-blue)](LICENSE-CODE)
-[![Methods note DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24017216.svg)](https://doi.org/10.5281/zenodo.24017216)
+[![Skill DOI](https://img.shields.io/badge/skill_DOI-10.5281%2Fzenodo.24023493-blue)](https://doi.org/10.5281/zenodo.24023493)
+[![Methods note DOI](https://img.shields.io/badge/methods_note_DOI-10.5281%2Fzenodo.24017216-blue)](https://doi.org/10.5281/zenodo.24017216)
 
 An agent skill that builds an independent environmental passport for **one specific farm**: what enters the farm, what has been measured and by what method, what has never been measured, and which sample to take first. PFAS screening is the first module; the same construction covers water, nutrients, soil, livestock, other contaminants, climate risk, ponds and biodiversity.
 
 > **Status — preview (v0.3.7).** The method is demonstrated on a **synthetic** dairy farm in Delaware County, New York. Every laboratory value in `examples/` is invented and labelled as such; the thresholds, the structure and the calculations are real. The skill has **not yet been validated on a real farm** — a field pilot is the next step. The passport is screening and expert opinion, not a compliance determination, a laboratory report or medical advice.
 
 **Method:** Baldanova R. (2026). *Farm Environmental Passport: a status-and-gap method for screening the environmental pathways of a single farm, with PFAS as the first module.* Methods note. Zenodo. https://doi.org/10.5281/zenodo.24017216
+
+**Skill:** Baldanova R. (2026). *Farm Environmental Passport — agent skill (preview)*, v0.3.7. Zenodo. https://doi.org/10.5281/zenodo.24023493
 
 ## Quick look — the synthetic farm
 

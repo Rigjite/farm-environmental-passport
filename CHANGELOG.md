@@ -1,5 +1,9 @@
 # farm-environmental-passport — Changelog
 
+## After v0.3.7 (no new version)
+
+- Zenodo DOI of the skill added to the READMEs and `CITATION.cff`: concept DOI 10.5281/zenodo.24023493 (all versions), version 0.3.7 — 10.5281/zenodo.24023494. The methods note stays the preferred citation.
+
 ## v0.3.7 — 2026-11-06 — English, Japanese and Russian; first public release
 
 - English editions of both worked examples in force (`examples/*-r7.en.md`, `examples/*-r2.en.md`); the Russian sources stay beside them. Numbers, statuses and conclusions are identical.

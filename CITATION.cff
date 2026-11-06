@@ -4,6 +4,14 @@ title: "Farm Environmental Passport"
 type: software
 version: "0.3.7"
 date-released: "2026-11-06"
+doi: "10.5281/zenodo.24023493"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.24023493"
+    description: "Concept DOI of the skill (all versions)"
+  - type: doi
+    value: "10.5281/zenodo.24023494"
+    description: "DOI of version 0.3.7"
 authors:
   - family-names: "Baldanova"
     given-names: "Rigjita"
