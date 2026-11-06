@@ -1,0 +1,25 @@
+{
+  "_about": "Synthetic inputs of Module 1, copied verbatim from examples/FARM-PFAS-SIMULATION-2026-10-31.md (sections 3–4). All laboratory values are SYNTHETIC. Do not edit to make a test pass: the test T8 checks these numbers against the simulation text.",
+  "source_file": "examples/FARM-PFAS-SIMULATION-2026-10-31.md",
+  "biosolids_ug_kg_dw": {"PFOS": 12.0, "PFOA": 5.0},
+  "soil_0_20cm_ug_kg": {
+    "F1": {"seasons": 10, "PFOS": 0.90, "PFOA": 0.40},
+    "F2": {"seasons": 7, "PFOS": 0.65, "PFOA": 0.30},
+    "F3": {"seasons": 5, "PFOS": 0.50, "PFOA": 0.22},
+    "F4": {"seasons": 3, "PFOS": 0.35, "PFOA": 0.18},
+    "F5": {"seasons": 0, "PFOS": 0.15, "PFOA": 0.08}
+  },
+  "soil_model_F1_PFOS_range_ug_kg": [0.3, 1.1],
+  "well_ng_l": {"PFOS": 6.5, "PFOA": 3.8, "date": "2025-10", "samples": 1},
+  "milk_tank_ng_l": {"PFOS": 18.0},
+  "milk_model_range_ng_l": [4.0, 17.0],
+  "dose_assumptions": {"bw_kg": 70.0, "milk_l_per_day": [0.25, 0.64], "water_l_per_day": 2.0},
+  "measured_pfas": ["PFOS", "PFOA"],
+  "expected_from_text": {
+    "milk_only_ng_kg_wk": [0.45, 1.15],
+    "water_only_ng_kg_wk": 2.06,
+    "milk_plus_water_ng_kg_wk": [2.51, 3.21],
+    "efsa_twi_ng_kg_wk": 4.4,
+    "statuses": {"biosolids": "green", "soil": "green", "well": "yellow", "milk": "green"}
+  }
+}

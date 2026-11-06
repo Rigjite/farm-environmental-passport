@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this skill, please cite it and the methods note."
+title: "Farm Environmental Passport"
+type: software
+version: "0.3.6"
+date-released: "2026-11-06"
+authors:
+  - family-names: "Baldanova"
+    given-names: "Rigjita"
+    orcid: "https://orcid.org/0009-0009-7891-7007"
+repository-code: "https://github.com/Rigjite/farm-environmental-passport"
+license-url: "https://github.com/Rigjite/farm-environmental-passport/blob/main/LICENSE-NOTICE.md"
+keywords:
+  - PFAS
+  - biosolids
+  - farm screening
+  - exposure assessment
+  - value of information
+  - agent skill
+preferred-citation:
+  type: article
+  title: "Farm Environmental Passport: a status-and-gap method for screening the environmental pathways of a single farm, with PFAS as the first module"
+  authors:
+    - family-names: "Baldanova"
+      given-names: "Rigjita"
+      orcid: "https://orcid.org/0009-0009-7891-7007"
+  year: 2026
+  publisher:
+    name: "Zenodo"
+  doi: "10.5281/zenodo.24017216"
+  notes: "Methods note (preprint)"

@@ -1,0 +1,12 @@
+{
+ "_about": "Profile of the synthetic dairy farm of examples/ (Delaware County, NY — synthetic). true / false only where the examples state it; everything they do not state is 'unknown', so the selection shows what must be confirmed first. Location is synthetic: no real coordinates.",
+ "crops": true, "forage": true, "row_crops": "unknown", "vegetables": false, "pesticides": "unknown",
+ "livestock": true, "dairy": true, "beef": false, "pigs": false, "poultry": false, "sheep": false,
+ "grazing": true, "housed": "unknown", "calves": "unknown",
+ "biosolids": true, "manure": "unknown", "irrigation": "unknown", "tile_drains": "unknown",
+ "drinking_well": true, "stream": true, "pond": true, "eutrophic_pond": true, "animal_access_pond": "unknown",
+ "sells_milk": true, "sells_meat": true, "sells_eggs": false, "raw_milk_sales": false, "public_access": false,
+ "purchased_grain": true, "cottonseed": "unknown", "drought_year": "unknown", "heavy_machinery": true,
+ "near_afff": "unknown", "industry_near": "unknown", "geogenic_risk": "unknown", "insect_pollinated": "unknown",
+ "protected_area_near": "unknown", "floodplain": "unknown", "arid": false, "road_salt": "unknown"
+}

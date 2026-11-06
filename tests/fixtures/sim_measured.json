@@ -1,0 +1,23 @@
+{
+ "_about": "What the two synthetic examples actually contain, by catalogue ID. partial = some of the panel measured; 'missing' names the rest. Values themselves stay in the examples (synthetic).",
+ "A-01": {"source": "example 1 §1 (field map, crops)"},
+ "A-16": {"source": "example 1 §3.2", "partial": true, "missing": "PFNA, PFHxS and the rest of the method list; depth below 20 cm"},
+ "A-24": {"source": "make_figs2.py (mineral N 600 kg/yr)"},
+ "A-25": {"source": "examples 1–2 (3 dry t/acre; N and P of the product)"},
+ "L-01": {"source": "make_figs2.py (80 cows; culls; heifers sold)"},
+ "L-03": {"source": "make_figs2.py (10 500 kg/cow/yr)"},
+ "L-04": {"source": "examples 1–2 (22 kg DM/day, 60 % own forage)"},
+ "L-05": {"source": "make_figs2.py (feed N and P fractions)"},
+ "L-09": {"source": "example 1 (same well)", "partial": true, "missing": "coliforms, TDS; PFAS panel incomplete"},
+ "L-40": {"source": "example 1 §3.4 (tank milk)", "partial": true, "missing": "PFOA, PFNA, PFHxS in milk; meat of cull cows not tested"},
+ "X-01": {"source": "example 1 §3.1", "partial": true, "missing": "PFNA, PFHxS and the rest of the method list"},
+ "E-01": {"source": "example 1 §3.3 (one sample)", "partial": true, "missing": "PFNA, PFHxS; quarterly series; method EPA 533/537.1"},
+ "E-02": {"source": "example 2 §3.1 (four quarters)", "partial": true, "missing": "nitrite"},
+ "E-05": {"source": "example 2 §3.2 (monthly TP)", "partial": true, "missing": "nitrate, suspended solids"},
+ "E-06": {"source": "example 2 §3.2 (one event sample)", "partial": true, "missing": "seasonal series for geometric mean and percentile"},
+ "E-08": {"source": "example 2 §3.3 (seasonal TP, chl-a)", "partial": true, "missing": "Secchi depth; monthly values"},
+ "E-11": {"source": "example 2 §4.1 (records-derived)"},
+ "E-12": {"source": "example 2 §4.2 (records-derived)"},
+ "E-13": {"source": "example 2 §4.3 (modelled)"},
+ "E-14": {"source": "example 1 §1 (30 m from the farm design)", "partial": true, "missing": "measured width and vegetation condition"}
+}

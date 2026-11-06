@@ -1,0 +1,98 @@
+{
+ "layer": "NASA remote-sensing layer for the farm passport",
+ "version": "2026-11-01",
+ "max_age_days": 365,
+ "access": "Requests are composed by the skill (scripts/indicator_select.py nasa_request) and executed by a data agent with NASA Earthdata access (or manually via NASA Earthdata / AppEEARS). The skill never downloads on its own.",
+ "rules": [
+  "Satellite results are evidence class 'remote' (a proxy): they target sampling, set triggers and describe context; they never set a status colour alone.",
+  "Field-scale products are used for an object only when the pixel-fit check gives at least 9 pure pixels (skill convention).",
+  "Farm-context products (SMAP, IMERG, POWER) describe the farm's surroundings; they are never attributed to a single field.",
+  "Every value keeps its provenance: product, version, granule or tile, acquisition date, cloud/quality mask."
+ ],
+ "products": [
+  {
+   "id": "HLS",
+   "name": "Harmonized Landsat Sentinel-2 surface reflectance (L30, S30) v2.0",
+   "variables": "surface reflectance → NDVI, EVI, bare-soil index",
+   "resolution_m": 30,
+   "cadence": "observations about every 1.6 days combined, cloud-dependent; archive from 2013",
+   "scale": "field",
+   "url": "https://www.earthdata.nasa.gov/data/projects/hls",
+   "checked": "2026-11-01",
+   "verified": "verified",
+   "limits": "clouds; mixed pixels on narrow strips and small ponds"
+  },
+  {
+   "id": "DSWx",
+   "name": "OPERA Dynamic Surface Water Extent from HLS (DSWx-HLS) v1",
+   "variables": "surface-water extent classes",
+   "resolution_m": 30,
+   "cadence": "multiple times per week, cloud-dependent",
+   "scale": "field",
+   "url": "https://www.earthdata.nasa.gov/s3fs-public/2024-04/OPERA-DSWx_Fact_Sheet.pdf",
+   "checked": "2026-11-01",
+   "verified": "verified",
+   "limits": "optical: misses flooding under cloud or dense canopy"
+  },
+  {
+   "id": "ECOSTRESS",
+   "name": "ECOSTRESS land surface temperature and evapotranspiration (ISS)",
+   "variables": "LST, ET",
+   "resolution_m": 70,
+   "cadence": "irregular ISS overpasses, varying time of day",
+   "scale": "field",
+   "url": "https://catalog.data.gov/dataset/ecostress-swath-land-surface-temperature-and-emissivity-instantaneous-l2-global-70-m-v002",
+   "checked": "2026-11-01",
+   "verified": "verified",
+   "limits": "irregular revisit; 70 m pixels need large fields"
+  },
+  {
+   "id": "SMAP",
+   "name": "SMAP L4 surface and root-zone soil moisture (SPL4SMGP V007, NSIDC DAAC)",
+   "variables": "soil moisture 0–5 cm and 0–100 cm",
+   "resolution_m": 9000,
+   "cadence": "3-hourly",
+   "scale": "farm-context",
+   "url": "https://data.nasa.gov/dataset/smap-l4-global-3-hourly-9-km-ease-grid-surface-and-root-zone-soil-moisture-geophysical-dat",
+   "checked": "2026-11-01",
+   "verified": "verified",
+   "limits": "9 km EASE-Grid 2.0 model–data product, from 2015-03-31: regional anomaly, not a field value; licence not stated on the NASA catalogue page (record it on delivery)"
+  },
+  {
+   "id": "IMERG",
+   "name": "GPM IMERG precipitation",
+   "variables": "precipitation rate, accumulations",
+   "resolution_m": 10000,
+   "cadence": "30 minutes",
+   "scale": "farm-context",
+   "url": "https://gpm.nasa.gov/node/3176",
+   "checked": "2026-11-01",
+   "verified": "verified",
+   "limits": "0.1° grid (about 10 km); use to time event sampling and erosivity"
+  },
+  {
+   "id": "POWER",
+   "name": "NASA POWER meteorology (agroclimatology)",
+   "variables": "T2M, RH2M, daily",
+   "resolution_m": 50000,
+   "cadence": "daily",
+   "scale": "farm-context",
+   "url": "https://power.larc.nasa.gov/docs/methodology/data/sources/",
+   "checked": "2026-11-01",
+   "verified": "verified",
+   "limits": "meteorology on a ½° × ⅝° grid (MERRA-2, from 1981; end trend analyses ~2 months before near real time); solar on 1° × 1° (CERES / GEWEX). An on-farm sensor is preferred for heat stress; POWER is the fallback"
+  },
+  {
+   "id": "LANDSAT",
+   "name": "Landsat archive (pre-2013 field history)",
+   "variables": "surface reflectance",
+   "resolution_m": 30,
+   "cadence": "16-day per satellite",
+   "scale": "field",
+   "url": "",
+   "checked": "2026-11-01",
+   "verified": "not-verified",
+   "limits": "archive span and processing level not checked in this pass"
+  }
+ ]
+}

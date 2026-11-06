@@ -1,0 +1,3051 @@
+[
+ {
+  "id": "A-01",
+  "block": "A",
+  "group": "Land and crops",
+  "indicator": "Field map, areas, crops and rotation",
+  "unit": "ha; crop per field-year",
+  "tier": "core",
+  "applies_if": [
+   "crops"
+  ],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "farm records, parcel registers; HLS crop-cover check",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "9",
+   "18"
+  ],
+  "aei": [
+   "10.1"
+  ],
+  "wq": "-",
+  "nasa": [
+   "HLS"
+  ],
+  "decision": "baseline for every field-level status and balance"
+ },
+ {
+  "id": "A-02",
+  "block": "A",
+  "group": "Soil chemistry",
+  "indicator": "Soil pH",
+  "unit": "pH units",
+  "tier": "core",
+  "applies_if": [
+   "crops"
+  ],
+  "trigger": [],
+  "cost": "lab",
+  "panel": "soil",
+  "method": "1:1 soil:water, composite 0–20 cm per field",
+  "frequency": "3 years",
+  "anchor": [],
+  "twin": [
+   "9"
+  ],
+  "aei": [
+   "26"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "liming; metal mobility below pH 6 (86/278 Art. 8)"
+ },
+ {
+  "id": "A-03",
+  "block": "A",
+  "group": "Soil chemistry",
+  "indicator": "Soil organic matter / organic carbon",
+  "unit": "%; t C/ha",
+  "tier": "core",
+  "applies_if": [
+   "crops"
+  ],
+  "trigger": [],
+  "cost": "lab",
+  "panel": "soil",
+  "method": "loss on ignition or dry combustion; bulk density for stocks",
+  "frequency": "3–5 years",
+  "anchor": [],
+  "twin": [
+   "9"
+  ],
+  "aei": [
+   "26"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "soil-health trend; carbon claims"
+ },
+ {
+  "id": "A-04",
+  "block": "A",
+  "group": "Soil fertility",
+  "indicator": "Soil-test phosphorus (Mehlich-3)",
+  "unit": "mg/kg",
+  "tier": "core",
+  "applies_if": [
+   "crops"
+  ],
+  "trigger": [],
+  "cost": "lab",
+  "panel": "soil",
+  "method": "Mehlich-3, ICP",
+  "frequency": "3 years",
+  "anchor": [],
+  "twin": [
+   "9",
+   "5"
+  ],
+  "aei": [
+   "16"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "P-based biosolids or manure rate; P-loss risk"
+ },
+ {
+  "id": "A-05",
+  "block": "A",
+  "group": "Soil fertility",
+  "indicator": "Soil K, Mg, Ca and CEC",
+  "unit": "mg/kg; cmol/kg",
+  "tier": "core",
+  "applies_if": [
+   "crops"
+  ],
+  "trigger": [],
+  "cost": "lab",
+  "panel": "soil",
+  "method": "Mehlich-3 ICP; CEC by summation",
+  "frequency": "3 years",
+  "anchor": [],
+  "twin": [
+   "9"
+  ],
+  "aei": [
+   "26"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "fertiliser need"
+ },
+ {
+  "id": "A-06",
+  "block": "A",
+  "group": "Soil fertility",
+  "indicator": "Soil nitrate (pre-sidedress or late fall)",
+  "unit": "mg N/kg",
+  "tier": "conditional",
+  "applies_if": [
+   "crops"
+  ],
+  "trigger": [
+   "row_crops",
+   "biosolids",
+   "manure"
+  ],
+  "cost": "lab",
+  "panel": "soil-nitrate",
+  "method": "KCl extraction, 0–30 cm",
+  "frequency": "seasonal",
+  "anchor": [],
+  "twin": [
+   "9",
+   "5"
+  ],
+  "aei": [
+   "15"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "N-rate adjustment; leaching risk"
+ },
+ {
+  "id": "A-07",
+  "block": "A",
+  "group": "Soil physics",
+  "indicator": "Texture and depth to a restrictive layer",
+  "unit": "% sand/silt/clay; cm",
+  "tier": "core",
+  "applies_if": [
+   "crops"
+  ],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "soil survey (SSURGO in the US); one lab texture per field to confirm",
+  "frequency": "once",
+  "anchor": [],
+  "twin": [
+   "9"
+  ],
+  "aei": [
+   "26"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "interpretation of every other soil value"
+ },
+ {
+  "id": "A-08",
+  "block": "A",
+  "group": "Soil physics",
+  "indicator": "Compaction: bulk density or penetration resistance",
+  "unit": "g/cm³; MPa",
+  "tier": "conditional",
+  "applies_if": [
+   "crops"
+  ],
+  "trigger": [
+   "heavy_machinery",
+   "grazing"
+  ],
+  "cost": "field",
+  "panel": "soil",
+  "method": "core sampling or penetrometer, 0–40 cm",
+  "frequency": "5 years",
+  "anchor": [],
+  "twin": [
+   "9",
+   "23"
+  ],
+  "aei": [
+   "26"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "traffic and grazing management"
+ },
+ {
+  "id": "A-09",
+  "block": "A",
+  "group": "Soil biology",
+  "indicator": "Soil biology: respiration, active carbon, earthworms",
+  "unit": "mg CO2-C/kg; mg/kg; count/m²",
+  "tier": "research",
+  "applies_if": [
+   "crops"
+  ],
+  "trigger": [],
+  "cost": "lab",
+  "panel": "soil",
+  "method": "soil-health panel; hand sorting",
+  "frequency": "on request",
+  "anchor": [],
+  "twin": [
+   "9",
+   "13"
+  ],
+  "aei": [
+   "26"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "soil-health programme claims"
+ },
+ {
+  "id": "A-10",
+  "block": "A",
+  "group": "Erosion",
+  "indicator": "Soil erosion (modelled)",
+  "unit": "t/ha/yr",
+  "tier": "core",
+  "applies_if": [
+   "crops"
+  ],
+  "trigger": [],
+  "cost": "remote",
+  "panel": "nasa",
+  "method": "RUSLE: rainfall erosivity (IMERG), erodibility (soil survey), slope, cover (HLS), practice",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "9"
+  ],
+  "aei": [
+   "21"
+  ],
+  "wq": "-",
+  "nasa": [
+   "HLS",
+   "IMERG"
+  ],
+  "decision": "erosion control, buffers"
+ },
+ {
+  "id": "A-11",
+  "block": "A",
+  "group": "Erosion",
+  "indicator": "Soil cover / bare-soil days",
+  "unit": "days/yr bare",
+  "tier": "core",
+  "applies_if": [
+   "crops"
+  ],
+  "trigger": [],
+  "cost": "remote",
+  "panel": "nasa",
+  "method": "HLS NDVI / bare-soil index time series per field",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "9",
+   "10"
+  ],
+  "aei": [
+   "11.1"
+  ],
+  "wq": "-",
+  "nasa": [
+   "HLS"
+  ],
+  "decision": "cover crops; winter-spreading risk"
+ },
+ {
+  "id": "A-12",
+  "block": "A",
+  "group": "Management",
+  "indicator": "Tillage practice",
+  "unit": "class",
+  "tier": "core",
+  "applies_if": [
+   "crops"
+  ],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "farm records; HLS residue check",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "17"
+  ],
+  "aei": [
+   "11.2"
+  ],
+  "wq": "-",
+  "nasa": [
+   "HLS"
+  ],
+  "decision": "erosion, carbon"
+ },
+ {
+  "id": "A-13",
+  "block": "A",
+  "group": "Management",
+  "indicator": "Cover crops and rotation diversity",
+  "unit": "% area; crops per rotation",
+  "tier": "core",
+  "applies_if": [
+   "crops"
+  ],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "farm records; HLS winter greenness",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "17"
+  ],
+  "aei": [
+   "10.1"
+  ],
+  "wq": "-",
+  "nasa": [
+   "HLS"
+  ],
+  "decision": "nitrate leaching, soil health"
+ },
+ {
+  "id": "A-14",
+  "block": "A",
+  "group": "Soil chemistry",
+  "indicator": "Salinity (electrical conductivity; SAR where irrigated)",
+  "unit": "dS/m",
+  "tier": "conditional",
+  "applies_if": [
+   "crops"
+  ],
+  "trigger": [
+   "irrigation",
+   "arid",
+   "road_salt"
+  ],
+  "cost": "lab",
+  "panel": "soil",
+  "method": "saturated-paste EC; SAR",
+  "frequency": "3 years",
+  "anchor": [],
+  "twin": [
+   "9"
+  ],
+  "aei": [
+   "26"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "irrigation suitability"
+ },
+ {
+  "id": "A-15",
+  "block": "A",
+  "group": "Contaminants in soil",
+  "indicator": "Heavy metals in soil: Cd, Cu, Ni, Pb, Zn, Hg",
+  "unit": "mg/kg DM",
+  "tier": "conditional",
+  "applies_if": [
+   "crops"
+  ],
+  "trigger": [
+   "biosolids",
+   "manure"
+  ],
+  "cost": "lab",
+  "panel": "soil",
+  "method": "strong-acid digestion, AAS/ICP; 25 cores per ≤5 ha, 25 cm (86/278 Annex II C)",
+  "frequency": "before first application; then 5 years",
+  "anchor": [
+   "EU-09",
+   "EU-10",
+   "EU-11",
+   "EU-12",
+   "EU-13",
+   "EU-14"
+  ],
+  "twin": [
+   "9",
+   "6"
+  ],
+  "aei": [
+   "26"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "whether sludge may be applied (EU); Cu/Zn build-up from manure"
+ },
+ {
+  "id": "A-16",
+  "block": "A",
+  "group": "Contaminants in soil",
+  "indicator": "PFAS in soil (EFSA four + method list)",
+  "unit": "µg/kg DM",
+  "tier": "conditional",
+  "applies_if": [
+   "crops"
+  ],
+  "trigger": [
+   "biosolids",
+   "near_afff"
+  ],
+  "cost": "lab",
+  "panel": "soil",
+  "method": "EPA 1633; application and control fields; depth stated",
+  "frequency": "5 years; after a source result above a tier",
+  "anchor": [
+   "NYUS-16"
+  ],
+  "twin": [
+   "9",
+   "6"
+  ],
+  "aei": [
+   "26"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "continue biosolids or not; soil→feed transfer"
+ },
+ {
+  "id": "A-17",
+  "block": "A",
+  "group": "Crops and forage",
+  "indicator": "Crop and forage yield",
+  "unit": "t DM/ha",
+  "tier": "core",
+  "applies_if": [
+   "crops"
+  ],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "farm records; yield maps",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "11",
+   "17"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [
+   "HLS"
+  ],
+  "decision": "nutrient removal for balances; productivity"
+ },
+ {
+  "id": "A-18",
+  "block": "A",
+  "group": "Crops and forage",
+  "indicator": "Forage quality: crude protein, NDF, energy",
+  "unit": "% DM; MJ/kg",
+  "tier": "core",
+  "applies_if": [
+   "forage"
+  ],
+  "trigger": [],
+  "cost": "lab",
+  "panel": "feed",
+  "method": "NIRS forage analysis",
+  "frequency": "each cut",
+  "anchor": [],
+  "twin": [
+   "11"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "ration balancing; N and P intake"
+ },
+ {
+  "id": "A-19",
+  "block": "A",
+  "group": "Crops and forage",
+  "indicator": "Nitrate in forage",
+  "unit": "% NO3 in DM",
+  "tier": "conditional",
+  "applies_if": [
+   "forage"
+  ],
+  "trigger": [
+   "drought_year",
+   "biosolids",
+   "manure"
+  ],
+  "cost": "lab",
+  "panel": "feed",
+  "method": "forage nitrate test",
+  "frequency": "risk seasons",
+  "anchor": [],
+  "twin": [
+   "11"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [
+   "SMAP"
+  ],
+  "decision": "feeding decision (nitrate-poisoning risk)"
+ },
+ {
+  "id": "A-20",
+  "block": "A",
+  "group": "Plant health",
+  "indicator": "Plant disease and pest pressure",
+  "unit": "% plants affected; severity score",
+  "tier": "core",
+  "applies_if": [
+   "crops"
+  ],
+  "trigger": [],
+  "cost": "field",
+  "panel": "scouting",
+  "method": "scouting protocol; image-based detection as screening; HLS anomaly maps target the scouting",
+  "frequency": "in season",
+  "anchor": [],
+  "twin": [
+   "11"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [
+   "HLS"
+  ],
+  "decision": "targeted control; crop loss"
+ },
+ {
+  "id": "A-21",
+  "block": "A",
+  "group": "Inputs",
+  "indicator": "Pesticide use: products, active substances, rates",
+  "unit": "kg a.i./ha",
+  "tier": "core",
+  "applies_if": [
+   "pesticides"
+  ],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "spray records",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "17",
+   "6"
+  ],
+  "aei": [
+   "6"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "pesticide risk and residue sampling"
+ },
+ {
+  "id": "A-22",
+  "block": "A",
+  "group": "Inputs",
+  "indicator": "Pesticide risk indicator",
+  "unit": "index",
+  "tier": "conditional",
+  "applies_if": [
+   "crops"
+  ],
+  "trigger": [
+   "pesticides"
+  ],
+  "cost": "desk",
+  "panel": "records",
+  "method": "harmonised risk indicator from use records",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "6"
+  ],
+  "aei": [
+   "17"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "substitution, risk reduction"
+ },
+ {
+  "id": "A-23",
+  "block": "A",
+  "group": "Product safety",
+  "indicator": "Pesticide residues in crops, feed or product",
+  "unit": "mg/kg vs MRL",
+  "tier": "conditional",
+  "applies_if": [
+   "crops"
+  ],
+  "trigger": [
+   "pesticides"
+  ],
+  "cost": "lab",
+  "panel": "feed",
+  "method": "multi-residue LC-MS/MS and GC-MS/MS",
+  "frequency": "per harvest or sale lot",
+  "anchor": [],
+  "twin": [
+   "6"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "whether a lot may be sold"
+ },
+ {
+  "id": "A-24",
+  "block": "A",
+  "group": "Inputs",
+  "indicator": "Mineral fertiliser N, P, K",
+  "unit": "kg/ha/yr",
+  "tier": "core",
+  "applies_if": [
+   "crops"
+  ],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "purchase and spreading records",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "17",
+   "5"
+  ],
+  "aei": [
+   "5"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "balances; rate decisions"
+ },
+ {
+  "id": "A-25",
+  "block": "A",
+  "group": "Inputs",
+  "indicator": "Organic inputs: biosolids, manure, compost — rate, N, P, metals",
+  "unit": "t DM/ha; kg N and P/ha",
+  "tier": "core",
+  "applies_if": [
+   "biosolids",
+   "manure"
+  ],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "delivery records and supplier analyses",
+  "frequency": "per delivery",
+  "anchor": [
+   "NYUS-07",
+   "NYUS-08",
+   "EU-15",
+   "EU-08"
+  ],
+  "twin": [
+   "17",
+   "5",
+   "23"
+  ],
+  "aei": [
+   "15",
+   "16"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "N- vs P-based rate; DMM-7 tiers"
+ },
+ {
+  "id": "A-26",
+  "block": "A",
+  "group": "Water use",
+  "indicator": "Irrigation volume and source",
+  "unit": "m³/ha/yr",
+  "tier": "core",
+  "applies_if": [
+   "irrigation"
+  ],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "meters; ECOSTRESS evapotranspiration as cross-check",
+  "frequency": "seasonal",
+  "anchor": [],
+  "twin": [
+   "3",
+   "17"
+  ],
+  "aei": [
+   "7",
+   "20"
+  ],
+  "wq": "-",
+  "nasa": [
+   "ECOSTRESS"
+  ],
+  "decision": "water abstraction; scheduling"
+ },
+ {
+  "id": "A-27",
+  "block": "A",
+  "group": "Water use",
+  "indicator": "Irrigation-water quality: EC, SAR, E. coli, PFAS where indicated",
+  "unit": "dS/m; CFU/100 mL; ng/L",
+  "tier": "conditional",
+  "applies_if": [
+   "irrigation"
+  ],
+  "trigger": [
+   "vegetables",
+   "biosolids",
+   "near_afff",
+   "stream"
+  ],
+  "cost": "lab",
+  "panel": "irrigation-water",
+  "method": "EC/SAR; E. coli (EPA 1603); PFAS (EPA 1633)",
+  "frequency": "seasonal",
+  "anchor": [],
+  "twin": [
+   "4",
+   "13",
+   "6"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "produce safety; salt build-up"
+ },
+ {
+  "id": "A-28",
+  "block": "A",
+  "group": "Vegetation",
+  "indicator": "NDVI / EVI and phenology",
+  "unit": "index; day of year",
+  "tier": "core",
+  "applies_if": [
+   "crops"
+  ],
+  "trigger": [],
+  "cost": "remote",
+  "panel": "nasa",
+  "method": "HLS 30 m time series per field, cloud-masked",
+  "frequency": "every usable scene",
+  "anchor": [],
+  "twin": [
+   "11",
+   "18"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [
+   "HLS"
+  ],
+  "decision": "crop condition; targeting field checks"
+ },
+ {
+  "id": "A-29",
+  "block": "A",
+  "group": "Water use",
+  "indicator": "Tile-drain flow and drain-water nitrate",
+  "unit": "mg N/L",
+  "tier": "conditional",
+  "applies_if": [
+   "crops"
+  ],
+  "trigger": [
+   "tile_drains"
+  ],
+  "cost": "lab",
+  "panel": "drain",
+  "method": "drain-outlet grab samples after events",
+  "frequency": "seasonal and events",
+  "anchor": [],
+  "twin": [
+   "5",
+   "23"
+  ],
+  "aei": [
+   "27.1"
+  ],
+  "wq": "-",
+  "nasa": [
+   "IMERG"
+  ],
+  "decision": "nitrate loss; drainage management"
+ },
+ {
+  "id": "A-30",
+  "block": "A",
+  "group": "Energy",
+  "indicator": "Energy use: fuel and electricity",
+  "unit": "kWh/yr; L diesel/yr",
+  "tier": "core",
+  "applies_if": [],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "bills and fuel records",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "17"
+  ],
+  "aei": [
+   "8"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "GHG accounting; costs"
+ },
+ {
+  "id": "A-31",
+  "block": "A",
+  "group": "Energy",
+  "indicator": "Renewable energy produced on the farm",
+  "unit": "kWh/yr",
+  "tier": "research",
+  "applies_if": [],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "meter data (solar, biogas)",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "17"
+  ],
+  "aei": [
+   "24"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "GHG accounting"
+ },
+ {
+  "id": "A-32",
+  "block": "A",
+  "group": "Diversity",
+  "indicator": "Crop varieties and genetic diversity",
+  "unit": "number of varieties; local varieties",
+  "tier": "research",
+  "applies_if": [
+   "crops"
+  ],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "seed records",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "11"
+  ],
+  "aei": [
+   "22"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "resilience"
+ },
+ {
+  "id": "L-01",
+  "block": "L",
+  "group": "Herd",
+  "indicator": "Herd size and structure",
+  "unit": "head by class; LSU",
+  "tier": "core",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "herd register",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "23"
+  ],
+  "aei": [
+   "10.2"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "every per-animal and per-hectare figure"
+ },
+ {
+  "id": "L-02",
+  "block": "L",
+  "group": "Herd",
+  "indicator": "Stocking density",
+  "unit": "LSU/ha",
+  "tier": "core",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "herd register ÷ farmed area",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "23"
+  ],
+  "aei": [
+   "12"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "intensity; manure load"
+ },
+ {
+  "id": "L-03",
+  "block": "L",
+  "group": "Production",
+  "indicator": "Milk yield and solids",
+  "unit": "kg/cow/yr; % fat, protein",
+  "tier": "core",
+  "applies_if": [
+   "dairy"
+  ],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "milk recording; processor statements",
+  "frequency": "monthly",
+  "anchor": [],
+  "twin": [
+   "23"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "balances per kg milk; efficiency"
+ },
+ {
+  "id": "L-04",
+  "block": "L",
+  "group": "Feed",
+  "indicator": "Ration composition and purchased-feed share",
+  "unit": "% DM; kg DM/head/day",
+  "tier": "core",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "ration sheets; purchase records",
+  "frequency": "seasonal",
+  "anchor": [],
+  "twin": [
+   "23"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "imported N and P; feed-contaminant pathway"
+ },
+ {
+  "id": "L-05",
+  "block": "L",
+  "group": "Feed",
+  "indicator": "Feed N and P content",
+  "unit": "% DM",
+  "tier": "core",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [],
+  "cost": "lab",
+  "panel": "feed",
+  "method": "NIRS or wet chemistry of main feeds; supplier analyses",
+  "frequency": "seasonal",
+  "anchor": [],
+  "twin": [
+   "5",
+   "23"
+  ],
+  "aei": [
+   "15",
+   "16"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "accuracy of the farm-gate balance"
+ },
+ {
+  "id": "L-06",
+  "block": "L",
+  "group": "Feed safety",
+  "indicator": "Aflatoxins in feed for dairy animals",
+  "unit": "µg/kg (ppb)",
+  "tier": "conditional",
+  "applies_if": [
+   "dairy"
+  ],
+  "trigger": [
+   "drought_year",
+   "purchased_grain",
+   "cottonseed"
+  ],
+  "cost": "lab",
+  "panel": "feed",
+  "method": "LC-MS/MS or validated ELISA screen",
+  "frequency": "per lot in risk seasons",
+  "anchor": [
+   "NYUS-24",
+   "EU-29"
+  ],
+  "twin": [
+   "new"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [
+   "IMERG",
+   "SMAP"
+  ],
+  "decision": "reject a feed lot; prevents aflatoxin M1 in milk"
+ },
+ {
+  "id": "L-07",
+  "block": "L",
+  "group": "Feed safety",
+  "indicator": "Other mycotoxins: DON, zearalenone, fumonisins",
+  "unit": "µg/kg",
+  "tier": "research",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [],
+  "cost": "lab",
+  "panel": "feed",
+  "method": "LC-MS/MS multi-mycotoxin",
+  "frequency": "on suspicion",
+  "anchor": [],
+  "twin": [
+   "new"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "unexplained health or fertility problems"
+ },
+ {
+  "id": "L-08",
+  "block": "L",
+  "group": "Feed safety",
+  "indicator": "PFAS in forage and feed (EFSA four + list)",
+  "unit": "µg/kg",
+  "tier": "conditional",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [
+   "biosolids",
+   "near_afff"
+  ],
+  "cost": "lab",
+  "panel": "feed",
+  "method": "FDA C-010.03 (silage and snaplage validated) or EPA 1633 for solids",
+  "frequency": "per harvest",
+  "anchor": [
+   "EU-30"
+  ],
+  "twin": [
+   "6",
+   "23"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "soil→feed→milk transfer; feed substitution"
+ },
+ {
+  "id": "L-09",
+  "block": "L",
+  "group": "Water for animals",
+  "indicator": "Livestock drinking-water quality: nitrate, coliforms, TDS; PFAS where indicated",
+  "unit": "mg/L; CFU/100 mL",
+  "tier": "core",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [],
+  "cost": "lab",
+  "panel": "well",
+  "method": "same visit as the household well; PFAS by EPA 533/537.1 for a well",
+  "frequency": "annual; quarterly if PFAS",
+  "anchor": [],
+  "twin": [
+   "8",
+   "23"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "treatment or source change"
+ },
+ {
+  "id": "L-10",
+  "block": "L",
+  "group": "Welfare — feeding",
+  "indicator": "Water availability: water points, flow, cleanliness",
+  "unit": "troughs per animal; L/min; score",
+  "tier": "core",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [],
+  "cost": "field",
+  "panel": "welfare-visit",
+  "method": "on-farm check (Welfare Quality-type)",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "new"
+  ],
+  "aei": [],
+  "wq": "absence of prolonged thirst",
+  "nasa": [],
+  "decision": "water-supply fixes"
+ },
+ {
+  "id": "L-11",
+  "block": "L",
+  "group": "Welfare — feeding",
+  "indicator": "Body condition: share of animals too thin",
+  "unit": "% animals BCS ≤ 2 (5-point)",
+  "tier": "core",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [],
+  "cost": "field",
+  "panel": "welfare-visit",
+  "method": "5-point body-condition scoring of a sample",
+  "frequency": "twice a year",
+  "anchor": [],
+  "twin": [
+   "new"
+  ],
+  "aei": [],
+  "wq": "absence of prolonged hunger",
+  "nasa": [],
+  "decision": "feeding management"
+ },
+ {
+  "id": "L-12",
+  "block": "L",
+  "group": "Welfare — housing",
+  "indicator": "Resting comfort: lying time, stall and bedding condition, cleanliness",
+  "unit": "h/day; score",
+  "tier": "conditional",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [
+   "housed"
+  ],
+  "cost": "field",
+  "panel": "welfare-visit",
+  "method": "observation or leg sensors; hygiene scoring",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "new"
+  ],
+  "aei": [],
+  "wq": "comfort around resting",
+  "nasa": [],
+  "decision": "housing improvements"
+ },
+ {
+  "id": "L-13",
+  "block": "L",
+  "group": "Welfare — housing",
+  "indicator": "Heat load: temperature-humidity index above the heat-stress level",
+  "unit": "hours/yr above threshold",
+  "tier": "core",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [],
+  "cost": "remote",
+  "panel": "nasa",
+  "method": "THI from an on-farm sensor; NASA POWER daily T2M/RH2M (0.5°×0.625°) as fallback. The Welfare Quality dairy protocol has no measure for thermal comfort; THI is the skill's proxy",
+  "frequency": "daily in the warm season",
+  "anchor": [],
+  "twin": [
+   "1",
+   "23"
+  ],
+  "aei": [],
+  "wq": "thermal comfort",
+  "nasa": [
+   "POWER"
+  ],
+  "decision": "shade, cooling, ventilation"
+ },
+ {
+  "id": "L-14",
+  "block": "L",
+  "group": "Welfare — housing",
+  "indicator": "Space allowance and freedom of movement (tethering, pen space)",
+  "unit": "m²/animal; % tethered",
+  "tier": "core",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [],
+  "cost": "field",
+  "panel": "welfare-visit",
+  "method": "on-farm measurement",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "new"
+  ],
+  "aei": [],
+  "wq": "ease of movement",
+  "nasa": [],
+  "decision": "housing redesign"
+ },
+ {
+  "id": "L-15",
+  "block": "L",
+  "group": "Welfare — health",
+  "indicator": "Lameness prevalence",
+  "unit": "% animals lame",
+  "tier": "core",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [],
+  "cost": "field",
+  "panel": "welfare-visit",
+  "method": "locomotion scoring (5-point) of the herd or a sample",
+  "frequency": "twice a year",
+  "anchor": [],
+  "twin": [
+   "new"
+  ],
+  "aei": [],
+  "wq": "absence of injuries",
+  "nasa": [],
+  "decision": "hoof care, flooring"
+ },
+ {
+  "id": "L-16",
+  "block": "L",
+  "group": "Welfare — health",
+  "indicator": "Integument alterations (hock lesions, swellings)",
+  "unit": "% animals",
+  "tier": "conditional",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [
+   "housed"
+  ],
+  "cost": "field",
+  "panel": "welfare-visit",
+  "method": "on-farm scoring",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "new"
+  ],
+  "aei": [],
+  "wq": "absence of injuries",
+  "nasa": [],
+  "decision": "bedding and stall design"
+ },
+ {
+  "id": "L-17",
+  "block": "L",
+  "group": "Health",
+  "indicator": "Clinical mastitis incidence",
+  "unit": "cases/100 cows/yr",
+  "tier": "core",
+  "applies_if": [
+   "dairy"
+  ],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "treatment records",
+  "frequency": "monthly",
+  "anchor": [],
+  "twin": [
+   "new"
+  ],
+  "aei": [],
+  "wq": "absence of disease",
+  "nasa": [],
+  "decision": "udder health; antimicrobial use"
+ },
+ {
+  "id": "L-18",
+  "block": "L",
+  "group": "Milk quality",
+  "indicator": "Bulk-tank somatic cell count",
+  "unit": "cells/mL",
+  "tier": "core",
+  "applies_if": [
+   "dairy"
+  ],
+  "trigger": [],
+  "cost": "lab",
+  "panel": "milk",
+  "method": "electronic counter (processor testing)",
+  "frequency": "each collection or monthly",
+  "anchor": [
+   "NYUS-22",
+   "EU-26"
+  ],
+  "twin": [
+   "new"
+  ],
+  "aei": [],
+  "wq": "absence of disease",
+  "nasa": [],
+  "decision": "udder health; marketability"
+ },
+ {
+  "id": "L-19",
+  "block": "L",
+  "group": "Milk quality",
+  "indicator": "Bulk-tank bacterial (plate) count",
+  "unit": "CFU/mL",
+  "tier": "core",
+  "applies_if": [
+   "dairy"
+  ],
+  "trigger": [],
+  "cost": "lab",
+  "panel": "milk",
+  "method": "plate count at 30 °C (processor testing)",
+  "frequency": "monthly",
+  "anchor": [
+   "NYUS-25",
+   "NYUS-26",
+   "EU-27"
+  ],
+  "twin": [
+   "new"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "milking hygiene; marketability"
+ },
+ {
+  "id": "L-20",
+  "block": "L",
+  "group": "Health",
+  "indicator": "Mortality and culling rate by cause",
+  "unit": "% per year",
+  "tier": "core",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "herd register",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "23"
+  ],
+  "aei": [],
+  "wq": "absence of disease",
+  "nasa": [],
+  "decision": "health management"
+ },
+ {
+  "id": "L-21",
+  "block": "L",
+  "group": "Health",
+  "indicator": "Young-stock health: diarrhoea and respiratory disease",
+  "unit": "% calves affected",
+  "tier": "conditional",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [
+   "calves"
+  ],
+  "cost": "desk",
+  "panel": "records",
+  "method": "treatment records",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "new"
+  ],
+  "aei": [],
+  "wq": "absence of disease",
+  "nasa": [],
+  "decision": "calf management"
+ },
+ {
+  "id": "L-22",
+  "block": "L",
+  "group": "Welfare — behaviour",
+  "indicator": "Access to pasture or an outdoor area",
+  "unit": "days/yr; h/day",
+  "tier": "core",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "grazing records",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "23"
+  ],
+  "aei": [],
+  "wq": "expression of other behaviours",
+  "nasa": [],
+  "decision": "grazing management"
+ },
+ {
+  "id": "L-23",
+  "block": "L",
+  "group": "Welfare — health",
+  "indicator": "Painful procedures without anaesthesia or analgesia (disbudding, castration, tail docking)",
+  "unit": "% animals",
+  "tier": "core",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "farm protocols and records",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "new"
+  ],
+  "aei": [],
+  "wq": "absence of pain induced by management procedures",
+  "nasa": [],
+  "decision": "procedure protocols"
+ },
+ {
+  "id": "L-24",
+  "block": "L",
+  "group": "Welfare — behaviour",
+  "indicator": "Social behaviour: agonistic interactions",
+  "unit": "events/animal/hour",
+  "tier": "research",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [],
+  "cost": "field",
+  "panel": "welfare-visit",
+  "method": "direct observation (Welfare Quality protocol)",
+  "frequency": "on request",
+  "anchor": [],
+  "twin": [
+   "new"
+  ],
+  "aei": [],
+  "wq": "expression of social behaviours",
+  "nasa": [],
+  "decision": "group management"
+ },
+ {
+  "id": "L-25",
+  "block": "L",
+  "group": "Welfare — behaviour",
+  "indicator": "Human–animal relationship: avoidance distance",
+  "unit": "% animals that can be touched",
+  "tier": "research",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [],
+  "cost": "field",
+  "panel": "welfare-visit",
+  "method": "avoidance-distance test (Welfare Quality protocol)",
+  "frequency": "on request",
+  "anchor": [],
+  "twin": [
+   "new"
+  ],
+  "aei": [],
+  "wq": "good human-animal relationship",
+  "nasa": [],
+  "decision": "handling training"
+ },
+ {
+  "id": "L-26",
+  "block": "L",
+  "group": "Welfare — behaviour",
+  "indicator": "Positive emotional state: qualitative behaviour assessment",
+  "unit": "QBA score",
+  "tier": "research",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [],
+  "cost": "field",
+  "panel": "welfare-visit",
+  "method": "Welfare Quality QBA",
+  "frequency": "on request",
+  "anchor": [],
+  "twin": [
+   "new"
+  ],
+  "aei": [],
+  "wq": "positive emotional state",
+  "nasa": [],
+  "decision": "overall welfare"
+ },
+ {
+  "id": "L-27",
+  "block": "L",
+  "group": "Antimicrobials",
+  "indicator": "Antimicrobial use by substance and route",
+  "unit": "mg/PCU or treatment days per animal-year",
+  "tier": "core",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "treatment records; veterinary prescriptions",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "new"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "stewardship; AMR pressure"
+ },
+ {
+  "id": "L-28",
+  "block": "L",
+  "group": "Antimicrobials",
+  "indicator": "Share of highest-priority critically important antimicrobials",
+  "unit": "% of use",
+  "tier": "core",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "from L-27 records by WHO category",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "new"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "substitution"
+ },
+ {
+  "id": "L-29",
+  "block": "L",
+  "group": "Biosecurity",
+  "indicator": "Biosecurity and vaccination plan",
+  "unit": "present/absent; score",
+  "tier": "core",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "review of the farm plan",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "new"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "risk of introducing disease"
+ },
+ {
+  "id": "L-30",
+  "block": "L",
+  "group": "Biosecurity",
+  "indicator": "Official status for notifiable and zoonotic diseases (e.g. tuberculosis, brucellosis; avian influenza for poultry)",
+  "unit": "status",
+  "tier": "core",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "official herd or flock records",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "new"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "trade and public-health obligations"
+ },
+ {
+  "id": "L-31",
+  "block": "L",
+  "group": "Zoonoses",
+  "indicator": "Zoonotic pathogens in manure or the environment (Salmonella, STEC, Campylobacter)",
+  "unit": "presence; CFU/g",
+  "tier": "conditional",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [
+   "raw_milk_sales",
+   "public_access",
+   "vegetables"
+  ],
+  "cost": "lab",
+  "panel": "manure",
+  "method": "culture or PCR",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "13"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "manure handling; visitor and produce safety"
+ },
+ {
+  "id": "L-32",
+  "block": "L",
+  "group": "Manure",
+  "indicator": "Manure production and N excretion",
+  "unit": "t/yr; kg N/yr",
+  "tier": "core",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "herd × excretion coefficients; storage volumes",
+  "frequency": "annual",
+  "anchor": [
+   "EU-08"
+  ],
+  "twin": [
+   "23"
+  ],
+  "aei": [
+   "10.2"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "manure-N limit in EU NVZs; spreading plan"
+ },
+ {
+  "id": "L-33",
+  "block": "L",
+  "group": "Manure",
+  "indicator": "Manure storage capacity, cover and freeboard",
+  "unit": "months of storage; covered yes/no",
+  "tier": "core",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [],
+  "cost": "field",
+  "panel": "walkover",
+  "method": "inspection and design records",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "23"
+  ],
+  "aei": [
+   "11.3"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "avoid winter spreading; ammonia"
+ },
+ {
+  "id": "L-34",
+  "block": "L",
+  "group": "Manure",
+  "indicator": "Manure application: rate, timing, method (incl. on frozen or saturated soil)",
+  "unit": "kg N/ha; dates; method",
+  "tier": "core",
+  "applies_if": [
+   "manure"
+  ],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "spreading log",
+  "frequency": "each application",
+  "anchor": [
+   "EU-08"
+  ],
+  "twin": [
+   "23",
+   "17"
+  ],
+  "aei": [
+   "15"
+  ],
+  "wq": "-",
+  "nasa": [
+   "IMERG",
+   "SMAP"
+  ],
+  "decision": "runoff and leaching risk"
+ },
+ {
+  "id": "L-35",
+  "block": "L",
+  "group": "Emissions",
+  "indicator": "Enteric methane",
+  "unit": "kg CH4/yr; g/kg milk",
+  "tier": "core",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "IPCC 2019 Tier 2 from intake and yield",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "2",
+   "23"
+  ],
+  "aei": [
+   "19"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "GHG footprint"
+ },
+ {
+  "id": "L-36",
+  "block": "L",
+  "group": "Emissions",
+  "indicator": "Ammonia from housing, storage and spreading",
+  "unit": "kg NH3/yr",
+  "tier": "core",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "EMEP/EEA emission inventory guidebook, Tier 2",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "2",
+   "23"
+  ],
+  "aei": [
+   "18"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "abatement (covers, injection)"
+ },
+ {
+  "id": "L-37",
+  "block": "L",
+  "group": "Emissions",
+  "indicator": "Nitrous oxide from manure and soils",
+  "unit": "kg N2O/yr",
+  "tier": "core",
+  "applies_if": [
+   "livestock",
+   "crops"
+  ],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "IPCC 2019 Tier 1/2",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "2",
+   "23"
+  ],
+  "aei": [
+   "19"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "GHG footprint"
+ },
+ {
+  "id": "L-38",
+  "block": "L",
+  "group": "Product safety",
+  "indicator": "Veterinary drug residues in milk, meat or eggs",
+  "unit": "pass/fail vs tolerances or MRLs",
+  "tier": "core",
+  "applies_if": [
+   "sells_milk",
+   "sells_meat",
+   "sells_eggs"
+  ],
+  "trigger": [],
+  "cost": "lab",
+  "panel": "milk",
+  "method": "processor or official screening tests",
+  "frequency": "each collection or official plan",
+  "anchor": [],
+  "twin": [
+   "new"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "whether product may be sold"
+ },
+ {
+  "id": "L-39",
+  "block": "L",
+  "group": "Product safety",
+  "indicator": "Aflatoxin M1 in milk",
+  "unit": "µg/kg",
+  "tier": "conditional",
+  "applies_if": [
+   "dairy"
+  ],
+  "trigger": [
+   "drought_year",
+   "purchased_grain",
+   "cottonseed"
+  ],
+  "cost": "lab",
+  "panel": "milk",
+  "method": "ISO 14501 (immunoaffinity + HPLC) or validated ELISA",
+  "frequency": "per risk season",
+  "anchor": [
+   "NYUS-23",
+   "EU-28"
+  ],
+  "twin": [
+   "new"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "milk diversion; feed source"
+ },
+ {
+  "id": "L-40",
+  "block": "L",
+  "group": "Product safety",
+  "indicator": "PFAS in milk, meat or eggs (EFSA four + list)",
+  "unit": "ng/L; µg/kg",
+  "tier": "conditional",
+  "applies_if": [
+   "sells_milk",
+   "sells_meat",
+   "sells_eggs"
+  ],
+  "trigger": [
+   "biosolids",
+   "near_afff"
+  ],
+  "cost": "lab",
+  "panel": "milk",
+  "method": "FDA C-010.03 or an equivalent ISO/IEC 17025 food method",
+  "frequency": "per season",
+  "anchor": [
+   "NYUS-14",
+   "NYUS-15",
+   "EU-18",
+   "EU-19",
+   "EU-20",
+   "EU-21",
+   "EU-22"
+  ],
+  "twin": [
+   "6"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "sale decision; dose scenario"
+ },
+ {
+  "id": "L-41",
+  "block": "L",
+  "group": "Product safety",
+  "indicator": "Raw-milk pathogens (Listeria, Salmonella, STEC, Campylobacter)",
+  "unit": "presence per 25 mL",
+  "tier": "conditional",
+  "applies_if": [
+   "dairy"
+  ],
+  "trigger": [
+   "raw_milk_sales"
+  ],
+  "cost": "lab",
+  "panel": "milk",
+  "method": "culture or PCR in an accredited food laboratory",
+  "frequency": "per state rule",
+  "anchor": [],
+  "twin": [
+   "13"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "raw-milk sales safety"
+ },
+ {
+  "id": "L-42",
+  "block": "L",
+  "group": "Diversity",
+  "indicator": "Breeds and livestock genetic diversity",
+  "unit": "number of breeds; local breeds",
+  "tier": "research",
+  "applies_if": [
+   "livestock"
+  ],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "herd register",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "15"
+  ],
+  "aei": [
+   "22"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "resilience; heritage breeds"
+ },
+ {
+  "id": "E-01",
+  "block": "E",
+  "group": "Drinking water",
+  "indicator": "Drinking well — PFAS (EFSA four + method list)",
+  "unit": "ng/L",
+  "tier": "conditional",
+  "applies_if": [
+   "drinking_well"
+  ],
+  "trigger": [
+   "biosolids",
+   "near_afff",
+   "industry_near"
+  ],
+  "cost": "lab",
+  "panel": "well",
+  "method": "EPA 533 or 537.1, reporting limit ≤ 2 ng/L",
+  "frequency": "quarterly for one year",
+  "anchor": [
+   "NYUS-01",
+   "NYUS-02",
+   "NYUS-03",
+   "NYUS-04",
+   "NYUS-05",
+   "EU-01",
+   "EU-02",
+   "EU-04"
+  ],
+  "twin": [
+   "8",
+   "6"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "household and herd water decisions; dose scenarios"
+ },
+ {
+  "id": "E-02",
+  "block": "E",
+  "group": "Drinking water",
+  "indicator": "Drinking well — nitrate and nitrite",
+  "unit": "mg/L as N",
+  "tier": "core",
+  "applies_if": [
+   "drinking_well"
+  ],
+  "trigger": [],
+  "cost": "lab",
+  "panel": "well",
+  "method": "ion chromatography or approved colorimetric method",
+  "frequency": "quarterly for one year; then annual",
+  "anchor": [
+   "NYUS-06",
+   "EU-03",
+   "EU-07"
+  ],
+  "twin": [
+   "8"
+  ],
+  "aei": [
+   "27.1"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "infant-formula water advice; source protection"
+ },
+ {
+  "id": "E-03",
+  "block": "E",
+  "group": "Drinking water",
+  "indicator": "Drinking well — total coliform and E. coli",
+  "unit": "presence/100 mL",
+  "tier": "core",
+  "applies_if": [
+   "drinking_well"
+  ],
+  "trigger": [],
+  "cost": "lab",
+  "panel": "well",
+  "method": "approved presence/absence method",
+  "frequency": "annual; after floods",
+  "anchor": [],
+  "twin": [
+   "8",
+   "13"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "disinfection, well repair"
+ },
+ {
+  "id": "E-04",
+  "block": "E",
+  "group": "Drinking water",
+  "indicator": "Drinking well — geogenic elements (arsenic, manganese, uranium)",
+  "unit": "µg/L",
+  "tier": "conditional",
+  "applies_if": [
+   "drinking_well"
+  ],
+  "trigger": [
+   "geogenic_risk"
+  ],
+  "cost": "lab",
+  "panel": "well",
+  "method": "ICP-MS",
+  "frequency": "once; then 5 years",
+  "anchor": [],
+  "twin": [
+   "8"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "treatment choice"
+ },
+ {
+  "id": "E-05",
+  "block": "E",
+  "group": "Surface water",
+  "indicator": "Stream — total phosphorus, nitrate, suspended solids",
+  "unit": "µg/L; mg/L",
+  "tier": "core",
+  "applies_if": [
+   "stream"
+  ],
+  "trigger": [],
+  "cost": "lab",
+  "panel": "stream",
+  "method": "monthly grab and event samples",
+  "frequency": "monthly",
+  "anchor": [
+   "NYUS-19"
+  ],
+  "twin": [
+   "4",
+   "5"
+  ],
+  "aei": [
+   "27.1"
+  ],
+  "wq": "-",
+  "nasa": [
+   "IMERG"
+  ],
+  "decision": "nutrient export; buffer effect"
+ },
+ {
+  "id": "E-06",
+  "block": "E",
+  "group": "Surface water",
+  "indicator": "Stream — E. coli or enterococci",
+  "unit": "CFU/100 mL",
+  "tier": "conditional",
+  "applies_if": [
+   "stream"
+  ],
+  "trigger": [
+   "grazing",
+   "manure",
+   "biosolids"
+  ],
+  "cost": "lab",
+  "panel": "stream",
+  "method": "EPA 1603 / 1600; seasonal series for geometric mean and percentile",
+  "frequency": "monthly in season and events",
+  "anchor": [
+   "NYUS-11",
+   "NYUS-12",
+   "EU-25"
+  ],
+  "twin": [
+   "4",
+   "13"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [
+   "IMERG"
+  ],
+  "decision": "livestock exclusion; spreading timing"
+ },
+ {
+  "id": "E-07",
+  "block": "E",
+  "group": "Surface water",
+  "indicator": "Stream flow (stage and discharge)",
+  "unit": "m³/s",
+  "tier": "conditional",
+  "applies_if": [
+   "stream"
+  ],
+  "trigger": [
+   "biosolids",
+   "manure"
+  ],
+  "cost": "field",
+  "panel": "stream",
+  "method": "staff gauge and rating curve",
+  "frequency": "each visit or continuous",
+  "anchor": [],
+  "twin": [
+   "3"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [
+   "IMERG"
+  ],
+  "decision": "loads in kg/yr instead of concentrations"
+ },
+ {
+  "id": "E-08",
+  "block": "E",
+  "group": "Standing water",
+  "indicator": "Pond — total phosphorus, chlorophyll-a, Secchi depth",
+  "unit": "µg/L; m",
+  "tier": "core",
+  "applies_if": [
+   "pond"
+  ],
+  "trigger": [],
+  "cost": "lab",
+  "panel": "pond",
+  "method": "monthly May–September",
+  "frequency": "monthly in season",
+  "anchor": [
+   "NYUS-19",
+   "NYUS-20",
+   "NYUS-21"
+  ],
+  "twin": [
+   "4",
+   "5",
+   "12"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [
+   "DSWx"
+  ],
+  "decision": "trophic state; loading"
+ },
+ {
+  "id": "E-09",
+  "block": "E",
+  "group": "Standing water",
+  "indicator": "Pond — dissolved-oxygen and temperature profile",
+  "unit": "mg/L by depth",
+  "tier": "core",
+  "applies_if": [
+   "pond"
+  ],
+  "trigger": [],
+  "cost": "field",
+  "panel": "pond",
+  "method": "multiparameter probe, 0.5 m steps",
+  "frequency": "monthly in season",
+  "anchor": [],
+  "twin": [
+   "4"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "fish and aeration decisions"
+ },
+ {
+  "id": "E-10",
+  "block": "E",
+  "group": "Standing water",
+  "indicator": "Cyanobacteria and cyanotoxins (microcystins)",
+  "unit": "cells/mL; µg/L",
+  "tier": "conditional",
+  "applies_if": [
+   "pond"
+  ],
+  "trigger": [
+   "eutrophic_pond",
+   "animal_access_pond"
+  ],
+  "cost": "lab",
+  "panel": "pond",
+  "method": "cell counts; ELISA for microcystins",
+  "frequency": "bloom season",
+  "anchor": [],
+  "twin": [
+   "12"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "livestock and dog access to water"
+ },
+ {
+  "id": "E-11",
+  "block": "E",
+  "group": "Nutrients",
+  "indicator": "Farm-gate nitrogen balance",
+  "unit": "kg N/ha/yr; kg N/Mg milk",
+  "tier": "core",
+  "applies_if": [],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "passport_calc.farm_gate_balance from records; denominator named",
+  "frequency": "annual; 3-year running",
+  "anchor": [
+   "NYUS-17",
+   "EU-08"
+  ],
+  "twin": [
+   "5",
+   "17"
+  ],
+  "aei": [
+   "15"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "input reduction; benchmark position"
+ },
+ {
+  "id": "E-12",
+  "block": "E",
+  "group": "Nutrients",
+  "indicator": "Farm-gate phosphorus balance",
+  "unit": "kg P/ha/yr; kg P/Mg milk",
+  "tier": "core",
+  "applies_if": [],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "as E-11",
+  "frequency": "annual; 3-year running",
+  "anchor": [
+   "NYUS-18"
+  ],
+  "twin": [
+   "5",
+   "17"
+  ],
+  "aei": [
+   "16"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "P-based rates; P build-up"
+ },
+ {
+  "id": "E-13",
+  "block": "E",
+  "group": "Nutrients",
+  "indicator": "Field nutrient export and delivery to water (modelled)",
+  "unit": "kg/yr",
+  "tier": "core",
+  "applies_if": [
+   "stream",
+   "pond"
+  ],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "export coefficients × area × delivery ratio, checked against E-05 and E-08",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "5"
+  ],
+  "aei": [
+   "16"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "which fields to treat first"
+ },
+ {
+  "id": "E-14",
+  "block": "E",
+  "group": "Habitat",
+  "indicator": "Riparian buffer width and condition",
+  "unit": "m; % vegetated",
+  "tier": "core",
+  "applies_if": [
+   "stream",
+   "pond"
+  ],
+  "trigger": [],
+  "cost": "field",
+  "panel": "walkover",
+  "method": "field survey; HLS NDVI along banks only if the pixel-fit check passes",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "10"
+  ],
+  "aei": [
+   "28"
+  ],
+  "wq": "-",
+  "nasa": [
+   "HLS"
+  ],
+  "decision": "buffer extension"
+ },
+ {
+  "id": "E-15",
+  "block": "E",
+  "group": "Habitat",
+  "indicator": "Livestock access to watercourses",
+  "unit": "% of bank fenced",
+  "tier": "conditional",
+  "applies_if": [
+   "stream",
+   "pond"
+  ],
+  "trigger": [
+   "grazing"
+  ],
+  "cost": "field",
+  "panel": "walkover",
+  "method": "survey",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "10",
+   "23"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "fencing, alternative water"
+ },
+ {
+  "id": "E-16",
+  "block": "E",
+  "group": "Habitat",
+  "indicator": "Semi-natural habitat share: hedgerows, margins, woodland",
+  "unit": "% farm area",
+  "tier": "core",
+  "applies_if": [],
+  "trigger": [],
+  "cost": "remote",
+  "panel": "nasa",
+  "method": "HLS or aerial classification with field check",
+  "frequency": "5 years",
+  "anchor": [],
+  "twin": [
+   "10"
+  ],
+  "aei": [
+   "28"
+  ],
+  "wq": "-",
+  "nasa": [
+   "HLS"
+  ],
+  "decision": "habitat measures"
+ },
+ {
+  "id": "E-17",
+  "block": "E",
+  "group": "Habitat",
+  "indicator": "Protected or high-nature-value areas on or next to the farm",
+  "unit": "ha; distance",
+  "tier": "conditional",
+  "applies_if": [],
+  "trigger": [
+   "protected_area_near"
+  ],
+  "cost": "desk",
+  "panel": "records",
+  "method": "public protected-area registers",
+  "frequency": "once",
+  "anchor": [],
+  "twin": [
+   "10",
+   "17"
+  ],
+  "aei": [
+   "2",
+   "23"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "restrictions; habitat value"
+ },
+ {
+  "id": "E-18",
+  "block": "E",
+  "group": "Biodiversity",
+  "indicator": "Pollinators (abundance, diversity)",
+  "unit": "count per transect",
+  "tier": "conditional",
+  "applies_if": [
+   "crops"
+  ],
+  "trigger": [
+   "insect_pollinated"
+  ],
+  "cost": "field",
+  "panel": "biodiversity",
+  "method": "transect walks or pan traps in season",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "14",
+   "16"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "margins, pesticide timing"
+ },
+ {
+  "id": "E-19",
+  "block": "E",
+  "group": "Biodiversity",
+  "indicator": "Farmland birds",
+  "unit": "species; pairs",
+  "tier": "research",
+  "applies_if": [],
+  "trigger": [],
+  "cost": "field",
+  "panel": "biodiversity",
+  "method": "point counts; acoustic detector with a published error rate, never the sole basis",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "15"
+  ],
+  "aei": [
+   "25"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "habitat value"
+ },
+ {
+  "id": "E-20",
+  "block": "E",
+  "group": "Biodiversity",
+  "indicator": "Amphibians at farm ponds",
+  "unit": "presence by species",
+  "tier": "research",
+  "applies_if": [
+   "pond"
+  ],
+  "trigger": [],
+  "cost": "field",
+  "panel": "biodiversity",
+  "method": "visual or egg-mass surveys; eDNA",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "15"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "pond management"
+ },
+ {
+  "id": "E-21",
+  "block": "E",
+  "group": "Land",
+  "indicator": "Land-use and land-cover change",
+  "unit": "ha changed per class",
+  "tier": "core",
+  "applies_if": [],
+  "trigger": [],
+  "cost": "remote",
+  "panel": "nasa",
+  "method": "HLS (from 2013) and the Landsat archive",
+  "frequency": "5 years",
+  "anchor": [],
+  "twin": [
+   "10"
+  ],
+  "aei": [
+   "9"
+  ],
+  "wq": "-",
+  "nasa": [
+   "HLS",
+   "LANDSAT"
+  ],
+  "decision": "field history; contamination pathways"
+ },
+ {
+  "id": "E-22",
+  "block": "E",
+  "group": "Climate",
+  "indicator": "Drought exposure: soil-moisture and precipitation anomalies",
+  "unit": "percentile vs climatology",
+  "tier": "core",
+  "applies_if": [],
+  "trigger": [],
+  "cost": "remote",
+  "panel": "nasa",
+  "method": "SMAP L4 root zone (9 km) and IMERG (0.1°) — farm-level context, not field status",
+  "frequency": "monthly",
+  "anchor": [],
+  "twin": [
+   "1"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [
+   "SMAP",
+   "IMERG"
+  ],
+  "decision": "feed reserves; triggers for forage nitrate and aflatoxin"
+ },
+ {
+  "id": "E-23",
+  "block": "E",
+  "group": "Climate",
+  "indicator": "Field flooding",
+  "unit": "days flooded per field",
+  "tier": "conditional",
+  "applies_if": [],
+  "trigger": [
+   "floodplain"
+  ],
+  "cost": "remote",
+  "panel": "nasa",
+  "method": "OPERA DSWx-HLS 30 m, pixel-fit check per field",
+  "frequency": "events",
+  "anchor": [],
+  "twin": [
+   "3",
+   "1"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [
+   "DSWx"
+  ],
+  "decision": "crop loss; spreading restrictions; well check after floods"
+ },
+ {
+  "id": "E-24",
+  "block": "E",
+  "group": "Climate",
+  "indicator": "Frost and heat days; growing degree days",
+  "unit": "days; °C·days",
+  "tier": "core",
+  "applies_if": [],
+  "trigger": [],
+  "cost": "remote",
+  "panel": "nasa",
+  "method": "on-farm station; NASA POWER daily T2M as fallback",
+  "frequency": "daily",
+  "anchor": [],
+  "twin": [
+   "1"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [
+   "POWER"
+  ],
+  "decision": "crop and herd planning"
+ },
+ {
+  "id": "E-25",
+  "block": "E",
+  "group": "Water",
+  "indicator": "Water abstraction, all uses",
+  "unit": "m³/yr",
+  "tier": "core",
+  "applies_if": [],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "meters or estimates per use",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "3",
+   "17"
+  ],
+  "aei": [
+   "20"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "water stress; permits"
+ },
+ {
+  "id": "E-26",
+  "block": "E",
+  "group": "Climate",
+  "indicator": "Whole-farm greenhouse-gas balance",
+  "unit": "t CO2e/yr; kg CO2e/kg product",
+  "tier": "core",
+  "applies_if": [],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "IPCC 2019 from L-35, L-37, A-30 and fertiliser",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "2",
+   "17"
+  ],
+  "aei": [
+   "19"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "mitigation options"
+ },
+ {
+  "id": "E-27",
+  "block": "E",
+  "group": "Management",
+  "indicator": "Organic status and agri-environment commitments",
+  "unit": "status; ha under a scheme",
+  "tier": "core",
+  "applies_if": [],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "certificates; scheme contracts",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "17"
+  ],
+  "aei": [
+   "1",
+   "4"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "eligibility; claims"
+ },
+ {
+  "id": "E-28",
+  "block": "E",
+  "group": "Management",
+  "indicator": "Farmer training and use of advisory services",
+  "unit": "yes/no; hours",
+  "tier": "research",
+  "applies_if": [],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "interview",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "17"
+  ],
+  "aei": [
+   "3"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "capacity"
+ },
+ {
+  "id": "E-29",
+  "block": "E",
+  "group": "Management",
+  "indicator": "Input intensity (fertiliser, feed, LSU per hectare)",
+  "unit": "kg/ha; LSU/ha",
+  "tier": "core",
+  "applies_if": [],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "derived from A-24, L-04, L-02",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "17"
+  ],
+  "aei": [
+   "12"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "extensification options"
+ },
+ {
+  "id": "E-30",
+  "block": "E",
+  "group": "Management",
+  "indicator": "Farm type and specialisation",
+  "unit": "type class",
+  "tier": "core",
+  "applies_if": [],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "farm records (standard-output classes)",
+  "frequency": "once",
+  "anchor": [],
+  "twin": [
+   "17"
+  ],
+  "aei": [
+   "13"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "benchmark peer group"
+ },
+ {
+  "id": "E-31",
+  "block": "E",
+  "group": "Surface and groundwater",
+  "indicator": "Pesticides in the well or stream",
+  "unit": "µg/L",
+  "tier": "conditional",
+  "applies_if": [
+   "drinking_well",
+   "stream"
+  ],
+  "trigger": [
+   "pesticides"
+  ],
+  "cost": "lab",
+  "panel": "well",
+  "method": "multi-residue LC-MS/MS",
+  "frequency": "annual in season",
+  "anchor": [],
+  "twin": [
+   "6",
+   "8"
+  ],
+  "aei": [
+   "27.2"
+  ],
+  "wq": "-",
+  "nasa": [],
+  "decision": "spray buffers, product choice"
+ },
+ {
+  "id": "X-01",
+  "block": "X",
+  "group": "Contaminant sources",
+  "indicator": "Biosolids source — PFOS, PFOA and method list",
+  "unit": "µg/kg DM",
+  "tier": "conditional",
+  "applies_if": [],
+  "trigger": [
+   "biosolids"
+  ],
+  "cost": "desk",
+  "panel": "records",
+  "method": "supplier DMM-7 results; EPA 1633",
+  "frequency": "quarterly (supplier)",
+  "anchor": [
+   "NYUS-07",
+   "NYUS-08",
+   "NYUS-09"
+  ],
+  "twin": [
+   "6",
+   "17"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "continue or stop application"
+ },
+ {
+  "id": "X-02",
+  "block": "X",
+  "group": "Contaminant sources",
+  "indicator": "Biosolids — heavy metals",
+  "unit": "mg/kg DM",
+  "tier": "conditional",
+  "applies_if": [],
+  "trigger": [
+   "biosolids"
+  ],
+  "cost": "desk",
+  "panel": "records",
+  "method": "supplier analyses",
+  "frequency": "per delivery; at least every six months (86/278 Annex II A)",
+  "anchor": [
+   "EU-15"
+  ],
+  "twin": [
+   "6"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "metal loading limits"
+ },
+ {
+  "id": "X-03",
+  "block": "X",
+  "group": "Contaminant sources",
+  "indicator": "Biosolids — pathogen class and treatment",
+  "unit": "class; indicator organisms",
+  "tier": "conditional",
+  "applies_if": [],
+  "trigger": [
+   "biosolids"
+  ],
+  "cost": "desk",
+  "panel": "records",
+  "method": "supplier certificates",
+  "frequency": "per delivery",
+  "anchor": [
+   "EU-16"
+  ],
+  "twin": [
+   "13"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "grazing and harvest waiting periods"
+ },
+ {
+  "id": "X-04",
+  "block": "X",
+  "group": "Contaminant sources",
+  "indicator": "Nearby sources: AFFF sites, landfills, industry, spill records",
+  "unit": "list; distance",
+  "tier": "core",
+  "applies_if": [],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "public registers and maps",
+  "frequency": "once; on change",
+  "anchor": [],
+  "twin": [
+   "6",
+   "17"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "which conditional PFAS panels to open"
+ },
+ {
+  "id": "X-05",
+  "block": "X",
+  "group": "AMR",
+  "indicator": "Antimicrobial-resistant bacteria or genes in manure, biosolids or water",
+  "unit": "presence; gene copies",
+  "tier": "research",
+  "applies_if": [
+   "livestock",
+   "biosolids"
+  ],
+  "trigger": [],
+  "cost": "lab",
+  "panel": "manure",
+  "method": "culture with breakpoints; qPCR of resistance genes",
+  "frequency": "on request",
+  "anchor": [],
+  "twin": [
+   "13"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "AMR pressure from the farm"
+ },
+ {
+  "id": "X-06",
+  "block": "X",
+  "group": "Contaminants",
+  "indicator": "Microplastics in soil (biosolids, plastic mulch, silage film)",
+  "unit": "particles/kg",
+  "tier": "research",
+  "applies_if": [
+   "crops"
+  ],
+  "trigger": [],
+  "cost": "lab",
+  "panel": "soil",
+  "method": "density separation and spectroscopy",
+  "frequency": "on request",
+  "anchor": [],
+  "twin": [
+   "6"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "input choices"
+ },
+ {
+  "id": "X-07",
+  "block": "X",
+  "group": "Governance",
+  "indicator": "Farm consent and data-use record",
+  "unit": "recorded yes/no; scope",
+  "tier": "core",
+  "applies_if": [],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "signed consent",
+  "frequency": "once; on change",
+  "anchor": [],
+  "twin": [
+   "17"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "any use beyond the farm"
+ },
+ {
+  "id": "X-08",
+  "block": "X",
+  "group": "Governance",
+  "indicator": "Completeness of farm records (feed, fertiliser, manure, antimicrobial use, spreading)",
+  "unit": "% of required logs present",
+  "tier": "core",
+  "applies_if": [],
+  "trigger": [],
+  "cost": "desk",
+  "panel": "records",
+  "method": "records audit",
+  "frequency": "annual",
+  "anchor": [],
+  "twin": [
+   "17"
+  ],
+  "aei": [],
+  "wq": "-",
+  "nasa": [],
+  "decision": "reliability of balances and doses"
+ }
+]
