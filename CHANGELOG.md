@@ -1,6 +1,15 @@
 # farm-environmental-passport — Changelog
 
-## v0.3.6 — 2026-11-06 — first public release (preview)
+## v0.3.7 — 2026-11-06 — English and Japanese
+
+- English editions of both worked examples in force (`examples/*-r7.en.md`, `examples/*-r2.en.md`); the Russian sources stay beside them. Numbers, statuses and conclusions are identical.
+- English figures for all three modules in `examples/figures/en/` (`examples/make_figs_en.py`); Modules 2–3 are computed by executing the unchanged data block of `make_figs2.py`. Series colours are neutral; status is shown by outline and caption.
+- Japanese README (`README.ja.md`); English README gains a quick look at the synthetic farm (answer card, dose table, figure).
+- The Russian water text now links to figures that exist in the package; four original Module 2 figures (`fig2_water_map`, `fig2_well_nitrate`, `fig2_stream_tp`, `fig2_vollenweider`) added from the original script.
+- Primary sources for the transfer factor and the milk secretion fraction cited in the Russian PFAS text as well.
+- Tests run on every push (GitHub Actions). Tests: 34/34.
+
+## v0.3.6 — 2026-11-06 — prepared for public release (preview)
 
 - Prepared for public release: README; licences by part — `LICENSE` (CC BY 4.0, method and documentation), `LICENSE-CORE` (CC BY-NC 4.0, everything under `core/`), `LICENSE-CODE` (Apache-2.0, code), with `LICENSE-NOTICE.md` mapping files to licences; `CITATION.cff` with the methods note (Zenodo, https://doi.org/10.5281/zenodo.24017216) as the preferred citation.
 - The NASA data request is addressed to any data agent with NASA Earthdata access; without one, the operator downloads the same products from NASA Earthdata or AppEEARS. Internal team names removed from texts, scripts and tests.

@@ -1,10 +1,12 @@
-# Действующие тексты примеров (с v0.3.6)
+# Texts in force (from v0.3.7)
 
-| Модуль | Действующий текст | Где лежит | Исходная редакция (не меняется) |
+| Module | Text in force (English) | Russian source | Original redaction (never changed) |
 |---|---|---|---|
-| 1 — PFAS | редакция 7 от 06.11.2026 (профили младенца и ребёнка — по ATSDR 2023) | `examples/FARM-PFAS-SIMULATION-2026-10-31-r7.md` | `examples/FARM-PFAS-SIMULATION-2026-10-31.md` (sha256 — T8) |
-| 2–3 — вода и биогены | редакция 2 от 05.11.2026 (правки Р2: E. coli = STV 410; эталон Cornell) | `examples/FARM-WATER-NUTRIENTS-SIMULATION-2026-10-31-r2.md` | `examples/FARM-WATER-NUTRIENTS-SIMULATION-2026-10-31.md` (sha256 — T8) |
+| 1 — PFAS | `FARM-PFAS-SIMULATION-2026-10-31-r7.en.md` — redaction 7 of 2026-11-06 (infant and child profiles from ATSDR 2023) | `FARM-PFAS-SIMULATION-2026-10-31-r7.md` | `FARM-PFAS-SIMULATION-2026-10-31.md` (sha256 — T8) |
+| 2–3 — water and nutrients | `FARM-WATER-NUTRIENTS-SIMULATION-2026-10-31-r2.en.md` — redaction 2 of 2026-11-05 (E. coli = STV 410; Cornell benchmark) | `FARM-WATER-NUTRIENTS-SIMULATION-2026-10-31-r2.md` | `FARM-WATER-NUTRIENTS-SIMULATION-2026-10-31.md` (sha256 — T8) |
 
-Фигуры модуля 1 (`figures/fig_biosolids.png`, `fig_dose.png`, `fig_well.png`, `fig_soil.png`) соответствуют редакции 7 и строятся `make_figs1.py`. Схема зон, пути поступления и хронология (`figures/fig_zone_map.png`, `fig_pathway.png`, `fig_timeline.png`) вложены в пакет; фотографии-иллюстрации `photo_*.jpg` в публичный пакет не входят; в действующих редакциях ссылки на них убраны, в исходных (sha256 — T8) остаются как часть исходного текста. Фигуры модулей 2–3: действующие — `figures/fig2_n_balance_v2.png` и `figures/fig2_p_balance_v2.png` (нейтральные цвета серий, десятичная запятая; скрипт `make_figs2_v2.py`); исходные `fig2_n_balance.png` и `fig2_p_balance.png` сохранены рядом (скрипт `make_figs2.py`, sha256 — T8). Остальные fig2_* в пакет не вложены.
+**Figures.** English: `figures/en/` — all 13 figures of Modules 1–3, built by `make_figs_en.py`; Modules 2–3 are computed from the unchanged data block of `make_figs2.py`. Russian: `figures/` — Module 1 by `make_figs1.py`; balances `fig2_*_v2.png` by `make_figs2_v2.py`; water sketch, well nitrate, creek phosphorus and the Vollenweider diagram from the original `make_figs2.py`; the original balance figures `fig2_n_balance.png` and `fig2_p_balance.png` are kept beside the `_v2` versions (script sha256 — T8). Series colours in the figures in force are neutral; red, yellow and green mean status only.
 
-Синтетические значения во всех редакциях одни и те же.
+Illustration photographs are not part of the public package. The unchanged originals of 31 October keep their original image paths (`farm-sim-figures/…`, `photo_*.jpg`), which are not in the package; read the texts in force for working figures.
+
+The synthetic values are the same in every redaction and in both languages.

@@ -426,7 +426,7 @@ def t19(c):
 @test("T20", "Package structure; v0.1.0 untouched")
 def t20(c):
     skill = (ROOT / "SKILL.md").read_text(encoding="utf-8")
-    c.true("frontmatter version 0.3.6", re.search(r"^version: 0\.3\.6$", skill, flags=re.M) is not None)
+    c.true("frontmatter version 0.3.7", re.search(r"^version: 0\.3\.7$", skill, flags=re.M) is not None)
     refs = set(re.findall(r"`((?:references|scripts|assets|tests|examples|core)/[^`]+)`", skill)) - {"tests/RUN-LOG.md"}  # output of this run
     def present(p):
         p = p.split(" ")[0]
@@ -688,7 +688,7 @@ def t34(c):
 # =================================================================== protocol
 def main() -> int:
     passed = sum(1 for *_, ok, _ in RESULTS if ok)
-    head = [f"# Test run — farm-environmental-passport v0.3.6", "",
+    head = [f"# Test run — farm-environmental-passport v0.3.7", "",
             f"Date: {TODAY.isoformat()}  ·  Python {sys.version.split()[0]}  ·  runner: tests/run_tests.py", "",
             f"**Result: {passed} / {len(RESULTS)} PASS**" + ("" if passed == len(RESULTS) else " — FAILURES BELOW"), "",
             "| Test | Title | Result |", "|---|---|---|"]

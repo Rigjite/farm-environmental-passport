@@ -1,4 +1,4 @@
-# Test run — farm-environmental-passport v0.3.6
+# Test run — farm-environmental-passport v0.3.7
 
 Date: 2026-11-06  ·  Python 3.13.18  ·  runner: tests/run_tests.py
 
@@ -252,8 +252,8 @@ ok  stream stays yellow on phosphorus (orientation): got 'yellow', expected 'yel
 ### T20 — Package structure; v0.1.0 untouched: PASS
 
 ```
-ok  frontmatter version 0.3.6
-ok  all 27 paths named in SKILL.md exist
+ok  frontmatter version 0.3.7
+ok  all 31 paths named in SKILL.md exist
 ok  CHANGELOG.md present
 ok  v0.1.0 SKILL.md unchanged
 ```
