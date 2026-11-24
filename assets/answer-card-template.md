@@ -5,7 +5,7 @@ Fill every field; a field that does not apply reads "n/a — reason", never blan
 ```
 FARM ENVIRONMENTAL PASSPORT — ANSWER CARD
 Farm: [name or code]            Jurisdiction pack: [NY-US / EU / …] version [date]
-Prepared: [date]  by [operator]  Skill version: 0.3.0  Core: 1.0.0-draft
+Prepared: [date]  by [operator]  Skill version: [x.y.z]  Core: [core version]
 Consent: [farm consent to use / publish — yes/no, date]   Public layer: [aggregated only]
 
 STATUS BY OBJECT                     status        reference that set it        provenance
@@ -49,3 +49,5 @@ synthetic or modelled values are labelled as such.
 ```
 
 The words *complies*, *safe*, *unsafe*, *violation* do not appear on the card.
+
+From v0.3.8 `scripts/demo.py` fills the status, dose, flags, work-plan and run-record parts of this card from the input folder (`references/input-format.md`); the operator adds the recommendations and the sampling-plan details.

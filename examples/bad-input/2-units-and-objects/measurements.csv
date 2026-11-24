@@ -1,0 +1,6 @@
+object,parameter,sampled,value,qualifier,reporting_limit,detection_limit,unit,uncertainty,method,laboratory,evidence,low,high,source
+F1,PFOS,2025-06,0.9,,,,mg/kg,,EPA 1633,synthetic,measured,,,illustration
+F1,PFOA,2025-06,0.4,,,,µg/kg ww,,EPA 1633,synthetic,measured,,,illustration
+WELL2,PFOS,2025-06,6.5,,,,ng/L,,EPA 533,synthetic,measured,,,illustration
+WELL,nitrate (as N),2025-06,11.4,,,,mg/L,,not stated,synthetic,measured,,,illustration
+WELL,PFOS,2025-06,6.5,,,,ng/L,,EPA 1633,synthetic,measured,,,illustration

@@ -2,7 +2,7 @@
 
 **English** · [日本語](README.ja.md) · [Русский](README.ru.md)
 
-![version 0.3.7](https://img.shields.io/badge/version-0.3.7_preview-blue)
+![version 0.3.8](https://img.shields.io/badge/version-0.3.8_preview-blue)
 [![tests](https://github.com/Rigjite/farm-environmental-passport/actions/workflows/tests.yml/badge.svg)](https://github.com/Rigjite/farm-environmental-passport/actions/workflows/tests.yml)
 [![Method: CC BY 4.0](https://img.shields.io/badge/method-CC_BY_4.0-lightgrey)](LICENSE)
 [![Core: CC BY-NC 4.0](https://img.shields.io/badge/core-CC_BY--NC_4.0-lightgrey)](LICENSE-CORE)
@@ -12,11 +12,11 @@
 
 An agent skill that builds an independent environmental passport for **one specific farm**: what enters the farm, what has been measured and by what method, what has never been measured, and which sample to take first. PFAS screening is the first module; the same construction covers water, nutrients, soil, livestock, other contaminants, climate risk, ponds and biodiversity.
 
-> **Status — preview (v0.3.7).** The method is demonstrated on a **synthetic** dairy farm in Delaware County, New York. Every laboratory value in `examples/` is invented and labelled as such; the thresholds, the structure and the calculations are real. The skill has **not yet been validated on a real farm** — a field pilot is the next step. The passport is screening and expert opinion, not a compliance determination, a laboratory report or medical advice.
+> **Status — preview (v0.3.8).** The method is demonstrated on a **synthetic** dairy farm in Delaware County, New York. Every laboratory value in `examples/` is invented and labelled as such; the thresholds, the structure and the calculations are real. The skill has **not yet been validated on a real farm** — a field pilot is the next step. The passport is screening and expert opinion, not a compliance determination, a laboratory report or medical advice.
 
 **Method:** Baldanova R. (2026). *Farm Environmental Passport: a status-and-gap method for screening the environmental pathways of a single farm, with PFAS as the first module.* Methods note. Zenodo. https://doi.org/10.5281/zenodo.24017216
 
-**Skill:** Baldanova R. (2026). *Farm Environmental Passport — agent skill (preview)*, v0.3.7. Zenodo. https://doi.org/10.5281/zenodo.24023493
+**Skill:** Baldanova R. (2026). *Farm Environmental Passport — agent skill (preview)*, v0.3.8. Zenodo. https://doi.org/10.5281/zenodo.24023493
 
 ## Quick look — the synthetic farm
 
@@ -62,23 +62,35 @@ It does not measure: certified laboratories measure, and the passport specifies 
 
 The skill is a folder with `SKILL.md` at its root, in the Agent Skills format: an AI agent that supports skills reads `SKILL.md` and follows it, calling the scripts in `scripts/`.
 
+**A farm in one folder, one command** (since v0.3.8; standard library only). Fill `farm.json` and `measurements.csv` from `assets/input-template/` — one laboratory result per row; the format is in `references/input-format.md`. Then:
+
+```bash
+python3 scripts/validate_input.py my-farm/      # every message names the line and the fix; errors stop the run
+python3 scripts/demo.py --farm my-farm/         # writes my-farm/passport.json and my-farm/answer-card.md
+python3 scripts/demo.py                         # the synthetic farm: examples/synthetic-farm/
+```
+
+`passport.json` holds the status of every object with the reference rows that set it, the flags with the sample that closes each, the dose block, the work plan and gap registry, and a run record (skill version, threshold pack and dates, sha256 of every input). A real farm's data stay with the farm: nothing is computed before its written consent is recorded, and nothing is published without it.
+
 Run the tests (Python 3.10+ with `numpy` and `matplotlib`; one test re-runs the original figure script of the worked example):
 
 ```bash
 python3 tests/run_tests.py
 ```
 
-The run writes `tests/RUN-LOG.md`. Expected result for this version: 34/34 PASS. The same suite runs on every push (GitHub Actions).
+The run writes `tests/RUN-LOG.md`. Expected result for this version: 41/41 PASS. The same suite runs on every push (GitHub Actions).
 
 ## Layout
 
 | Path | Contents |
 |---|---|
 | `SKILL.md` | the skill: procedure, rules, quality gate |
-| `core/` | shared library: indicator catalogue, threshold packs, NASA layer, crosswalk to the Ecosystem Digital Twin catalogue |
-| `references/` | status rules, dose scenarios, methods by matrix, threshold verification record |
-| `scripts/` | `passport_calc.py` (doses, balances, statuses), `indicator_select.py` (selection, gap registry, sampling plan, NASA request), `render_catalogue.py`, `render_thresholds.py` |
+| `core/` | shared library: indicator catalogue, threshold packs, screening map and matrix (parameter → reference → unit → method), NASA layer, crosswalk to the Ecosystem Digital Twin catalogue |
+| `references/` | status rules, dose scenarios, methods by matrix, input format, threshold verification record |
+| `scripts/` | `passport_calc.py` (doses, balances, statuses), `indicator_select.py` (selection, gap registry, sampling plan, NASA request), `validate_input.py` (input check), `demo.py` (input folder → passport and card), `render_catalogue.py`, `render_thresholds.py`, `render_matrix.py` |
 | `examples/` | synthetic farm: English editions (`*.en.md`) and Russian sources of the texts in force, unchanged originals, figures (`figures/en/` English, `figures/` Russian) and scripts; `ACTIVE-TEXTS.md` says which text is in force |
+| `assets/` | the answer-card template; `input-template/` — an empty input folder |
+| `examples/synthetic-farm/`, `examples/bad-input/` | the synthetic farm as an input folder with its generated passport and card; three folders with deliberate input errors |
 | `tests/` | `run_tests.py`, test descriptions, last run log |
 | `archive/v0.1.0/` | the first version, unchanged |
 

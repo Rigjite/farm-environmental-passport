@@ -1,0 +1,2950 @@
+{
+ "passport_format": "farm-environmental-passport/passport@1",
+ "synthetic": true,
+ "farm": {
+  "farm_id": "SIM-DAIRY-01",
+  "name": "Synthetic dairy farm, Delaware County, New York",
+  "jurisdiction": "NY-US",
+  "consent": {
+   "recorded": false,
+   "date": null,
+   "scope": null,
+   "note": "synthetic farm — there is no farm to consent; a real farm needs its written consent (indicator X-07) before anything is computed"
+  }
+ },
+ "objects": [
+  {
+   "id": "BIO",
+   "label": "Biosolids — class B, small municipal plants",
+   "matrix": "biosolids",
+   "group": null,
+   "status": "green",
+   "status_farmland": "green",
+   "set_by": [
+    {
+     "row": "NYUS-07",
+     "parameter": "PFOS",
+     "status": "green",
+     "max": 12.0,
+     "fraction": 0.6,
+     "fit": "object"
+    },
+    {
+     "row": "NYUS-07",
+     "parameter": "PFOA",
+     "status": "green",
+     "max": 5.0,
+     "fraction": 0.25,
+     "fit": "object"
+    },
+    {
+     "row": "NYUS-08",
+     "parameter": "PFOS",
+     "status": "green",
+     "max": 12.0,
+     "fraction": 0.24,
+     "fit": "object"
+    },
+    {
+     "row": "NYUS-08",
+     "parameter": "PFOA",
+     "status": "green",
+     "max": 5.0,
+     "fraction": 0.1,
+     "fit": "object"
+    }
+   ],
+   "references": [
+    {
+     "row": "NYUS-07",
+     "status": "green",
+     "why": "max 12 vs 20 (60%)",
+     "max": 12.0,
+     "fraction": 0.6,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "object",
+     "single_result_acts": false,
+     "parameter": "PFOS",
+     "legal_status": "in_force",
+     "value": 20,
+     "unit": "µg/kg dw (ppb)"
+    },
+    {
+     "row": "NYUS-08",
+     "status": "green",
+     "why": "max 12 vs 50 (24%)",
+     "max": 12.0,
+     "fraction": 0.24,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "object",
+     "single_result_acts": true,
+     "parameter": "PFOS",
+     "legal_status": "in_force",
+     "value": 50,
+     "unit": "µg/kg dw (ppb)"
+    },
+    {
+     "row": "NYUS-07",
+     "status": "green",
+     "why": "max 5 vs 20 (25%)",
+     "max": 5.0,
+     "fraction": 0.25,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "object",
+     "single_result_acts": false,
+     "parameter": "PFOA",
+     "legal_status": "in_force",
+     "value": 20,
+     "unit": "µg/kg dw (ppb)"
+    },
+    {
+     "row": "NYUS-08",
+     "status": "green",
+     "why": "max 5 vs 50 (10%)",
+     "max": 5.0,
+     "fraction": 0.1,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "object",
+     "single_result_acts": true,
+     "parameter": "PFOA",
+     "legal_status": "in_force",
+     "value": 50,
+     "unit": "µg/kg dw (ppb)"
+    }
+   ],
+   "measurements": [
+    {
+     "parameter": "PFOS",
+     "sampled": "not stated",
+     "value": 12.0,
+     "censored": false,
+     "reporting_limit": null,
+     "unit": "µg/kg",
+     "unit_reported": "µg/kg dw",
+     "method": "EPA 1633",
+     "laboratory": "synthetic",
+     "evidence": "measured",
+     "low": null,
+     "high": null,
+     "source": "PFAS example §3.1 (synthetic)",
+     "line": 2,
+     "coloured": true
+    },
+    {
+     "parameter": "PFOA",
+     "sampled": "not stated",
+     "value": 5.0,
+     "censored": false,
+     "reporting_limit": null,
+     "unit": "µg/kg",
+     "unit_reported": "µg/kg dw",
+     "method": "EPA 1633",
+     "laboratory": "synthetic",
+     "evidence": "measured",
+     "low": null,
+     "high": null,
+     "source": "PFAS example §3.1 (synthetic)",
+     "line": 3,
+     "coloured": true
+    }
+   ],
+   "flags": [
+    {
+     "kind": "partial panel",
+     "text": "PFNA, PFHxS not analysed (EFSA four incomplete)",
+     "closing": "re-analyse the existing extract or archived sample for the missing analytes — no new field trip (references/methods.md §3, item 1)"
+    }
+   ],
+   "geometry": null
+  },
+  {
+   "id": "F1",
+   "label": "Field F1 — 10 seasons of biosolids, 0–20 cm",
+   "matrix": "soil",
+   "group": "soil",
+   "status": "yellow",
+   "status_farmland": "green",
+   "set_by": [
+    {
+     "row": "NYUS-28",
+     "parameter": "PFOS",
+     "status": "yellow",
+     "max": 0.9,
+     "fraction": 1.022727,
+     "fit": "other land use"
+    }
+   ],
+   "references": [
+    {
+     "row": "NYUS-16",
+     "status": "green",
+     "why": "max 0.9 vs 3 (30%)",
+     "max": 0.9,
+     "fraction": 0.3,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "farmland",
+     "single_result_acts": false,
+     "parameter": "PFOS",
+     "legal_status": "orientation",
+     "value": 3.0,
+     "unit": "µg/kg"
+    },
+    {
+     "row": "NYUS-28",
+     "status": "yellow",
+     "why": "above a guidance reference — screening only",
+     "max": 0.9,
+     "fraction": 1.022727,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "other land use",
+     "single_result_acts": false,
+     "parameter": "PFOS",
+     "legal_status": "guidance",
+     "value": 0.88,
+     "unit": "µg/kg"
+    },
+    {
+     "row": "NYUS-34",
+     "status": "green-watch",
+     "why": "max 0.9 vs 1 (90%)",
+     "max": 0.9,
+     "fraction": 0.9,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "other land use",
+     "single_result_acts": false,
+     "parameter": "PFOS",
+     "legal_status": "guidance",
+     "value": 1.0,
+     "unit": "µg/kg"
+    },
+    {
+     "row": "NYUS-35",
+     "status": "green",
+     "why": "max 0.4 vs 1.5 (27%)",
+     "max": 0.4,
+     "fraction": 0.266667,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "farmland",
+     "single_result_acts": false,
+     "parameter": "PFOA",
+     "legal_status": "proposed",
+     "value": 1.5,
+     "unit": "µg/kg"
+    },
+    {
+     "row": "NYUS-27",
+     "status": "green",
+     "why": "max 0.4 vs 0.66 (61%)",
+     "max": 0.4,
+     "fraction": 0.606061,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "other land use",
+     "single_result_acts": false,
+     "parameter": "PFOA",
+     "legal_status": "guidance",
+     "value": 0.66,
+     "unit": "µg/kg"
+    },
+    {
+     "row": "NYUS-33",
+     "status": "green",
+     "why": "max 0.4 vs 0.8 (50%)",
+     "max": 0.4,
+     "fraction": 0.5,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "other land use",
+     "single_result_acts": false,
+     "parameter": "PFOA",
+     "legal_status": "guidance",
+     "value": 0.8,
+     "unit": "µg/kg"
+    }
+   ],
+   "measurements": [
+    {
+     "parameter": "PFOS",
+     "sampled": "not stated",
+     "value": 0.9,
+     "censored": false,
+     "reporting_limit": null,
+     "unit": "µg/kg",
+     "unit_reported": "µg/kg",
+     "method": "EPA 1633",
+     "laboratory": "synthetic",
+     "evidence": "measured",
+     "low": null,
+     "high": null,
+     "source": "PFAS example §3.2 (synthetic)",
+     "line": 4,
+     "coloured": true
+    },
+    {
+     "parameter": "PFOA",
+     "sampled": "not stated",
+     "value": 0.4,
+     "censored": false,
+     "reporting_limit": null,
+     "unit": "µg/kg",
+     "unit_reported": "µg/kg",
+     "method": "EPA 1633",
+     "laboratory": "synthetic",
+     "evidence": "measured",
+     "low": null,
+     "high": null,
+     "source": "PFAS example §3.2 (synthetic)",
+     "line": 5,
+     "coloured": true
+    },
+    {
+     "parameter": "PFOS",
+     "sampled": "not stated",
+     "value": null,
+     "censored": false,
+     "reporting_limit": null,
+     "unit": "µg/kg",
+     "unit_reported": "µg/kg",
+     "method": "",
+     "laboratory": "",
+     "evidence": "modelled",
+     "low": 0.3,
+     "high": 1.1,
+     "source": "PFAS example §3.2 — accumulation model for 10 seasons",
+     "line": 14,
+     "coloured": false
+    }
+   ],
+   "flags": [
+    {
+     "kind": "model agrees",
+     "text": "PFOS measured 0.9 µg/kg is inside the modelled range 0.3–1.1 µg/kg (PFAS example §3.2 — accumulation model for 10 seasons)",
+     "closing": ""
+    },
+    {
+     "kind": "partial panel",
+     "text": "PFNA, PFHxS not analysed (EFSA four incomplete)",
+     "closing": "re-analyse the existing extract or archived sample for the missing analytes — no new field trip (references/methods.md §3, item 1)"
+    }
+   ],
+   "geometry": null
+  },
+  {
+   "id": "F2",
+   "label": "Field F2 — 7 seasons, 0–20 cm",
+   "matrix": "soil",
+   "group": "soil",
+   "status": "green",
+   "status_farmland": "green",
+   "set_by": [
+    {
+     "row": "NYUS-28",
+     "parameter": "PFOS",
+     "status": "green",
+     "max": 0.65,
+     "fraction": 0.738636,
+     "fit": "other land use"
+    },
+    {
+     "row": "NYUS-34",
+     "parameter": "PFOS",
+     "status": "green",
+     "max": 0.65,
+     "fraction": 0.65,
+     "fit": "other land use"
+    },
+    {
+     "row": "NYUS-27",
+     "parameter": "PFOA",
+     "status": "green",
+     "max": 0.3,
+     "fraction": 0.454545,
+     "fit": "other land use"
+    },
+    {
+     "row": "NYUS-33",
+     "parameter": "PFOA",
+     "status": "green",
+     "max": 0.3,
+     "fraction": 0.375,
+     "fit": "other land use"
+    },
+    {
+     "row": "NYUS-16",
+     "parameter": "PFOS",
+     "status": "green",
+     "max": 0.65,
+     "fraction": 0.216667,
+     "fit": "farmland"
+    },
+    {
+     "row": "NYUS-35",
+     "parameter": "PFOA",
+     "status": "green",
+     "max": 0.3,
+     "fraction": 0.2,
+     "fit": "farmland"
+    }
+   ],
+   "references": [
+    {
+     "row": "NYUS-16",
+     "status": "green",
+     "why": "max 0.65 vs 3 (22%)",
+     "max": 0.65,
+     "fraction": 0.216667,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "farmland",
+     "single_result_acts": false,
+     "parameter": "PFOS",
+     "legal_status": "orientation",
+     "value": 3.0,
+     "unit": "µg/kg"
+    },
+    {
+     "row": "NYUS-28",
+     "status": "green",
+     "why": "max 0.65 vs 0.88 (74%)",
+     "max": 0.65,
+     "fraction": 0.738636,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "other land use",
+     "single_result_acts": false,
+     "parameter": "PFOS",
+     "legal_status": "guidance",
+     "value": 0.88,
+     "unit": "µg/kg"
+    },
+    {
+     "row": "NYUS-34",
+     "status": "green",
+     "why": "max 0.65 vs 1 (65%)",
+     "max": 0.65,
+     "fraction": 0.65,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "other land use",
+     "single_result_acts": false,
+     "parameter": "PFOS",
+     "legal_status": "guidance",
+     "value": 1.0,
+     "unit": "µg/kg"
+    },
+    {
+     "row": "NYUS-35",
+     "status": "green",
+     "why": "max 0.3 vs 1.5 (20%)",
+     "max": 0.3,
+     "fraction": 0.2,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "farmland",
+     "single_result_acts": false,
+     "parameter": "PFOA",
+     "legal_status": "proposed",
+     "value": 1.5,
+     "unit": "µg/kg"
+    },
+    {
+     "row": "NYUS-27",
+     "status": "green",
+     "why": "max 0.3 vs 0.66 (45%)",
+     "max": 0.3,
+     "fraction": 0.454545,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "other land use",
+     "single_result_acts": false,
+     "parameter": "PFOA",
+     "legal_status": "guidance",
+     "value": 0.66,
+     "unit": "µg/kg"
+    },
+    {
+     "row": "NYUS-33",
+     "status": "green",
+     "why": "max 0.3 vs 0.8 (37%)",
+     "max": 0.3,
+     "fraction": 0.375,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "other land use",
+     "single_result_acts": false,
+     "parameter": "PFOA",
+     "legal_status": "guidance",
+     "value": 0.8,
+     "unit": "µg/kg"
+    }
+   ],
+   "measurements": [
+    {
+     "parameter": "PFOS",
+     "sampled": "not stated",
+     "value": 0.65,
+     "censored": false,
+     "reporting_limit": null,
+     "unit": "µg/kg",
+     "unit_reported": "µg/kg",
+     "method": "EPA 1633",
+     "laboratory": "synthetic",
+     "evidence": "measured",
+     "low": null,
+     "high": null,
+     "source": "PFAS example §3.2 (synthetic)",
+     "line": 6,
+     "coloured": true
+    },
+    {
+     "parameter": "PFOA",
+     "sampled": "not stated",
+     "value": 0.3,
+     "censored": false,
+     "reporting_limit": null,
+     "unit": "µg/kg",
+     "unit_reported": "µg/kg",
+     "method": "EPA 1633",
+     "laboratory": "synthetic",
+     "evidence": "measured",
+     "low": null,
+     "high": null,
+     "source": "PFAS example §3.2 (synthetic)",
+     "line": 7,
+     "coloured": true
+    }
+   ],
+   "flags": [
+    {
+     "kind": "partial panel",
+     "text": "PFNA, PFHxS not analysed (EFSA four incomplete)",
+     "closing": "re-analyse the existing extract or archived sample for the missing analytes — no new field trip (references/methods.md §3, item 1)"
+    }
+   ],
+   "geometry": null
+  },
+  {
+   "id": "F3",
+   "label": "Field F3 — 5 seasons, 0–20 cm",
+   "matrix": "soil",
+   "group": "soil",
+   "status": "green",
+   "status_farmland": "green",
+   "set_by": [
+    {
+     "row": "NYUS-28",
+     "parameter": "PFOS",
+     "status": "green",
+     "max": 0.5,
+     "fraction": 0.568182,
+     "fit": "other land use"
+    },
+    {
+     "row": "NYUS-34",
+     "parameter": "PFOS",
+     "status": "green",
+     "max": 0.5,
+     "fraction": 0.5,
+     "fit": "other land use"
+    },
+    {
+     "row": "NYUS-27",
+     "parameter": "PFOA",
+     "status": "green",
+     "max": 0.22,
+     "fraction": 0.333333,
+     "fit": "other land use"
+    },
+    {
+     "row": "NYUS-33",
+     "parameter": "PFOA",
+     "status": "green",
+     "max": 0.22,
+     "fraction": 0.275,
+     "fit": "other land use"
+    },
+    {
+     "row": "NYUS-16",
+     "parameter": "PFOS",
+     "status": "green",
+     "max": 0.5,
+     "fraction": 0.166667,
+     "fit": "farmland"
+    },
+    {
+     "row": "NYUS-35",
+     "parameter": "PFOA",
+     "status": "green",
+     "max": 0.22,
+     "fraction": 0.146667,
+     "fit": "farmland"
+    }
+   ],
+   "references": [
+    {
+     "row": "NYUS-16",
+     "status": "green",
+     "why": "max 0.5 vs 3 (17%)",
+     "max": 0.5,
+     "fraction": 0.166667,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "farmland",
+     "single_result_acts": false,
+     "parameter": "PFOS",
+     "legal_status": "orientation",
+     "value": 3.0,
+     "unit": "µg/kg"
+    },
+    {
+     "row": "NYUS-28",
+     "status": "green",
+     "why": "max 0.5 vs 0.88 (57%)",
+     "max": 0.5,
+     "fraction": 0.568182,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "other land use",
+     "single_result_acts": false,
+     "parameter": "PFOS",
+     "legal_status": "guidance",
+     "value": 0.88,
+     "unit": "µg/kg"
+    },
+    {
+     "row": "NYUS-34",
+     "status": "green",
+     "why": "max 0.5 vs 1 (50%)",
+     "max": 0.5,
+     "fraction": 0.5,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "other land use",
+     "single_result_acts": false,
+     "parameter": "PFOS",
+     "legal_status": "guidance",
+     "value": 1.0,
+     "unit": "µg/kg"
+    },
+    {
+     "row": "NYUS-35",
+     "status": "green",
+     "why": "max 0.22 vs 1.5 (15%)",
+     "max": 0.22,
+     "fraction": 0.146667,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "farmland",
+     "single_result_acts": false,
+     "parameter": "PFOA",
+     "legal_status": "proposed",
+     "value": 1.5,
+     "unit": "µg/kg"
+    },
+    {
+     "row": "NYUS-27",
+     "status": "green",
+     "why": "max 0.22 vs 0.66 (33%)",
+     "max": 0.22,
+     "fraction": 0.333333,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "other land use",
+     "single_result_acts": false,
+     "parameter": "PFOA",
+     "legal_status": "guidance",
+     "value": 0.66,
+     "unit": "µg/kg"
+    },
+    {
+     "row": "NYUS-33",
+     "status": "green",
+     "why": "max 0.22 vs 0.8 (27%)",
+     "max": 0.22,
+     "fraction": 0.275,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "other land use",
+     "single_result_acts": false,
+     "parameter": "PFOA",
+     "legal_status": "guidance",
+     "value": 0.8,
+     "unit": "µg/kg"
+    }
+   ],
+   "measurements": [
+    {
+     "parameter": "PFOS",
+     "sampled": "not stated",
+     "value": 0.5,
+     "censored": false,
+     "reporting_limit": null,
+     "unit": "µg/kg",
+     "unit_reported": "µg/kg",
+     "method": "EPA 1633",
+     "laboratory": "synthetic",
+     "evidence": "measured",
+     "low": null,
+     "high": null,
+     "source": "PFAS example §3.2 (synthetic)",
+     "line": 8,
+     "coloured": true
+    },
+    {
+     "parameter": "PFOA",
+     "sampled": "not stated",
+     "value": 0.22,
+     "censored": false,
+     "reporting_limit": null,
+     "unit": "µg/kg",
+     "unit_reported": "µg/kg",
+     "method": "EPA 1633",
+     "laboratory": "synthetic",
+     "evidence": "measured",
+     "low": null,
+     "high": null,
+     "source": "PFAS example §3.2 (synthetic)",
+     "line": 9,
+     "coloured": true
+    }
+   ],
+   "flags": [
+    {
+     "kind": "partial panel",
+     "text": "PFNA, PFHxS not analysed (EFSA four incomplete)",
+     "closing": "re-analyse the existing extract or archived sample for the missing analytes — no new field trip (references/methods.md §3, item 1)"
+    }
+   ],
+   "geometry": null
+  },
+  {
+   "id": "F4",
+   "label": "Field F4 — 3 seasons, 0–20 cm",
+   "matrix": "soil",
+   "group": "soil",
+   "status": "green",
+   "status_farmland": "green",
+   "set_by": [
+    {
+     "row": "NYUS-28",
+     "parameter": "PFOS",
+     "status": "green",
+     "max": 0.35,
+     "fraction": 0.397727,
+     "fit": "other land use"
+    },
+    {
+     "row": "NYUS-34",
+     "parameter": "PFOS",
+     "status": "green",
+     "max": 0.35,
+     "fraction": 0.35,
+     "fit": "other land use"
+    },
+    {
+     "row": "NYUS-27",
+     "parameter": "PFOA",
+     "status": "green",
+     "max": 0.18,
+     "fraction": 0.272727,
+     "fit": "other land use"
+    },
+    {
+     "row": "NYUS-33",
+     "parameter": "PFOA",
+     "status": "green",
+     "max": 0.18,
+     "fraction": 0.225,
+     "fit": "other land use"
+    },
+    {
+     "row": "NYUS-35",
+     "parameter": "PFOA",
+     "status": "green",
+     "max": 0.18,
+     "fraction": 0.12,
+     "fit": "farmland"
+    },
+    {
+     "row": "NYUS-16",
+     "parameter": "PFOS",
+     "status": "green",
+     "max": 0.35,
+     "fraction": 0.116667,
+     "fit": "farmland"
+    }
+   ],
+   "references": [
+    {
+     "row": "NYUS-16",
+     "status": "green",
+     "why": "max 0.35 vs 3 (12%)",
+     "max": 0.35,
+     "fraction": 0.116667,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "farmland",
+     "single_result_acts": false,
+     "parameter": "PFOS",
+     "legal_status": "orientation",
+     "value": 3.0,
+     "unit": "µg/kg"
+    },
+    {
+     "row": "NYUS-28",
+     "status": "green",
+     "why": "max 0.35 vs 0.88 (40%)",
+     "max": 0.35,
+     "fraction": 0.397727,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "other land use",
+     "single_result_acts": false,
+     "parameter": "PFOS",
+     "legal_status": "guidance",
+     "value": 0.88,
+     "unit": "µg/kg"
+    },
+    {
+     "row": "NYUS-34",
+     "status": "green",
+     "why": "max 0.35 vs 1 (35%)",
+     "max": 0.35,
+     "fraction": 0.35,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "other land use",
+     "single_result_acts": false,
+     "parameter": "PFOS",
+     "legal_status": "guidance",
+     "value": 1.0,
+     "unit": "µg/kg"
+    },
+    {
+     "row": "NYUS-35",
+     "status": "green",
+     "why": "max 0.18 vs 1.5 (12%)",
+     "max": 0.18,
+     "fraction": 0.12,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "farmland",
+     "single_result_acts": false,
+     "parameter": "PFOA",
+     "legal_status": "proposed",
+     "value": 1.5,
+     "unit": "µg/kg"
+    },
+    {
+     "row": "NYUS-27",
+     "status": "green",
+     "why": "max 0.18 vs 0.66 (27%)",
+     "max": 0.18,
+     "fraction": 0.272727,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "other land use",
+     "single_result_acts": false,
+     "parameter": "PFOA",
+     "legal_status": "guidance",
+     "value": 0.66,
+     "unit": "µg/kg"
+    },
+    {
+     "row": "NYUS-33",
+     "status": "green",
+     "why": "max 0.18 vs 0.8 (22%)",
+     "max": 0.18,
+     "fraction": 0.225,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "other land use",
+     "single_result_acts": false,
+     "parameter": "PFOA",
+     "legal_status": "guidance",
+     "value": 0.8,
+     "unit": "µg/kg"
+    }
+   ],
+   "measurements": [
+    {
+     "parameter": "PFOS",
+     "sampled": "not stated",
+     "value": 0.35,
+     "censored": false,
+     "reporting_limit": null,
+     "unit": "µg/kg",
+     "unit_reported": "µg/kg",
+     "method": "EPA 1633",
+     "laboratory": "synthetic",
+     "evidence": "measured",
+     "low": null,
+     "high": null,
+     "source": "PFAS example §3.2 (synthetic)",
+     "line": 10,
+     "coloured": true
+    },
+    {
+     "parameter": "PFOA",
+     "sampled": "not stated",
+     "value": 0.18,
+     "censored": false,
+     "reporting_limit": null,
+     "unit": "µg/kg",
+     "unit_reported": "µg/kg",
+     "method": "EPA 1633",
+     "laboratory": "synthetic",
+     "evidence": "measured",
+     "low": null,
+     "high": null,
+     "source": "PFAS example §3.2 (synthetic)",
+     "line": 11,
+     "coloured": true
+    }
+   ],
+   "flags": [
+    {
+     "kind": "partial panel",
+     "text": "PFNA, PFHxS not analysed (EFSA four incomplete)",
+     "closing": "re-analyse the existing extract or archived sample for the missing analytes — no new field trip (references/methods.md §3, item 1)"
+    }
+   ],
+   "geometry": null
+  },
+  {
+   "id": "F5",
+   "label": "Field F5 — control, no biosolids, 0–20 cm",
+   "matrix": "soil",
+   "group": "soil",
+   "status": "green",
+   "status_farmland": "green",
+   "set_by": [
+    {
+     "row": "NYUS-28",
+     "parameter": "PFOS",
+     "status": "green",
+     "max": 0.15,
+     "fraction": 0.170455,
+     "fit": "other land use"
+    },
+    {
+     "row": "NYUS-34",
+     "parameter": "PFOS",
+     "status": "green",
+     "max": 0.15,
+     "fraction": 0.15,
+     "fit": "other land use"
+    },
+    {
+     "row": "NYUS-27",
+     "parameter": "PFOA",
+     "status": "green",
+     "max": 0.08,
+     "fraction": 0.121212,
+     "fit": "other land use"
+    },
+    {
+     "row": "NYUS-33",
+     "parameter": "PFOA",
+     "status": "green",
+     "max": 0.08,
+     "fraction": 0.1,
+     "fit": "other land use"
+    },
+    {
+     "row": "NYUS-35",
+     "parameter": "PFOA",
+     "status": "green",
+     "max": 0.08,
+     "fraction": 0.053333,
+     "fit": "farmland"
+    },
+    {
+     "row": "NYUS-16",
+     "parameter": "PFOS",
+     "status": "green",
+     "max": 0.15,
+     "fraction": 0.05,
+     "fit": "farmland"
+    }
+   ],
+   "references": [
+    {
+     "row": "NYUS-16",
+     "status": "green",
+     "why": "max 0.15 vs 3 (5%)",
+     "max": 0.15,
+     "fraction": 0.05,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "farmland",
+     "single_result_acts": false,
+     "parameter": "PFOS",
+     "legal_status": "orientation",
+     "value": 3.0,
+     "unit": "µg/kg"
+    },
+    {
+     "row": "NYUS-28",
+     "status": "green",
+     "why": "max 0.15 vs 0.88 (17%)",
+     "max": 0.15,
+     "fraction": 0.170455,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "other land use",
+     "single_result_acts": false,
+     "parameter": "PFOS",
+     "legal_status": "guidance",
+     "value": 0.88,
+     "unit": "µg/kg"
+    },
+    {
+     "row": "NYUS-34",
+     "status": "green",
+     "why": "max 0.15 vs 1 (15%)",
+     "max": 0.15,
+     "fraction": 0.15,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "other land use",
+     "single_result_acts": false,
+     "parameter": "PFOS",
+     "legal_status": "guidance",
+     "value": 1.0,
+     "unit": "µg/kg"
+    },
+    {
+     "row": "NYUS-35",
+     "status": "green",
+     "why": "max 0.08 vs 1.5 (5%)",
+     "max": 0.08,
+     "fraction": 0.053333,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "farmland",
+     "single_result_acts": false,
+     "parameter": "PFOA",
+     "legal_status": "proposed",
+     "value": 1.5,
+     "unit": "µg/kg"
+    },
+    {
+     "row": "NYUS-27",
+     "status": "green",
+     "why": "max 0.08 vs 0.66 (12%)",
+     "max": 0.08,
+     "fraction": 0.121212,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "other land use",
+     "single_result_acts": false,
+     "parameter": "PFOA",
+     "legal_status": "guidance",
+     "value": 0.66,
+     "unit": "µg/kg"
+    },
+    {
+     "row": "NYUS-33",
+     "status": "green",
+     "why": "max 0.08 vs 0.8 (10%)",
+     "max": 0.08,
+     "fraction": 0.1,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "other land use",
+     "single_result_acts": false,
+     "parameter": "PFOA",
+     "legal_status": "guidance",
+     "value": 0.8,
+     "unit": "µg/kg"
+    }
+   ],
+   "measurements": [
+    {
+     "parameter": "PFOS",
+     "sampled": "not stated",
+     "value": 0.15,
+     "censored": false,
+     "reporting_limit": null,
+     "unit": "µg/kg",
+     "unit_reported": "µg/kg",
+     "method": "EPA 1633",
+     "laboratory": "synthetic",
+     "evidence": "measured",
+     "low": null,
+     "high": null,
+     "source": "PFAS example §3.2 (synthetic)",
+     "line": 12,
+     "coloured": true
+    },
+    {
+     "parameter": "PFOA",
+     "sampled": "not stated",
+     "value": 0.08,
+     "censored": false,
+     "reporting_limit": null,
+     "unit": "µg/kg",
+     "unit_reported": "µg/kg",
+     "method": "EPA 1633",
+     "laboratory": "synthetic",
+     "evidence": "measured",
+     "low": null,
+     "high": null,
+     "source": "PFAS example §3.2 (synthetic)",
+     "line": 13,
+     "coloured": true
+    }
+   ],
+   "flags": [
+    {
+     "kind": "partial panel",
+     "text": "PFNA, PFHxS not analysed (EFSA four incomplete)",
+     "closing": "re-analyse the existing extract or archived sample for the missing analytes — no new field trip (references/methods.md §3, item 1)"
+    }
+   ],
+   "geometry": null
+  },
+  {
+   "id": "WELL",
+   "label": "Well, 35 m, farmstead — people and herd",
+   "matrix": "well-drinking",
+   "group": null,
+   "status": "yellow",
+   "status_farmland": "yellow",
+   "set_by": [
+    {
+     "row": "NYUS-04",
+     "parameter": "PFOS",
+     "status": "yellow",
+     "max": 6.5,
+     "fraction": 1.625,
+     "fit": "object"
+    },
+    {
+     "row": "NYUS-32",
+     "parameter": "PFOS",
+     "status": "yellow",
+     "max": 6.5,
+     "fraction": 2.407407,
+     "fit": "object"
+    }
+   ],
+   "references": [
+    {
+     "row": "NYUS-02",
+     "status": "green",
+     "why": "max 6.5 vs 10 (65%)",
+     "max": 6.5,
+     "fraction": 0.65,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "object",
+     "single_result_acts": false,
+     "parameter": "PFOS",
+     "legal_status": "in_force",
+     "value": 10,
+     "unit": "ng/L"
+    },
+    {
+     "row": "NYUS-04",
+     "status": "yellow",
+     "why": "above a future reference — screening only",
+     "max": 6.5,
+     "fraction": 1.625,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "object",
+     "single_result_acts": false,
+     "parameter": "PFOS",
+     "legal_status": "future",
+     "value": 4.0,
+     "unit": "ng/L"
+    },
+    {
+     "row": "NYUS-32",
+     "status": "yellow",
+     "why": "above a guidance reference — screening only",
+     "max": 6.5,
+     "fraction": 2.407407,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "object",
+     "single_result_acts": false,
+     "parameter": "PFOS",
+     "legal_status": "guidance",
+     "value": 2.7,
+     "unit": "ng/L"
+    },
+    {
+     "row": "NYUS-01",
+     "status": "green",
+     "why": "max 3.8 vs 10 (38%)",
+     "max": 3.8,
+     "fraction": 0.38,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "object",
+     "single_result_acts": false,
+     "parameter": "PFOA",
+     "legal_status": "in_force",
+     "value": 10,
+     "unit": "ng/L"
+    },
+    {
+     "row": "NYUS-03",
+     "status": "green-watch",
+     "why": "max 3.8 vs 4 (95%)",
+     "max": 3.8,
+     "fraction": 0.95,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "object",
+     "single_result_acts": false,
+     "parameter": "PFOA",
+     "legal_status": "future",
+     "value": 4.0,
+     "unit": "ng/L"
+    },
+    {
+     "row": "NYUS-31",
+     "status": "green",
+     "why": "max 3.8 vs 6.7 (57%)",
+     "max": 3.8,
+     "fraction": 0.567164,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "object",
+     "single_result_acts": false,
+     "parameter": "PFOA",
+     "legal_status": "guidance",
+     "value": 6.7,
+     "unit": "ng/L"
+    }
+   ],
+   "measurements": [
+    {
+     "parameter": "PFOS",
+     "sampled": "2025-10",
+     "value": 6.5,
+     "censored": false,
+     "reporting_limit": null,
+     "unit": "ng/L",
+     "unit_reported": "ng/L",
+     "method": "not stated",
+     "laboratory": "synthetic",
+     "evidence": "measured",
+     "low": null,
+     "high": null,
+     "source": "PFAS example §3.3 (synthetic; one sample)",
+     "line": 15,
+     "coloured": true
+    },
+    {
+     "parameter": "PFOA",
+     "sampled": "2025-10",
+     "value": 3.8,
+     "censored": false,
+     "reporting_limit": null,
+     "unit": "ng/L",
+     "unit_reported": "ng/L",
+     "method": "not stated",
+     "laboratory": "synthetic",
+     "evidence": "measured",
+     "low": null,
+     "high": null,
+     "source": "PFAS example §3.3 (synthetic; one sample)",
+     "line": 16,
+     "coloured": true
+    }
+   ],
+   "flags": [
+    {
+     "kind": "single event",
+     "text": "one sampling event — seasonal variation unknown, and whether an exceedance is sustained cannot be shown",
+     "closing": "a quarterly series for one year, the full EFSA four by EPA 533 or 537.1 (references/methods.md §3, item 2)"
+    },
+    {
+     "kind": "partial panel",
+     "text": "PFNA, PFHxS not analysed (EFSA four incomplete)",
+     "closing": "re-analyse the existing extract or archived sample for the missing analytes — no new field trip (references/methods.md §3, item 1)"
+    }
+   ],
+   "geometry": null
+  },
+  {
+   "id": "MILK",
+   "label": "Milk, bulk tank",
+   "matrix": "milk",
+   "group": null,
+   "status": "green",
+   "status_farmland": "green",
+   "set_by": [
+    {
+     "row": "NYUS-14",
+     "parameter": "PFOS",
+     "status": "green",
+     "max": 18.0,
+     "fraction": 0.085714,
+     "fit": "object"
+    }
+   ],
+   "references": [
+    {
+     "row": "NYUS-14",
+     "status": "green",
+     "why": "max 18 vs 210 (9%)",
+     "max": 18.0,
+     "fraction": 0.085714,
+     "events": 1,
+     "depends_on_censoring": false,
+     "fit": "object",
+     "single_result_acts": false,
+     "parameter": "PFOS",
+     "legal_status": "in_force",
+     "value": 210,
+     "unit": "ng/L (ppt)"
+    }
+   ],
+   "measurements": [
+    {
+     "parameter": "PFOS",
+     "sampled": "not stated",
+     "value": 18.0,
+     "censored": false,
+     "reporting_limit": null,
+     "unit": "ng/L",
+     "unit_reported": "ng/L",
+     "method": "not stated",
+     "laboratory": "synthetic",
+     "evidence": "measured",
+     "low": null,
+     "high": null,
+     "source": "PFAS example §3.4 (synthetic; bulk tank)",
+     "line": 17,
+     "coloured": true
+    },
+    {
+     "parameter": "PFOS",
+     "sampled": "not stated",
+     "value": null,
+     "censored": false,
+     "reporting_limit": null,
+     "unit": "ng/L",
+     "unit_reported": "ng/L",
+     "method": "",
+     "laboratory": "",
+     "evidence": "modelled",
+     "low": 4.0,
+     "high": 17.0,
+     "source": "examples/reconstruct.py — soil → forage → cow model at the extreme TF values; PFAS example §2",
+     "line": 18,
+     "coloured": false
+    }
+   ],
+   "flags": [
+    {
+     "kind": "model disagrees",
+     "text": "PFOS measured 18 ng/L is outside the modelled range 4–17 ng/L (examples/reconstruct.py — soil → forage → cow model at the extreme TF values; PFAS example §2)",
+     "closing": "a repeat measurement and a check of the model's main uncertainty; the disagreement stays a gap until one explains the other"
+    },
+    {
+     "kind": "single event",
+     "text": "one sampling event — seasonal variation unknown",
+     "closing": "a repeat bulk-tank sample by an FDA-type food method, repeated where model and measurement disagree (references/methods.md §3, item 3)"
+    },
+    {
+     "kind": "partial panel",
+     "text": "PFOA, PFNA, PFHxS not analysed (EFSA four incomplete)",
+     "closing": "re-analyse the existing extract or archived sample for the missing analytes — no new field trip (references/methods.md §3, item 1)"
+    }
+   ],
+   "geometry": null
+  }
+ ],
+ "groups": [
+  {
+   "group": "soil",
+   "objects": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5"
+   ],
+   "status": "green",
+   "set_by": [
+    {
+     "row": "NYUS-16",
+     "parameter": "PFOS",
+     "object": "F1",
+     "max": 0.9,
+     "fraction": 0.3
+    }
+   ],
+   "fields_flagged": [
+    {
+     "object": "F1",
+     "status": "yellow",
+     "set_by": [
+      {
+       "row": "NYUS-28",
+       "parameter": "PFOS",
+       "status": "yellow",
+       "max": 0.9,
+       "fraction": 1.022727,
+       "fit": "other land use"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "dose": {
+  "computed": true,
+  "unit": "ng/kg body weight per week",
+  "twi": {
+   "row": "NYUS-10",
+   "value": 4.4,
+   "unit": "ng/kg bw per week",
+   "legal_status": "guidance",
+   "matrix": "consumer dose",
+   "analyte": "sum PFOS + PFOA + PFNA + PFHxS",
+   "checked": "2026-11-01",
+   "verified": "verified",
+   "source": "EFSA"
+  },
+  "efsa_four": {
+   "measured": 2,
+   "of": 4,
+   "missing": [
+    "PFNA",
+    "PFHxS"
+   ],
+   "lower_bound": true
+  },
+  "media": {
+   "drinking_water": {
+    "object": "WELL",
+    "analytes": [
+     "PFOS",
+     "PFOA"
+    ],
+    "sum_lower": 10.3,
+    "sum_upper": 10.3,
+    "unit": "ng/L"
+   },
+   "product": {
+    "object": "MILK",
+    "analytes": [
+     "PFOS"
+    ],
+    "sum_lower": 18.0,
+    "sum_upper": 18.0,
+    "unit": "ng/L"
+   }
+  },
+  "scenarios": [
+   {
+    "role": "off_farm_adult",
+    "label": "Off-farm adult — farm milk only",
+    "bw_kg": 70.0,
+    "source": "worked example assumption (examples/FARM-PFAS-SIMULATION-2026-10-31-r7.en.md §4): 70 kg, milk 0.25–0.64 L/day",
+    "cases": [
+     {
+      "label": "milk 0.25 L/day",
+      "water_l_day": 0.0,
+      "milk_l_day": 0.25,
+      "dose": 0.45,
+      "dose_censored_lower": 0.45,
+      "share_of_twi": 0.102273,
+      "not_included": []
+     },
+     {
+      "label": "milk 0.64 L/day",
+      "water_l_day": 0.0,
+      "milk_l_day": 0.64,
+      "dose": 1.152,
+      "dose_censored_lower": 1.152,
+      "share_of_twi": 0.261818,
+      "not_included": []
+     }
+    ]
+   },
+   {
+    "role": "resident_adult",
+    "label": "Resident adult — farm milk and well water",
+    "bw_kg": 70.0,
+    "source": "worked example: ATSDR 2005 adult default (2 L/day, 70 kg), kept in the example; new cards use ATSDR 2023 (references/dose-scenarios.md)",
+    "cases": [
+     {
+      "label": "milk 0.25 L/day, water 2 L/day",
+      "water_l_day": 2.0,
+      "milk_l_day": 0.25,
+      "dose": 2.51,
+      "dose_censored_lower": 2.51,
+      "share_of_twi": 0.570455,
+      "not_included": []
+     },
+     {
+      "label": "milk 0.64 L/day, water 2 L/day",
+      "water_l_day": 2.0,
+      "milk_l_day": 0.64,
+      "dose": 3.212,
+      "dose_censored_lower": 3.212,
+      "share_of_twi": 0.73,
+      "not_included": []
+     }
+    ]
+   },
+   {
+    "role": "infant_formula_well_water",
+    "label": "Infant fed formula made with well water",
+    "bw_kg": 7.8,
+    "source": "ATSDR (2023), Exposure Dose Guidance for Water Ingestion, Table 1 (EPA EFH 2019): infant under 1 year",
+    "cases": [
+     {
+      "label": "mean water intake",
+      "water_l_day": 0.595,
+      "milk_l_day": 0.0,
+      "dose": 5.499936,
+      "dose_censored_lower": 5.499936,
+      "share_of_twi": 1.249985,
+      "not_included": []
+     },
+     {
+      "label": "95th percentile",
+      "water_l_day": 1.106,
+      "milk_l_day": 0.0,
+      "dose": 10.22341,
+      "dose_censored_lower": 10.22341,
+      "share_of_twi": 2.323502,
+      "not_included": []
+     }
+    ]
+   },
+   {
+    "role": "young_child_resident",
+    "label": "Young child resident, 1 to under 2 years",
+    "bw_kg": 11.4,
+    "source": "ATSDR (2023), Table 1: child 1 to under 2 years; milk 0.25 L/day — worked example assumption",
+    "cases": [
+     {
+      "label": "mean water, milk 0.25 L/day",
+      "water_l_day": 0.245,
+      "milk_l_day": 0.25,
+      "dose": 4.312675,
+      "dose_censored_lower": 4.312675,
+      "share_of_twi": 0.980154,
+      "not_included": []
+     },
+     {
+      "label": "95th percentile water, milk 0.25 L/day",
+      "water_l_day": 0.658,
+      "milk_l_day": 0.25,
+      "dose": 6.924719,
+      "dose_censored_lower": 6.924719,
+      "share_of_twi": 1.5738,
+      "not_included": []
+     }
+    ],
+    "break_even_milk_l_day": [
+     {
+      "case": "mean water, milk 0.25 L/day",
+      "value": 0.257901
+     },
+     {
+      "case": "95th percentile water, milk 0.25 L/day",
+      "value": 0.021573
+     }
+    ]
+   }
+  ],
+  "rule": "weekly dose = concentration × daily intake × 7 ÷ body weight (scripts/passport_calc.py); an estimate with uncertainty, not a health forecast; with fewer than four EFSA PFAS measured every dose is a lower bound"
+ },
+ "indicators": {
+  "catalogue": 113,
+  "selected": 98,
+  "to_confirm": 16,
+  "left_out": [
+   {
+    "id": "A-09",
+    "reason": "research tier — on request"
+   },
+   {
+    "id": "A-31",
+    "reason": "research tier — on request"
+   },
+   {
+    "id": "A-32",
+    "reason": "research tier — on request"
+   },
+   {
+    "id": "L-07",
+    "reason": "research tier — on request"
+   },
+   {
+    "id": "L-24",
+    "reason": "research tier — on request"
+   },
+   {
+    "id": "L-25",
+    "reason": "research tier — on request"
+   },
+   {
+    "id": "L-26",
+    "reason": "research tier — on request"
+   },
+   {
+    "id": "L-31",
+    "reason": "trigger absent (raw_milk_sales, public_access, vegetables)"
+   },
+   {
+    "id": "L-41",
+    "reason": "trigger absent (raw_milk_sales)"
+   },
+   {
+    "id": "L-42",
+    "reason": "research tier — on request"
+   },
+   {
+    "id": "E-19",
+    "reason": "research tier — on request"
+   },
+   {
+    "id": "E-20",
+    "reason": "research tier — on request"
+   },
+   {
+    "id": "E-28",
+    "reason": "research tier — on request"
+   },
+   {
+    "id": "X-05",
+    "reason": "research tier — on request"
+   },
+   {
+    "id": "X-06",
+    "reason": "research tier — on request"
+   }
+  ],
+  "facts_to_confirm": [
+   "pesticides",
+   "irrigation",
+   "manure",
+   "protected_area_near",
+   "calves",
+   "floodplain",
+   "insect_pollinated",
+   "housed",
+   "road_salt",
+   "tile_drains",
+   "geogenic_risk"
+  ],
+  "work_plan": [
+   {
+    "action": "consent",
+    "cost": "desk",
+    "indicators": [
+     "X-07"
+    ],
+    "facts": []
+   },
+   {
+    "action": "confirm",
+    "cost": "desk",
+    "indicators": [
+     "A-21",
+     "A-26",
+     "L-34",
+     "A-22",
+     "E-17",
+     "L-21",
+     "E-23",
+     "E-18",
+     "L-12",
+     "L-16",
+     "A-14",
+     "A-23",
+     "A-27",
+     "A-29",
+     "E-04",
+     "E-31"
+    ],
+    "facts": [
+     "pesticides",
+     "irrigation",
+     "manure",
+     "protected_area_near",
+     "calves",
+     "floodplain",
+     "insect_pollinated",
+     "housed",
+     "road_salt",
+     "tile_drains",
+     "geogenic_risk"
+    ]
+   },
+   {
+    "action": "records",
+    "cost": "desk",
+    "indicators": [
+     "X-01",
+     "A-07",
+     "A-12",
+     "A-13",
+     "A-17",
+     "A-30",
+     "E-25",
+     "E-26",
+     "E-27",
+     "E-29",
+     "E-30",
+     "L-02",
+     "L-17",
+     "L-20",
+     "L-22",
+     "L-23",
+     "L-27",
+     "L-28",
+     "L-29",
+     "L-30",
+     "L-32",
+     "L-35",
+     "L-36",
+     "L-37",
+     "X-04",
+     "X-08",
+     "X-02",
+     "X-03"
+    ],
+    "facts": []
+   },
+   {
+    "action": "nasa",
+    "cost": "remote",
+    "indicators": [
+     "A-10",
+     "A-11",
+     "A-28",
+     "E-16",
+     "E-21",
+     "E-22",
+     "E-24",
+     "L-13"
+    ],
+    "facts": []
+   },
+   {
+    "action": "walkover",
+    "cost": "field",
+    "indicators": [
+     "E-14",
+     "L-33",
+     "E-15"
+    ],
+    "facts": []
+   },
+   {
+    "action": "welfare-visit",
+    "cost": "field",
+    "indicators": [
+     "L-10",
+     "L-11",
+     "L-14",
+     "L-15"
+    ],
+    "facts": []
+   },
+   {
+    "action": "scouting",
+    "cost": "field",
+    "indicators": [
+     "A-20"
+    ],
+    "facts": []
+   },
+   {
+    "action": "well",
+    "cost": "lab",
+    "indicators": [
+     "E-02",
+     "L-09",
+     "E-01",
+     "E-03"
+    ],
+    "facts": []
+   },
+   {
+    "action": "milk",
+    "cost": "lab",
+    "indicators": [
+     "L-40",
+     "L-18",
+     "L-19",
+     "L-38",
+     "L-39"
+    ],
+    "facts": []
+   },
+   {
+    "action": "feed",
+    "cost": "lab",
+    "indicators": [
+     "A-18",
+     "A-19",
+     "L-06",
+     "L-08"
+    ],
+    "facts": []
+   },
+   {
+    "action": "soil",
+    "cost": "lab",
+    "indicators": [
+     "A-16",
+     "A-02",
+     "A-03",
+     "A-04",
+     "A-05",
+     "A-08",
+     "A-15"
+    ],
+    "facts": []
+   },
+   {
+    "action": "soil-nitrate",
+    "cost": "lab",
+    "indicators": [
+     "A-06"
+    ],
+    "facts": []
+   },
+   {
+    "action": "pond",
+    "cost": "lab",
+    "indicators": [
+     "E-08",
+     "E-09",
+     "E-10"
+    ],
+    "facts": []
+   },
+   {
+    "action": "stream",
+    "cost": "lab",
+    "indicators": [
+     "E-05",
+     "E-06",
+     "E-07"
+    ],
+    "facts": []
+   }
+  ],
+  "lab_panels": {
+   "well": [
+    "L-09",
+    "E-01",
+    "E-02",
+    "E-03"
+   ],
+   "milk": [
+    "L-18",
+    "L-19",
+    "L-38",
+    "L-39",
+    "L-40"
+   ],
+   "feed": [
+    "A-18",
+    "A-19",
+    "L-05",
+    "L-06",
+    "L-08"
+   ],
+   "soil": [
+    "A-02",
+    "A-03",
+    "A-04",
+    "A-05",
+    "A-15",
+    "A-16"
+   ],
+   "soil-nitrate": [
+    "A-06"
+   ],
+   "pond": [
+    "E-08",
+    "E-10"
+   ],
+   "stream": [
+    "E-05",
+    "E-06"
+   ]
+  },
+  "gap_registry": [
+   {
+    "id": "X-07",
+    "indicator": "Farm consent and data-use record",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "never measured",
+    "closing": "signed consent"
+   },
+   {
+    "id": "A-21",
+    "indicator": "Pesticide use: products, active substances, rates",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "confirm the fact first",
+    "closing": "confirm with the farm or its records: pesticides"
+   },
+   {
+    "id": "A-26",
+    "indicator": "Irrigation volume and source",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "confirm the fact first",
+    "closing": "confirm with the farm or its records: irrigation"
+   },
+   {
+    "id": "L-34",
+    "indicator": "Manure application: rate, timing, method (incl. on frozen or saturated soil)",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "confirm the fact first",
+    "closing": "confirm with the farm or its records: manure"
+   },
+   {
+    "id": "A-22",
+    "indicator": "Pesticide risk indicator",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "confirm the fact first",
+    "closing": "confirm with the farm or its records: pesticides"
+   },
+   {
+    "id": "E-17",
+    "indicator": "Protected or high-nature-value areas on or next to the farm",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "confirm the fact first",
+    "closing": "confirm with the farm or its records: protected_area_near"
+   },
+   {
+    "id": "L-21",
+    "indicator": "Young-stock health: diarrhoea and respiratory disease",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "confirm the fact first",
+    "closing": "confirm with the farm or its records: calves"
+   },
+   {
+    "id": "E-23",
+    "indicator": "Field flooding",
+    "panel": "nasa",
+    "cost": "remote",
+    "gap": "confirm the fact first",
+    "closing": "confirm with the farm or its records: floodplain"
+   },
+   {
+    "id": "E-18",
+    "indicator": "Pollinators (abundance, diversity)",
+    "panel": "biodiversity",
+    "cost": "field",
+    "gap": "confirm the fact first",
+    "closing": "confirm with the farm or its records: insect_pollinated"
+   },
+   {
+    "id": "L-12",
+    "indicator": "Resting comfort: lying time, stall and bedding condition, cleanliness",
+    "panel": "welfare-visit",
+    "cost": "field",
+    "gap": "confirm the fact first",
+    "closing": "confirm with the farm or its records: housed"
+   },
+   {
+    "id": "L-16",
+    "indicator": "Integument alterations (hock lesions, swellings)",
+    "panel": "welfare-visit",
+    "cost": "field",
+    "gap": "confirm the fact first",
+    "closing": "confirm with the farm or its records: housed"
+   },
+   {
+    "id": "A-14",
+    "indicator": "Salinity (electrical conductivity; SAR where irrigated)",
+    "panel": "soil",
+    "cost": "lab",
+    "gap": "confirm the fact first",
+    "closing": "confirm with the farm or its records: irrigation, road_salt"
+   },
+   {
+    "id": "A-23",
+    "indicator": "Pesticide residues in crops, feed or product",
+    "panel": "feed",
+    "cost": "lab",
+    "gap": "confirm the fact first",
+    "closing": "confirm with the farm or its records: pesticides"
+   },
+   {
+    "id": "A-27",
+    "indicator": "Irrigation-water quality: EC, SAR, E. coli, PFAS where indicated",
+    "panel": "irrigation-water",
+    "cost": "lab",
+    "gap": "confirm the fact first",
+    "closing": "confirm with the farm or its records: irrigation"
+   },
+   {
+    "id": "A-29",
+    "indicator": "Tile-drain flow and drain-water nitrate",
+    "panel": "drain",
+    "cost": "lab",
+    "gap": "confirm the fact first",
+    "closing": "confirm with the farm or its records: tile_drains"
+   },
+   {
+    "id": "E-04",
+    "indicator": "Drinking well — geogenic elements (arsenic, manganese, uranium)",
+    "panel": "well",
+    "cost": "lab",
+    "gap": "confirm the fact first",
+    "closing": "confirm with the farm or its records: geogenic_risk"
+   },
+   {
+    "id": "E-31",
+    "indicator": "Pesticides in the well or stream",
+    "panel": "well",
+    "cost": "lab",
+    "gap": "confirm the fact first",
+    "closing": "confirm with the farm or its records: pesticides"
+   },
+   {
+    "id": "X-01",
+    "indicator": "Biosolids source — PFOS, PFOA and method list",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "partial: PFNA, PFHxS and the rest of the method list",
+    "closing": "supplier DMM-7 results; EPA 1633"
+   },
+   {
+    "id": "A-07",
+    "indicator": "Texture and depth to a restrictive layer",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "never measured",
+    "closing": "soil survey (SSURGO in the US); one lab texture per field to confirm"
+   },
+   {
+    "id": "A-12",
+    "indicator": "Tillage practice",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "never measured",
+    "closing": "farm records; HLS residue check"
+   },
+   {
+    "id": "A-13",
+    "indicator": "Cover crops and rotation diversity",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "never measured",
+    "closing": "farm records; HLS winter greenness"
+   },
+   {
+    "id": "A-17",
+    "indicator": "Crop and forage yield",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "never measured",
+    "closing": "farm records; yield maps"
+   },
+   {
+    "id": "A-30",
+    "indicator": "Energy use: fuel and electricity",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "never measured",
+    "closing": "bills and fuel records"
+   },
+   {
+    "id": "E-25",
+    "indicator": "Water abstraction, all uses",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "never measured",
+    "closing": "meters or estimates per use"
+   },
+   {
+    "id": "E-26",
+    "indicator": "Whole-farm greenhouse-gas balance",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "never measured",
+    "closing": "IPCC 2019 from L-35, L-37, A-30 and fertiliser"
+   },
+   {
+    "id": "E-27",
+    "indicator": "Organic status and agri-environment commitments",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "never measured",
+    "closing": "certificates; scheme contracts"
+   },
+   {
+    "id": "E-29",
+    "indicator": "Input intensity (fertiliser, feed, LSU per hectare)",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "never measured",
+    "closing": "derived from A-24, L-04, L-02"
+   },
+   {
+    "id": "E-30",
+    "indicator": "Farm type and specialisation",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "never measured",
+    "closing": "farm records (standard-output classes)"
+   },
+   {
+    "id": "L-02",
+    "indicator": "Stocking density",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "never measured",
+    "closing": "herd register ÷ farmed area"
+   },
+   {
+    "id": "L-17",
+    "indicator": "Clinical mastitis incidence",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "never measured",
+    "closing": "treatment records"
+   },
+   {
+    "id": "L-20",
+    "indicator": "Mortality and culling rate by cause",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "never measured",
+    "closing": "herd register"
+   },
+   {
+    "id": "L-22",
+    "indicator": "Access to pasture or an outdoor area",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "never measured",
+    "closing": "grazing records"
+   },
+   {
+    "id": "L-23",
+    "indicator": "Painful procedures without anaesthesia or analgesia (disbudding, castration, tail docking)",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "never measured",
+    "closing": "farm protocols and records"
+   },
+   {
+    "id": "L-27",
+    "indicator": "Antimicrobial use by substance and route",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "never measured",
+    "closing": "treatment records; veterinary prescriptions"
+   },
+   {
+    "id": "L-28",
+    "indicator": "Share of highest-priority critically important antimicrobials",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "never measured",
+    "closing": "from L-27 records by WHO category"
+   },
+   {
+    "id": "L-29",
+    "indicator": "Biosecurity and vaccination plan",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "never measured",
+    "closing": "review of the farm plan"
+   },
+   {
+    "id": "L-30",
+    "indicator": "Official status for notifiable and zoonotic diseases (e.g. tuberculosis, brucellosis; avian influenza for poultry)",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "never measured",
+    "closing": "official herd or flock records"
+   },
+   {
+    "id": "L-32",
+    "indicator": "Manure production and N excretion",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "never measured",
+    "closing": "herd × excretion coefficients; storage volumes"
+   },
+   {
+    "id": "L-35",
+    "indicator": "Enteric methane",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "never measured",
+    "closing": "IPCC 2019 Tier 2 from intake and yield"
+   },
+   {
+    "id": "L-36",
+    "indicator": "Ammonia from housing, storage and spreading",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "never measured",
+    "closing": "EMEP/EEA emission inventory guidebook, Tier 2"
+   },
+   {
+    "id": "L-37",
+    "indicator": "Nitrous oxide from manure and soils",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "never measured",
+    "closing": "IPCC 2019 Tier 1/2"
+   },
+   {
+    "id": "X-04",
+    "indicator": "Nearby sources: AFFF sites, landfills, industry, spill records",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "never measured",
+    "closing": "public registers and maps"
+   },
+   {
+    "id": "X-08",
+    "indicator": "Completeness of farm records (feed, fertiliser, manure, antimicrobial use, spreading)",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "never measured",
+    "closing": "records audit"
+   },
+   {
+    "id": "X-02",
+    "indicator": "Biosolids — heavy metals",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "never measured",
+    "closing": "supplier analyses"
+   },
+   {
+    "id": "X-03",
+    "indicator": "Biosolids — pathogen class and treatment",
+    "panel": "records",
+    "cost": "desk",
+    "gap": "never measured",
+    "closing": "supplier certificates"
+   },
+   {
+    "id": "A-10",
+    "indicator": "Soil erosion (modelled)",
+    "panel": "nasa",
+    "cost": "remote",
+    "gap": "never measured",
+    "closing": "RUSLE: rainfall erosivity (IMERG), erodibility (soil survey), slope, cover (HLS), practice"
+   },
+   {
+    "id": "A-11",
+    "indicator": "Soil cover / bare-soil days",
+    "panel": "nasa",
+    "cost": "remote",
+    "gap": "never measured",
+    "closing": "HLS NDVI / bare-soil index time series per field"
+   },
+   {
+    "id": "A-28",
+    "indicator": "NDVI / EVI and phenology",
+    "panel": "nasa",
+    "cost": "remote",
+    "gap": "never measured",
+    "closing": "HLS 30 m time series per field, cloud-masked"
+   },
+   {
+    "id": "E-16",
+    "indicator": "Semi-natural habitat share: hedgerows, margins, woodland",
+    "panel": "nasa",
+    "cost": "remote",
+    "gap": "never measured",
+    "closing": "HLS or aerial classification with field check"
+   },
+   {
+    "id": "E-21",
+    "indicator": "Land-use and land-cover change",
+    "panel": "nasa",
+    "cost": "remote",
+    "gap": "never measured",
+    "closing": "HLS (from 2013) and the Landsat archive"
+   },
+   {
+    "id": "E-22",
+    "indicator": "Drought exposure: soil-moisture and precipitation anomalies",
+    "panel": "nasa",
+    "cost": "remote",
+    "gap": "never measured",
+    "closing": "SMAP L4 root zone (9 km) and IMERG (0.1°) — farm-level context, not field status"
+   },
+   {
+    "id": "E-24",
+    "indicator": "Frost and heat days; growing degree days",
+    "panel": "nasa",
+    "cost": "remote",
+    "gap": "never measured",
+    "closing": "on-farm station; NASA POWER daily T2M as fallback"
+   },
+   {
+    "id": "L-13",
+    "indicator": "Heat load: temperature-humidity index above the heat-stress level",
+    "panel": "nasa",
+    "cost": "remote",
+    "gap": "never measured",
+    "closing": "THI from an on-farm sensor; NASA POWER daily T2M/RH2M (0.5°×0.625°) as fallback. The Welfare Quality dairy protocol has no measure for thermal comfort; THI is the skill's proxy"
+   },
+   {
+    "id": "E-14",
+    "indicator": "Riparian buffer width and condition",
+    "panel": "walkover",
+    "cost": "field",
+    "gap": "partial: measured width and vegetation condition",
+    "closing": "field survey; HLS NDVI along banks only if the pixel-fit check passes"
+   },
+   {
+    "id": "L-33",
+    "indicator": "Manure storage capacity, cover and freeboard",
+    "panel": "walkover",
+    "cost": "field",
+    "gap": "never measured",
+    "closing": "inspection and design records"
+   },
+   {
+    "id": "E-15",
+    "indicator": "Livestock access to watercourses",
+    "panel": "walkover",
+    "cost": "field",
+    "gap": "never measured",
+    "closing": "survey"
+   },
+   {
+    "id": "L-10",
+    "indicator": "Water availability: water points, flow, cleanliness",
+    "panel": "welfare-visit",
+    "cost": "field",
+    "gap": "never measured",
+    "closing": "on-farm check (Welfare Quality-type)"
+   },
+   {
+    "id": "L-11",
+    "indicator": "Body condition: share of animals too thin",
+    "panel": "welfare-visit",
+    "cost": "field",
+    "gap": "never measured",
+    "closing": "5-point body-condition scoring of a sample"
+   },
+   {
+    "id": "L-14",
+    "indicator": "Space allowance and freedom of movement (tethering, pen space)",
+    "panel": "welfare-visit",
+    "cost": "field",
+    "gap": "never measured",
+    "closing": "on-farm measurement"
+   },
+   {
+    "id": "L-15",
+    "indicator": "Lameness prevalence",
+    "panel": "welfare-visit",
+    "cost": "field",
+    "gap": "never measured",
+    "closing": "locomotion scoring (5-point) of the herd or a sample"
+   },
+   {
+    "id": "A-20",
+    "indicator": "Plant disease and pest pressure",
+    "panel": "scouting",
+    "cost": "field",
+    "gap": "never measured",
+    "closing": "scouting protocol; image-based detection as screening; HLS anomaly maps target the scouting"
+   },
+   {
+    "id": "E-02",
+    "indicator": "Drinking well — nitrate and nitrite",
+    "panel": "well",
+    "cost": "lab",
+    "gap": "partial: nitrite",
+    "closing": "ion chromatography or approved colorimetric method"
+   },
+   {
+    "id": "L-09",
+    "indicator": "Livestock drinking-water quality: nitrate, coliforms, TDS; PFAS where indicated",
+    "panel": "well",
+    "cost": "lab",
+    "gap": "partial: coliforms, TDS; PFAS panel incomplete",
+    "closing": "same visit as the household well; PFAS by EPA 533/537.1 for a well"
+   },
+   {
+    "id": "E-01",
+    "indicator": "Drinking well — PFAS (EFSA four + method list)",
+    "panel": "well",
+    "cost": "lab",
+    "gap": "partial: PFNA, PFHxS; quarterly series; method EPA 533/537.1",
+    "closing": "EPA 533 or 537.1, reporting limit ≤ 2 ng/L"
+   },
+   {
+    "id": "E-03",
+    "indicator": "Drinking well — total coliform and E. coli",
+    "panel": "well",
+    "cost": "lab",
+    "gap": "never measured",
+    "closing": "approved presence/absence method"
+   },
+   {
+    "id": "L-40",
+    "indicator": "PFAS in milk, meat or eggs (EFSA four + list)",
+    "panel": "milk",
+    "cost": "lab",
+    "gap": "partial: PFOA, PFNA, PFHxS in milk; meat of cull cows not tested",
+    "closing": "FDA C-010.03 or an equivalent ISO/IEC 17025 food method"
+   },
+   {
+    "id": "L-18",
+    "indicator": "Bulk-tank somatic cell count",
+    "panel": "milk",
+    "cost": "lab",
+    "gap": "never measured",
+    "closing": "electronic counter (processor testing)"
+   },
+   {
+    "id": "L-19",
+    "indicator": "Bulk-tank bacterial (plate) count",
+    "panel": "milk",
+    "cost": "lab",
+    "gap": "never measured",
+    "closing": "plate count at 30 °C (processor testing)"
+   },
+   {
+    "id": "L-38",
+    "indicator": "Veterinary drug residues in milk, meat or eggs",
+    "panel": "milk",
+    "cost": "lab",
+    "gap": "never measured",
+    "closing": "processor or official screening tests"
+   },
+   {
+    "id": "L-39",
+    "indicator": "Aflatoxin M1 in milk",
+    "panel": "milk",
+    "cost": "lab",
+    "gap": "never measured",
+    "closing": "ISO 14501 (immunoaffinity + HPLC) or validated ELISA"
+   },
+   {
+    "id": "A-18",
+    "indicator": "Forage quality: crude protein, NDF, energy",
+    "panel": "feed",
+    "cost": "lab",
+    "gap": "never measured",
+    "closing": "NIRS forage analysis"
+   },
+   {
+    "id": "A-19",
+    "indicator": "Nitrate in forage",
+    "panel": "feed",
+    "cost": "lab",
+    "gap": "never measured",
+    "closing": "forage nitrate test"
+   },
+   {
+    "id": "L-06",
+    "indicator": "Aflatoxins in feed for dairy animals",
+    "panel": "feed",
+    "cost": "lab",
+    "gap": "never measured",
+    "closing": "LC-MS/MS or validated ELISA screen"
+   },
+   {
+    "id": "L-08",
+    "indicator": "PFAS in forage and feed (EFSA four + list)",
+    "panel": "feed",
+    "cost": "lab",
+    "gap": "never measured",
+    "closing": "FDA C-010.03 (silage and snaplage validated) or EPA 1633 for solids"
+   },
+   {
+    "id": "A-16",
+    "indicator": "PFAS in soil (EFSA four + method list)",
+    "panel": "soil",
+    "cost": "lab",
+    "gap": "partial: PFNA, PFHxS and the rest of the method list; depth below 20 cm",
+    "closing": "EPA 1633; application and control fields; depth stated"
+   },
+   {
+    "id": "A-02",
+    "indicator": "Soil pH",
+    "panel": "soil",
+    "cost": "lab",
+    "gap": "never measured",
+    "closing": "1:1 soil:water, composite 0–20 cm per field"
+   },
+   {
+    "id": "A-03",
+    "indicator": "Soil organic matter / organic carbon",
+    "panel": "soil",
+    "cost": "lab",
+    "gap": "never measured",
+    "closing": "loss on ignition or dry combustion; bulk density for stocks"
+   },
+   {
+    "id": "A-04",
+    "indicator": "Soil-test phosphorus (Mehlich-3)",
+    "panel": "soil",
+    "cost": "lab",
+    "gap": "never measured",
+    "closing": "Mehlich-3, ICP"
+   },
+   {
+    "id": "A-05",
+    "indicator": "Soil K, Mg, Ca and CEC",
+    "panel": "soil",
+    "cost": "lab",
+    "gap": "never measured",
+    "closing": "Mehlich-3 ICP; CEC by summation"
+   },
+   {
+    "id": "A-08",
+    "indicator": "Compaction: bulk density or penetration resistance",
+    "panel": "soil",
+    "cost": "field",
+    "gap": "never measured",
+    "closing": "core sampling or penetrometer, 0–40 cm"
+   },
+   {
+    "id": "A-15",
+    "indicator": "Heavy metals in soil: Cd, Cu, Ni, Pb, Zn, Hg",
+    "panel": "soil",
+    "cost": "lab",
+    "gap": "never measured",
+    "closing": "strong-acid digestion, AAS/ICP; 25 cores per ≤5 ha, 25 cm (86/278 Annex II C)"
+   },
+   {
+    "id": "A-06",
+    "indicator": "Soil nitrate (pre-sidedress or late fall)",
+    "panel": "soil-nitrate",
+    "cost": "lab",
+    "gap": "never measured",
+    "closing": "KCl extraction, 0–30 cm"
+   },
+   {
+    "id": "E-08",
+    "indicator": "Pond — total phosphorus, chlorophyll-a, Secchi depth",
+    "panel": "pond",
+    "cost": "lab",
+    "gap": "partial: Secchi depth; monthly values",
+    "closing": "monthly May–September"
+   },
+   {
+    "id": "E-09",
+    "indicator": "Pond — dissolved-oxygen and temperature profile",
+    "panel": "pond",
+    "cost": "field",
+    "gap": "never measured",
+    "closing": "multiparameter probe, 0.5 m steps"
+   },
+   {
+    "id": "E-10",
+    "indicator": "Cyanobacteria and cyanotoxins (microcystins)",
+    "panel": "pond",
+    "cost": "lab",
+    "gap": "never measured",
+    "closing": "cell counts; ELISA for microcystins"
+   },
+   {
+    "id": "E-05",
+    "indicator": "Stream — total phosphorus, nitrate, suspended solids",
+    "panel": "stream",
+    "cost": "lab",
+    "gap": "partial: nitrate, suspended solids",
+    "closing": "monthly grab and event samples"
+   },
+   {
+    "id": "E-06",
+    "indicator": "Stream — E. coli or enterococci",
+    "panel": "stream",
+    "cost": "lab",
+    "gap": "partial: seasonal series for geometric mean and percentile",
+    "closing": "EPA 1603 / 1600; seasonal series for geometric mean and percentile"
+   },
+   {
+    "id": "E-07",
+    "indicator": "Stream flow (stage and discharge)",
+    "panel": "stream",
+    "cost": "field",
+    "gap": "never measured",
+    "closing": "staff gauge and rating curve"
+   }
+  ],
+  "nasa_request": {
+   "products": [
+    "DSWx",
+    "ECOSTRESS",
+    "HLS",
+    "IMERG",
+    "LANDSAT",
+    "POWER",
+    "SMAP"
+   ],
+   "excluded": [
+    {
+     "indicator": "E-08",
+     "product": "DSWx",
+     "reason": "object too small for 30 m pixels (0 pure pixels < 9)"
+    },
+    {
+     "indicator": "E-14",
+     "product": "HLS",
+     "reason": "object too small for 30 m pixels (0 pure pixels < 9)"
+    }
+   ],
+   "rule": "remote = proxy: used for triggers, targeting and context; never a status colour alone",
+   "consent": "send only after the farm consent record (X-07) covers satellite data for this area"
+  }
+ },
+ "references_used": [
+  {
+   "row": "NYUS-01",
+   "value": 10,
+   "unit": "ng/L",
+   "legal_status": "in_force",
+   "matrix": "drinking water (public systems)",
+   "analyte": "PFOA",
+   "checked": "2026-11-01",
+   "verified": "verified",
+   "source": "NYS Department of Health"
+  },
+  {
+   "row": "NYUS-02",
+   "value": 10,
+   "unit": "ng/L",
+   "legal_status": "in_force",
+   "matrix": "drinking water (public systems)",
+   "analyte": "PFOS",
+   "checked": "2026-11-01",
+   "verified": "verified",
+   "source": "NYS Department of Health"
+  },
+  {
+   "row": "NYUS-03",
+   "value": 4.0,
+   "unit": "ng/L",
+   "legal_status": "future",
+   "matrix": "drinking water (public systems)",
+   "analyte": "PFOA",
+   "checked": "2026-11-01",
+   "verified": "corrected",
+   "source": "US EPA"
+  },
+  {
+   "row": "NYUS-04",
+   "value": 4.0,
+   "unit": "ng/L",
+   "legal_status": "future",
+   "matrix": "drinking water (public systems)",
+   "analyte": "PFOS",
+   "checked": "2026-11-01",
+   "verified": "corrected",
+   "source": "US EPA"
+  },
+  {
+   "row": "NYUS-07",
+   "value": 20,
+   "unit": "µg/kg dw (ppb)",
+   "legal_status": "in_force",
+   "matrix": "biosolids recycled in NYS (dry weight)",
+   "analyte": "PFOS or PFOA (each)",
+   "checked": "2026-11-01",
+   "verified": "corrected",
+   "source": "NYS DEC"
+  },
+  {
+   "row": "NYUS-08",
+   "value": 50,
+   "unit": "µg/kg dw (ppb)",
+   "legal_status": "in_force",
+   "matrix": "biosolids recycled in NYS (dry weight)",
+   "analyte": "PFOS or PFOA (each)",
+   "checked": "2026-11-01",
+   "verified": "verified",
+   "source": "NYS DEC"
+  },
+  {
+   "row": "NYUS-10",
+   "value": 4.4,
+   "unit": "ng/kg bw per week",
+   "legal_status": "guidance",
+   "matrix": "consumer dose",
+   "analyte": "sum PFOS + PFOA + PFNA + PFHxS",
+   "checked": "2026-11-01",
+   "verified": "verified",
+   "source": "EFSA"
+  },
+  {
+   "row": "NYUS-14",
+   "value": 210,
+   "unit": "ng/L (ppt)",
+   "legal_status": "in_force",
+   "matrix": "cow's milk",
+   "analyte": "PFOS",
+   "checked": "2026-11-01",
+   "verified": "verified",
+   "source": "Maine CDC / Maine DACF"
+  },
+  {
+   "row": "NYUS-16",
+   "value": 3.0,
+   "unit": "µg/kg",
+   "legal_status": "orientation",
+   "matrix": "agricultural / rural soil",
+   "analyte": "PFOS (PFOA 1.5)",
+   "checked": "2026-11-01",
+   "verified": "verified-secondary",
+   "source": "NYS DEC (via secondary)"
+  },
+  {
+   "row": "NYUS-27",
+   "value": 0.66,
+   "unit": "µg/kg",
+   "legal_status": "guidance",
+   "matrix": "soil (unrestricted use)",
+   "analyte": "PFOA",
+   "checked": "2026-11-05",
+   "verified": "verified",
+   "source": "NYS DEC"
+  },
+  {
+   "row": "NYUS-28",
+   "value": 0.88,
+   "unit": "µg/kg",
+   "legal_status": "guidance",
+   "matrix": "soil (unrestricted use)",
+   "analyte": "PFOS",
+   "checked": "2026-11-05",
+   "verified": "verified",
+   "source": "NYS DEC"
+  },
+  {
+   "row": "NYUS-31",
+   "value": 6.7,
+   "unit": "ng/L",
+   "legal_status": "guidance",
+   "matrix": "groundwater (Class GA)",
+   "analyte": "PFOA",
+   "checked": "2026-11-05",
+   "verified": "verified",
+   "source": "NYS DEC Division of Water"
+  },
+  {
+   "row": "NYUS-32",
+   "value": 2.7,
+   "unit": "ng/L",
+   "legal_status": "guidance",
+   "matrix": "groundwater (Class GA)",
+   "analyte": "PFOS",
+   "checked": "2026-11-05",
+   "verified": "verified",
+   "source": "NYS DEC Division of Water"
+  },
+  {
+   "row": "NYUS-33",
+   "value": 0.8,
+   "unit": "µg/kg",
+   "legal_status": "guidance",
+   "matrix": "soil (protection of groundwater)",
+   "analyte": "PFOA",
+   "checked": "2026-11-05",
+   "verified": "verified-secondary",
+   "source": "NYS DEC (via reproductions of its table)"
+  },
+  {
+   "row": "NYUS-34",
+   "value": 1.0,
+   "unit": "µg/kg",
+   "legal_status": "guidance",
+   "matrix": "soil (protection of groundwater)",
+   "analyte": "PFOS",
+   "checked": "2026-11-05",
+   "verified": "verified-secondary",
+   "source": "NYS DEC (via reproductions of its table)"
+  },
+  {
+   "row": "NYUS-35",
+   "value": 1.5,
+   "unit": "µg/kg",
+   "legal_status": "proposed",
+   "matrix": "soil (rural background — proposed)",
+   "analyte": "PFOA",
+   "checked": "2026-11-05",
+   "verified": "verified-secondary",
+   "source": "NYS DEC (study, via secondary summary)"
+  }
+ ],
+ "limits": "Screening and expert opinion — not a compliance determination, a laboratory report or medical advice. Only measured values carry a colour; red only for a sustained exceedance of an in-force reference under its own rule.",
+ "run_record": {
+  "skill": "farm-environmental-passport",
+  "skill_version": "0.3.8",
+  "run_date": "2026-11-10",
+  "command": "python3 scripts/demo.py --farm examples/synthetic-farm --date 2026-11-10",
+  "python": "3.13.18",
+  "threshold_pack": {
+   "pack": "NY-US",
+   "version": "2026-11-05",
+   "max_age_days": 183
+  },
+  "screening_map": {
+   "version": "2026-11-10"
+  },
+  "rows_used": [
+   {
+    "row": "NYUS-01",
+    "checked": "2026-11-01",
+    "verified": "verified"
+   },
+   {
+    "row": "NYUS-02",
+    "checked": "2026-11-01",
+    "verified": "verified"
+   },
+   {
+    "row": "NYUS-03",
+    "checked": "2026-11-01",
+    "verified": "corrected"
+   },
+   {
+    "row": "NYUS-04",
+    "checked": "2026-11-01",
+    "verified": "corrected"
+   },
+   {
+    "row": "NYUS-07",
+    "checked": "2026-11-01",
+    "verified": "corrected"
+   },
+   {
+    "row": "NYUS-08",
+    "checked": "2026-11-01",
+    "verified": "verified"
+   },
+   {
+    "row": "NYUS-10",
+    "checked": "2026-11-01",
+    "verified": "verified"
+   },
+   {
+    "row": "NYUS-14",
+    "checked": "2026-11-01",
+    "verified": "verified"
+   },
+   {
+    "row": "NYUS-16",
+    "checked": "2026-11-01",
+    "verified": "verified-secondary"
+   },
+   {
+    "row": "NYUS-27",
+    "checked": "2026-11-05",
+    "verified": "verified"
+   },
+   {
+    "row": "NYUS-28",
+    "checked": "2026-11-05",
+    "verified": "verified"
+   },
+   {
+    "row": "NYUS-31",
+    "checked": "2026-11-05",
+    "verified": "verified"
+   },
+   {
+    "row": "NYUS-32",
+    "checked": "2026-11-05",
+    "verified": "verified"
+   },
+   {
+    "row": "NYUS-33",
+    "checked": "2026-11-05",
+    "verified": "verified-secondary"
+   },
+   {
+    "row": "NYUS-34",
+    "checked": "2026-11-05",
+    "verified": "verified-secondary"
+   },
+   {
+    "row": "NYUS-35",
+    "checked": "2026-11-05",
+    "verified": "verified-secondary"
+   }
+  ],
+  "stale_rows": [],
+  "inputs": [
+   {
+    "path": "examples/synthetic-farm/farm.json",
+    "sha256": "7848fd2ac9cb0b2192f6c7d5575cb0a002cebb58ee0d79c8759205a07992a616"
+   },
+   {
+    "path": "examples/synthetic-farm/measurements.csv",
+    "sha256": "1a841f44abeb2a010a6a141a39c1de8c2e782d292c95734ec0093450e6626a94"
+   }
+  ],
+  "core": [
+   {
+    "path": "core/thresholds/ny-us.json",
+    "sha256": "8a84087f87798dedcba0de1400744a83444d8c5c9575edb69056e4acfe6e4ff9"
+   },
+   {
+    "path": "core/screening-map.json",
+    "sha256": "35086da5dea6fd82212393141d2c44cee0e7aa619c3c452c24bccf742582f9e6"
+   },
+   {
+    "path": "core/indicators/farm-indicators.psv",
+    "sha256": "04c6c4629dd4f38f57cf08fa1d1cf5cd08f7e91a9eed2be325f88167e1338231"
+   },
+   {
+    "path": "core/remote-sensing/nasa-layer.json",
+    "sha256": "b8ba463de93d395bd9d31c1607d3ef2bf50a1ad1e3836bb79eaee4708d165416"
+   }
+  ],
+  "checks": {
+   "errors": 0,
+   "warnings": [
+    {
+     "code": "date-not-stated",
+     "where": "measurements.csv lines 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 17",
+     "text": "sampling date not stated in the source"
+    },
+    {
+     "code": "basis-not-stated",
+     "where": "measurements.csv lines 4, 5, 6, 7, 8, 9, 10, 11, 12, 13",
+     "text": "dry or wet basis not stated; the references are dry weight"
+    },
+    {
+     "code": "method-not-stated",
+     "where": "measurements.csv lines 15, 16, 17",
+     "text": "method not stated in the source"
+    }
+   ]
+  }
+ }
+}

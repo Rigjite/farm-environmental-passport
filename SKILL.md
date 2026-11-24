@@ -2,7 +2,7 @@
 name: farm-environmental-passport
 description: Build an independent environmental passport for a specific farm — input pathways, water and soil status, nutrient balances, contaminant screening (PFAS first module), a registry of what has never been measured, and a minimal sampling plan. Use when asked to assess a farm's environmental safety, biosolids history, well or irrigation water, nutrient export to water bodies, or the exposure a farm's product may carry. The skill collects and reconciles open data and existing analyses; it does not measure — certified laboratories measure.
 author: Rigjita Baldanova
-version: 0.3.7
+version: 0.3.8
 license: CC BY 4.0 (method and documentation); CC BY-NC 4.0 (indicator catalogue, threshold packs, remote-sensing layer in core/); Apache-2.0 (code). See LICENSE-NOTICE.md, LICENSE, LICENSE-CORE, LICENSE-CODE
 ---
 
@@ -15,9 +15,9 @@ An independent passport for one specific farm: what enters it, what has been mea
 1. Record the farm's consent (indicator X-07); nothing else starts without it.
 2. Name the jurisdiction and load its threshold pack (`core/thresholds.md`; machine form `core/thresholds/*.json`). If any row you need is older than the pack's `max_age_days`, re-check it before use.
 3. Fill the farm profile (true / false / unknown for each component and trigger) and select indicators from the farm catalogue with `scripts/indicator_select.py` (`core/indicators/farm-indicators.md`). Unknown facts are confirmed first — they decide which panels open.
-4. Compose the NASA data request (`nasa_request`) for the data agent — whoever holds NASA Earthdata access — and collect inputs and open series (below); class every number as *measured*, *modelled*, *remote* or *never measured*.
-5. Compute with `scripts/passport_calc.py` — doses, balances, loads, statuses. Do not compute by hand in the card.
-6. Assign statuses with the decision table in `references/status-rules.md`.
+4. Compose the NASA data request (`nasa_request`) for the data agent — whoever holds NASA Earthdata access — and collect inputs and open series (below); class every number as *measured*, *modelled*, *remote* or *never measured*. Write the farm into an input folder — `farm.json` and one result per row in `measurements.csv` (`references/input-format.md`; template `assets/input-template/`) — and check it with `scripts/validate_input.py`: errors stop the run, warnings go into the run record.
+5. Compute with `scripts/demo.py --farm FOLDER`: it checks the input, compares every result with the reference rows of the screening map (`core/screening-map.json`, rendered `core/screening-matrix.md`) through `scripts/passport_calc.py`, and writes `passport.json` — statuses, flags, dose, indicator selection, gap registry and the run record — and the answer card beside it. Balances and loads of Modules 2–3 are computed with `scripts/passport_calc.py` directly. Do not compute by hand in the card.
+6. Assign statuses with the decision table in `references/status-rules.md` (a group of fields: §3a).
 7. Run the dose scenarios in `references/dose-scenarios.md`, including the sensitive group.
 8. Generate the gap registry from the selection (`gap_registry`), collapse it into the work plan (`work_plan`: consent → one call to confirm the unknown facts → records interview → NASA request → field visits → laboratory panels) and write each panel's sampling plan (`references/methods.md` — method by matrix). Worked case: `examples/sim-farm-indicator-selection.md`.
 9. Fill `assets/answer-card-template.md` and pass the quality gate at the end of this file.
@@ -123,10 +123,13 @@ Template: `assets/answer-card-template.md`.
 - Recommendations: continue or suspend biosolids application; buffer strips; re-check date; threshold rows due for re-verification.
 - A provenance line for every number: *measured*, *modelled*, *remote* or *reference*, with the primary source named.
 - Indicator selection and work plan: what was selected and why, what was left out and why, the facts to confirm, the NASA request sent to the data agent (products, what was excluded by the pixel-fit check).
+- The machine-readable passport `passport.json` (`references/input-format.md` §4) with its **run record**: skill version, run date and command, threshold pack and version, every row used with its check date and verification mark, rows stale on the run date, sha256 of every input and core file, and the input-check warnings. The card is rendered from it and changes no number.
 
 ## Quality gate (before a card leaves the operator)
 
+- [ ] The input folder passes `scripts/validate_input.py` with no errors; its warnings are read and carried in the run record.
 - [ ] Every number came from `passport_calc.py` or a laboratory report; none typed by hand.
+- [ ] `passport.json` carries the run record (skill version, pack version, rows used with check dates, sha256 of the inputs).
 - [ ] Every threshold used has a row ID, legal status and a check date within the pack's limit.
 - [ ] No status is coloured from a model alone; every grey has a gap row and a closing sample.
 - [ ] Censored values are bounded; partial sums are labelled lower bounds.
@@ -158,3 +161,4 @@ The method is demonstrated on a synthetic farm; the first real farm is its valid
 - **Figures.** English figures for all modules in `examples/figures/en/`, built by `examples/make_figs_en.py` (Modules 2–3 computed from the unchanged data block of `make_figs2.py`). Russian figures in `examples/figures/`, built by `make_figs1.py` (Module 1), `make_figs2_v2.py` (balances) and the original `make_figs2.py`, which reproduces every number of Modules 2–3. Data series are neutral; red, yellow and green are reserved for status.
 - **Intake record.** The original texts of 31 October 2026 (`examples/FARM-PFAS-SIMULATION-2026-10-31.md`, `examples/FARM-WATER-NUTRIENTS-SIMULATION-2026-10-31.md`) stay byte-identical (sha256 checked by T8); later rules are recorded in the texts in force and in `references/dose-scenarios.md` §4 and `references/threshold-verification-2026-11-01.md` §2. The synthetic values are the same in every redaction.
 - `examples/sim-farm-indicator-selection.md` (generated by `scripts/render_catalogue.py`) applies the catalogue to the same farm: indicator selection with reasons, the work plan, the gap registry and the NASA request.
+- **One command, end to end** (since v0.3.8). `examples/synthetic-farm/` holds the same farm as an input folder (Module 1 values, unchanged) and the outputs of `python3 scripts/demo.py`: `passport.json` and `answer-card.md`, which reproduce the statuses and doses of the PFAS example. `examples/bad-input/` holds three folders with deliberate input errors and the messages they produce.

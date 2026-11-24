@@ -9,6 +9,7 @@ The Farm Environmental Passport (a snapshot of one farm: status card, gap regist
 | In the core (shared, versioned) | In each skill (its own) |
 |---|---|
 | Threshold packs with legal status, check date, verification mark (`core/thresholds/`) | The passport's status table; the twin's watch levels and alert rules |
+| Screening map: which reference rows apply to which matrix and parameter, in which unit, by which method (`core/screening-map.json`, rendered `core/screening-matrix.md`; since passport v0.3.8) | How each skill uses a comparison: the passport's status and group rules; the twin's alerts |
 | Indicator catalogue for farms (`core/indicators/`), keyed to the twin's sections | The twin's full ecosystem catalogue (§1–§32) — referenced, not copied |
 | NASA remote-sensing layer: products, resolutions, rules (`core/remote-sensing/`) | Models, calibration, scenarios (twin); dose scenarios, answer card (passport) |
 | Analytical methods by matrix; unit conversions | Workflows, templates, tests of behaviour |

@@ -1,0 +1,27 @@
+{
+ "passport_input": "farm-environmental-passport/input@1",
+ "farm_id": "BAD-3",
+ "name": "Illustration of input errors — not a farm",
+ "synthetic": false,
+ "about": "A real farm (synthetic = false) without its consent and without dose scenarios; results without date, method or laboratory; a date in the future; two results for one event; a model row without its range. Expected: errors consent-missing, dose-scenarios-missing, date-in-future, method-missing, date-missing, duplicate-event, model-range.",
+ "jurisdiction": "NY-US",
+ "consent": {
+  "recorded": false,
+  "date": null,
+  "scope": null,
+  "note": "illustration of input errors — not a farm"
+ },
+ "objects": [
+  {
+   "id": "WELL",
+   "label": "Well",
+   "matrix": "well-drinking",
+   "dose_role": "drinking_water"
+  },
+  {
+   "id": "MILK",
+   "label": "Milk, bulk tank",
+   "matrix": "milk"
+  }
+ ]
+}

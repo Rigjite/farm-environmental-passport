@@ -1,8 +1,8 @@
-# farm-environmental-passport — saved test inputs (v0.3.0)
+# farm-environmental-passport — saved test inputs (v0.3.8)
 
 Run these after any change to SKILL.md, the threshold packs or the calculation core. Log pass/fail + date below before shipping.
 
-- Computable tests T1–T34 run with `python3 tests/run_tests.py`; the dated protocol is written to `tests/RUN-LOG.md`.
+- Computable tests T1–T41 run with `python3 tests/run_tests.py`; the dated protocol is written to `tests/RUN-LOG.md`.
 - Expected values come from the two worked examples (`examples/`, synthetic) or from hand calculations shown in the test — never from the code under test.
 - Behavioural tests B1–B7 describe how an operator or a model must use the skill; they are pending first live use.
 - Inputs live in `tests/fixtures/`, copied verbatim from the examples; T8 proves they have not drifted. Synthetic values are never edited to make a test pass.
@@ -92,7 +92,7 @@ Run these after any change to SKILL.md, the threshold packs or the calculation c
 **Expected:** equal to — not above — the current EPA STV 410 (green-watch); above the superseded 235 (yellow at most, row marked superseded); the stream stays yellow on phosphorus.
 
 ### T20 — Package structure
-**Expected:** version 0.3.0 in the frontmatter; every path named in SKILL.md exists; CHANGELOG.md present; v0.1.0 SKILL.md byte-identical to the intake.
+**Expected:** the release version in the frontmatter (0.3.8); every path named in SKILL.md exists; CHANGELOG.md present; v0.1.0 SKILL.md byte-identical to the intake.
 
 ## Farm catalogue, selection, NASA layer (new in v0.3)
 
@@ -172,10 +172,38 @@ Inputs: `core/indicators/farm-indicators.psv`; `tests/fixtures/sim_farm_profile.
 **Input:** the data agent returns an NDVI drop on field F2 and two SMAP months below the 20th percentile.
 **Expected:** both are recorded as *remote* with product, date and mask; the drought flag opens the aflatoxin and forage-nitrate panels; field F2 gets a scouting visit; no status colour changes on the satellite values alone.
 
+## Input folder, one command, run record (new in v0.3.8)
+
+Inputs: `assets/input-template/`; `examples/synthetic-farm/` (the synthetic farm as an input folder — Module 1 values copied from the PFAS example, unchanged); `examples/bad-input/` (three folders with deliberate errors). Run date of the committed outputs: 2026-11-10. Expected values come from the worked example and the fixtures, never from the code under test.
+
+### T35 — Input template and format description
+**Expected:** the template's header equals the format's columns; the empty template gives exactly one error — the missing consent of a real farm; every column and every matrix is described in `references/input-format.md`; the synthetic farm passes with no errors and warns only where the example states nothing (sampling date, dry/wet basis, method); row warnings are merged for display, one message per kind.
+
+### T36 — The synthetic farm's input equals the worked example
+**Expected:** every measured value and model range in `examples/synthetic-farm/measurements.csv` equals `tests/fixtures/sim1_pfas.json` (biosolids, soil F1–F5, well with its month, milk; model ranges 0.3–1.1 and 4–17); profile, coverage and pixel-fit objects equal the v0.3 fixtures; the dose scenarios equal the example's assumptions and ATSDR 2023 Table 1; the farm is labelled synthetic and carries no coordinates.
+
+### T37 — The three bad-input examples
+**Expected:** exactly the error and warning codes listed in `examples/bad-input/README.md`; every message names its line and says how to fix it; exit code 1 from the command line; `demo.py` refuses and writes nothing; the synthetic farm exits 0.
+
+### T38 — One command, end to end
+**Expected:** biosolids green, soil green, well yellow, milk green (= T9); F1 printed beside the soil summary as yellow, set by DEC guidance NYUS-28; the soil summary set by the farmland reference NYUS-16; the well set by NYUS-04 and NYUS-32; milk 18 outside the model 4–17 flagged, F1 inside its model recorded as agreement; a seasonal series asked for the well and the milk, not for soil or biosolids; doses 0.45–1.15, 2.51–3.21, 5.50 / 10.22, 4.31 / 6.92, break-even milk 0.26 / 0.022 L/day (= T1, T13); EFSA 2 of 4, lower bound; selection 98 / 16 / 15, 88 gaps, 14 actions, 11 facts (= T25–T26); the card opens with the SYNTHETIC banner and carries no compliance or safety wording.
+
+### T39 — Run record and committed outputs
+**Expected:** skill version from SKILL.md; pack NY-US and its version; sha256 of every input and core file equal to the files; rows used = every row evaluated plus the TWI, each with its check date and verification mark from the pack; no stale row on the run date, every row stale on 2027-06-01; the input warnings carried into the run record; `scripts/demo.py --check` confirms that the committed `passport.json` and `answer-card.md` equal a fresh run.
+
+### T40 — Screening matrix
+**Expected:** every row of `core/screening-map.json` exists in the pack and is in its parameter's canonical unit; every method in the map is named in `references/methods.md`; the nitrate factor equals 1 / NO3_PER_N; one farmland reference per screened soil parameter; the map holds row IDs, never values; `core/screening-matrix.md` equals a fresh render.
+
+### T41 — Status rules through the input folder
+**Input:** throw-away copies of the synthetic farm with one result changed.
+**Expected:** F2 PFOS 3.5 (above the farmland reference 3.0) turns the soil summary yellow; biosolids PFOS 55 → red under the DMM-7 single-result tier (NYUS-08), PFOS 30 → yellow; well PFOS reported as 0.0065 µg/L → converted, same status and reference; well PFOS "<5" → yellow with the flag "depends on censored values" and the warning that the reporting limit is not below the reference, dose printed as the upper bound with the lower bound beside it; well PFOS by EPA 1633 → printed grey, the colour comes from PFOA only; milk never measured → grey with a "never measured" gap, and the dose names the product as not included, never counted as zero.
+
 ## Run log
 
 - 2026-11-01 — v0.2.0 working version: `python3 tests/run_tests.py --date 2026-11-01` → **20 / 20 PASS** (protocol: tests/RUN-LOG.md). First run 19/20: T20 failed honestly (TESTS.md not yet written; a glob path in SKILL.md not resolved by the check) — fixed in the test and the package, re-run passed.
 - 2026-11-01 — mutation check (tests must fail when something is wrong; run on throw-away copies): Q2 nitrate in the fixture 11.4 → 11.0 fails T5, T8, T14; EFSA TWI in the pack 4.4 → 4.0 fails T1, T15; the red rule weakened to "any exceedance" fails T9, T10, T14; milk 18 → 16 in the example text fails T8. The suite detects each.
 - 2026-11-01 — v0.3.0 working version: `python3 tests/run_tests.py --date 2026-11-01` → **31 / 31 PASS** (protocol: tests/RUN-LOG.md). T1–T20 unchanged from v0.2 and still pass with the new threshold rows (T15, T16).
 - 2026-11-01 — v0.3 mutation check on throw-away copies, every mutation caught: confirm rows moved last → T21, T26; consent not first → T21, T26; pixel-fit minimum 9 → 0 → T21, T30; drought cutoff 20 → 30 → T31; "unknown" treated as absent → T21, T25, T26, T30; confirm flag dropped from the NASA request → T21, T30; AEI 28 removed from every row → T21, T22; Welfare Quality "thermal comfort" removed → T21, T23; a milk-panel lab row moved to records → T21, T26, T27; PMO SCC 750 000 → 1 000 000 → T15, T29; FDA aflatoxin M1 reclassed *in force* → T15, T29; core README claims the twin was changed → T28; raw-milk sales switched on → T21, T25. Second round (after the review fixes): laboratory panels sorted alphabetically → T21, T26; partly measured rows not first → T21, T26; licence dropped from the NASA delivery → T21, T30; thermal-comfort proxy note removed → T21, T23; handover left on the old phase names → T28.
+- 2026-11-10 — v0.3.8 working version: `python3 tests/run_tests.py --date 2026-11-10` → **41 / 41 PASS** (protocol: tests/RUN-LOG.md). T1–T34 unchanged and still pass.
+- 2026-11-10 — v0.3.8 mutation check on throw-away copies, every mutation caught: DEC guidance NYUS-28 marked as a farmland reference → T38, T39, T40, T41; the DMM-7 single-result rule removed → T39, T40, T41; the µg/L factor 1000 → 1 → T39, T40, T41; an unmeasured product counted as zero → T41; '<2' accepted in the value column → T37; milk 18 → 16 in the input → T36, T38, T39, T41; a seasonal series asked for soil → T38, T39, T41; green objects named by legal weight instead of the closest reference → T38, T39; the pack version edited without a re-run → T15, T39, T40.
 - Behavioural tests B1–B7 pending first live use.

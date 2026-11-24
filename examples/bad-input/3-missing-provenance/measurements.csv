@@ -1,0 +1,7 @@
+object,parameter,sampled,value,qualifier,reporting_limit,detection_limit,unit,uncertainty,method,laboratory,evidence,low,high,source
+WELL,PFOS,2099-06-01,6.5,,,,ng/L,,EPA 533,Example Lab (illustration),measured,,,illustration
+WELL,PFOA,2025-10,3.8,,,,ng/L,,,,measured,,,illustration
+WELL,nitrate (as N),,8.9,,,,mg/L as N,,,Example Lab (illustration),measured,,,illustration
+MILK,PFOS,2025,18,,,,ng/L,,FDA C-010.03,Example Lab (illustration),measured,,,illustration
+MILK,PFOS,2025,21,,,,ng/L,,FDA C-010.03,Example Lab (illustration),measured,,,illustration
+MILK,PFOS,,,,,,ng/L,,,,modelled,,,a milk model without its range

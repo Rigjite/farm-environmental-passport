@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Farm indicator catalogue: loading, selection by farm profile, gap registry,
-NASA request for the data agent, pixel-fit check (v0.3.0). Standard library only. Apache-2.0.
+NASA request for the data agent, pixel-fit check (since v0.3.0). Standard library only. Apache-2.0.
 
 Selection discipline (shared with the Ecosystem Digital Twin catalogue, §18–§19):
   core          — selected whenever the component is present (applies_if)

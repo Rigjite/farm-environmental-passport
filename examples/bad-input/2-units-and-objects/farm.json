@@ -1,0 +1,26 @@
+{
+ "passport_input": "farm-environmental-passport/input@1",
+ "farm_id": "BAD-2",
+ "name": "Illustration of input errors — not a farm",
+ "synthetic": true,
+ "about": "Units the references cannot be compared with, an object that was never declared, a drinking-water result by a non-drinking-water method. Expected: errors unit-not-accepted (twice), wet-weight, unknown-object; warning method-not-valid (the result is printed grey).",
+ "jurisdiction": "NY-US",
+ "consent": {
+  "recorded": false,
+  "date": null,
+  "scope": null,
+  "note": "illustration of input errors — not a farm"
+ },
+ "objects": [
+  {
+   "id": "WELL",
+   "label": "Well",
+   "matrix": "well-drinking"
+  },
+  {
+   "id": "F1",
+   "label": "Field F1, 0–20 cm",
+   "matrix": "soil"
+  }
+ ]
+}

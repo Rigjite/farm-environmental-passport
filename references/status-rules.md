@@ -34,6 +34,16 @@ An object compared with several references takes the **worst** status among them
 
 Red means a sustained exceedance under the source's own rule — never a single sample, unless the source itself acts on a single result (DMM-7 tiers are such a case).
 
+## 3a. A group of fields (since v0.3.8)
+
+Fields of one farm sampled for the same question (soil of the application fields and a control field) are printed as one summary line with the individual fields beside it. The rule, as applied in the worked example (PFAS example §3.2):
+
+- Each field takes the worst status among all its references (§3, unchanged).
+- The **summary** of the group takes the worst status among the references written for **farmland** or rural soil.
+- A reference written for **another land use** (for example DEC soil guidance for remedial sites, unrestricted use or protection of groundwater) sets the status of the individual field and is named beside the summary — "green; F1 yellow" — but it does not set the summary. Such a reference is guidance or orientation, so the field's colour from it is yellow at most.
+
+Which reference is written for farmland is recorded per row in `core/screening-map.json` (`fit`) and rendered in `core/screening-matrix.md`. Without a farmland reference for a parameter, the summary is grey for that parameter and the fields carry their own colours.
+
 ## 4. Censored values (below the reporting limit)
 
 - A result reported as `<RL` is stored as censored with its reporting limit — never as 0, never as missing.

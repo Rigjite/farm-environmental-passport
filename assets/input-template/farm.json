@@ -1,0 +1,103 @@
+{
+ "passport_input": "farm-environmental-passport/input@1",
+ "farm_id": "FARM-CODE",
+ "name": "",
+ "synthetic": false,
+ "jurisdiction": "NY-US",
+ "consent": {
+  "recorded": false,
+  "date": null,
+  "scope": null,
+  "note": "the farm's written consent (indicator X-07): set recorded = true, the date and the scope once signed — nothing is computed before"
+ },
+ "objects": [
+  {
+   "id": "WELL",
+   "label": "Drinking well — depth, position on the farm",
+   "matrix": "well-drinking",
+   "dose_role": "drinking_water",
+   "geometry": null
+  },
+  {
+   "id": "MILK",
+   "label": "Milk, bulk tank",
+   "matrix": "milk",
+   "dose_role": "product"
+  },
+  {
+   "id": "BIO",
+   "label": "Biosolids — source plant, class",
+   "matrix": "biosolids"
+  },
+  {
+   "id": "F1",
+   "label": "Field F1 — seasons of application, depth 0–20 cm",
+   "matrix": "soil",
+   "geometry": null
+  }
+ ],
+ "dose_scenarios": [
+  {
+   "role": "off_farm_adult",
+   "label": "Off-farm adult — farm product only",
+   "bw_kg": 80.0,
+   "cases": [
+    {
+     "label": "product only — consumption not sourced"
+    }
+   ],
+   "break_even": true,
+   "source": "ATSDR (2023), Exposure Dose Guidance for Water Ingestion, Table 1: adult body weight 80 kg; without a cited product intake the card prints the break-even intake"
+  },
+  {
+   "role": "resident_adult",
+   "label": "Resident adult — farm product and well water",
+   "bw_kg": 80.0,
+   "cases": [
+    {
+     "label": "mean water",
+     "water_l_day": 1.313
+    },
+    {
+     "label": "95th percentile water",
+     "water_l_day": 3.229
+    }
+   ],
+   "break_even": true,
+   "source": "ATSDR (2023), Table 1: adult 1,313 / 3,229 mL/day at 80 kg"
+  },
+  {
+   "role": "infant_formula_well_water",
+   "label": "Infant fed formula made with well water",
+   "bw_kg": 7.8,
+   "cases": [
+    {
+     "label": "mean water",
+     "water_l_day": 0.595
+    },
+    {
+     "label": "95th percentile",
+     "water_l_day": 1.106
+    }
+   ],
+   "source": "ATSDR (2023), Table 1: infant under 1 year, 595 / 1,106 mL/day at 7.8 kg"
+  },
+  {
+   "role": "young_child_resident",
+   "label": "Young child resident, 1 to under 2 years",
+   "bw_kg": 11.4,
+   "cases": [
+    {
+     "label": "mean water",
+     "water_l_day": 0.245
+    },
+    {
+     "label": "95th percentile water",
+     "water_l_day": 0.658
+    }
+   ],
+   "break_even": true,
+   "source": "ATSDR (2023), Table 1: child 1 to under 2 years, 245 / 658 mL/day at 11.4 kg"
+  }
+ ]
+}

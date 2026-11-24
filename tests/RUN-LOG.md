@@ -1,8 +1,8 @@
-# Test run — farm-environmental-passport v0.3.7
+# Test run — farm-environmental-passport v0.3.8
 
-Date: 2026-11-06  ·  Python 3.13.18  ·  runner: tests/run_tests.py
+Date: 2026-11-10  ·  Python 3.13.18  ·  runner: tests/run_tests.py
 
-**Result: 34 / 34 PASS**
+**Result: 41 / 41 PASS**
 
 | Test | Title | Result |
 |---|---|---|
@@ -40,6 +40,13 @@ Date: 2026-11-06  ·  Python 3.13.18  ·  runner: tests/run_tests.py
 | T32 | DEC soil guidance: F1 PFOS above the unrestricted value (new 2026-11-05) | PASS |
 | T33 | DEC groundwater guidance: well PFOS above the Class GA value (new 2026-11-05) | PASS |
 | T34 | DEC soil guidance: F2 PFOS below the 75 % watch fraction (new 2026-11-05) | PASS |
+| T35 | Input template and format description (v0.3.8) | PASS |
+| T36 | Synthetic farm input equals the worked example (no drift) | PASS |
+| T37 | Input check: the three bad-input examples | PASS |
+| T38 | Demo end to end: the PFAS example's card from the input folder | PASS |
+| T39 | Run record and committed outputs | PASS |
+| T40 | Screening matrix: map, pack, units and methods agree | PASS |
+| T41 | Status rules through the input folder: group summary, single-result tier, censoring | PASS |
 
 ## Detail
 
@@ -197,10 +204,10 @@ ok  same object, two packs, different binding reference — both printed
 
 ```
 ok  NY-US: all 36 rows complete, vocabulary valid
-ok  NY-US: stale rows on 2026-11-06: got [], expected []
+ok  NY-US: stale rows on 2026-11-10: got [], expected []
 ok  NY-US: every row stale on 2027-06-01 (mechanism works)
 ok  EU: all 30 rows complete, vocabulary valid
-ok  EU: stale rows on 2026-11-06: got [], expected []
+ok  EU: stale rows on 2026-11-10: got [], expected []
 ok  EU: every row stale on 2027-06-01 (mechanism works)
 ok  core/thresholds.md equals a fresh render of the JSON packs
 ok  EU pack covers drinking water, EFSA, soil
@@ -252,8 +259,8 @@ ok  stream stays yellow on phosphorus (orientation): got 'yellow', expected 'yel
 ### T20 — Package structure; v0.1.0 untouched: PASS
 
 ```
-ok  frontmatter version 0.3.7
-ok  all 31 paths named in SKILL.md exist
+ok  frontmatter version 0.3.8
+ok  all 39 paths named in SKILL.md exist
 ok  CHANGELOG.md present
 ok  v0.1.0 SKILL.md unchanged
 ```
@@ -428,4 +435,128 @@ ok  F2 share of the guidance value < 75 %
 ok  F2 0.65 vs 0.88 -> green: got 'green', expected 'green'
 ```
 
-Behavioural tests B1–B5 (tests/TESTS.md) are not executable here: pending first live use.
+### T35 — Input template and format description (v0.3.8): PASS
+
+```
+ok  template header = the format's columns: got ['object', 'parameter', 'sampled', 'value', 'qualifier', 'reporting_limit', 'detection_limit', 'unit', 'uncertainty', 'method', 'laboratory', 'evidence', 'low', 'high', 'source'], expected ['object', 'parameter', 'sampled', 'value', 'qualifier', 'reporting_limit', 'detection_limit', 'unit', 'uncertainty', 'method', 'laboratory', 'evidence', 'low', 'high', 'source']
+ok  empty template: the only error is the missing consent of a real farm: got ['consent-missing'], expected ['consent-missing']
+ok  every column is described in references/input-format.md
+ok  every matrix of the screening map is named in the format description
+ok  synthetic farm: no errors: got [], expected []
+ok  synthetic farm: warnings only for what the example does not state: got ['basis-not-stated', 'date-not-stated', 'method-not-stated'], expected ['basis-not-stated', 'date-not-stated', 'method-not-stated']
+ok  warnings are merged for display: one message per kind — 26 row warnings → 3 messages
+```
+
+### T36 — Synthetic farm input equals the worked example (no drift): PASS
+
+```
+ok  biosolids PFOS, PFOA: got (12.0, 5.0), expected (12.0, 5.0)
+ok  soil F1–F5 PFOS, PFOA: got {'F1': (0.9, 0.4), 'F2': (0.65, 0.3), 'F3': (0.5, 0.22), 'F4': (0.35, 0.18), 'F5': (0.15, 0.08)}, expected {'F1': (0.9, 0.4), 'F2': (0.65, 0.3), 'F3': (0.5, 0.22), 'F4': (0.35, 0.18), 'F5': (0.15, 0.08)}
+ok  well PFOS, PFOA and month: got (6.5, 3.8, '2025-10'), expected (6.5, 3.8, '2025-10')
+ok  milk PFOS: got 18.0, expected 18.0
+ok  milk model range: got [4.0, 17.0], expected [4.0, 17.0]
+ok  F1 soil model range: got [0.3, 1.1], expected [0.3, 1.1]
+ok  measured results (15) = values of the example: got 15, expected 15
+ok  profile = tests/fixtures/sim_farm_profile.json
+ok  coverage = tests/fixtures/sim_measured.json
+ok  pixel_fit = tests/fixtures/sim_objects.json
+ok  resident adult = example assumptions (70 kg, milk 0.25–0.64, water 2): got (70.0, [0.25, 0.64], 2.0), expected (70.0, [0.25, 0.64], 2.0)
+ok  infant and child = ATSDR 2023 Table 1 as in T13: got (7.8, [0.595, 1.106], 11.4, [0.245, 0.658]), expected (7.8, [0.595, 1.106], 11.4, [0.245, 0.658])
+ok  farm is labelled synthetic; no geometry (no real coordinates)
+```
+
+### T37 — Input check: the three bad-input examples: PASS
+
+```
+ok  1-censored-written-as-text: errors: got ['censored-as-text', 'censored-as-text', 'decimal-comma', 'rl-missing'], expected ['censored-as-text', 'censored-as-text', 'decimal-comma', 'rl-missing']
+ok  1-censored-written-as-text: warnings: got [], expected []
+ok  1-censored-written-as-text: every message says how to fix it
+ok  1-censored-written-as-text: every row message names its line
+ok  1-censored-written-as-text: every code is named in examples/bad-input/README.md
+ok  1-censored-written-as-text: command-line exit code: got 1, expected 1
+ok  1-censored-written-as-text: demo refuses and writes nothing
+ok  2-units-and-objects: errors: got ['unit-not-accepted', 'unit-not-accepted', 'unknown-object', 'wet-weight'], expected ['unit-not-accepted', 'unit-not-accepted', 'unknown-object', 'wet-weight']
+ok  2-units-and-objects: warnings: got ['method-not-valid'], expected ['method-not-valid']
+ok  2-units-and-objects: every message says how to fix it
+ok  2-units-and-objects: every row message names its line
+ok  2-units-and-objects: every code is named in examples/bad-input/README.md
+ok  2-units-and-objects: command-line exit code: got 1, expected 1
+ok  2-units-and-objects: demo refuses and writes nothing
+ok  3-missing-provenance: errors: got ['consent-missing', 'date-in-future', 'date-missing', 'dose-scenarios-missing', 'duplicate-event', 'method-missing', 'model-range'], expected ['consent-missing', 'date-in-future', 'date-missing', 'dose-scenarios-missing', 'duplicate-event', 'method-missing', 'model-range']
+ok  3-missing-provenance: warnings: got [], expected []
+ok  3-missing-provenance: every message says how to fix it
+ok  3-missing-provenance: every row message names its line
+ok  3-missing-provenance: every code is named in examples/bad-input/README.md
+ok  3-missing-provenance: command-line exit code: got 1, expected 1
+ok  3-missing-provenance: demo refuses and writes nothing
+ok  synthetic farm: exit code 0 (warnings only): got 0, expected 0
+```
+
+### T38 — Demo end to end: the PFAS example's card from the input folder: PASS
+
+```
+ok  statuses = the example (T9): got {'biosolids': 'green', 'soil': 'green', 'well': 'yellow', 'milk': 'green'}, expected {'biosolids': 'green', 'soil': 'green', 'well': 'yellow', 'milk': 'green'}
+ok  soil: F1 printed beside the summary, set by DEC guidance NYUS-28: got [('F1', 'yellow', 'NYUS-28')], expected [('F1', 'yellow', 'NYUS-28')]
+ok  soil summary set by the farmland reference NYUS-16: got 'NYUS-16', expected 'NYUS-16'
+ok  well set by the future EPA MCL and the DEC groundwater guidance: got ['NYUS-04', 'NYUS-32'], expected ['NYUS-04', 'NYUS-32']
+ok  milk: measured 18 outside the model 4–17 is flagged, not smoothed
+ok  F1 soil: measurement inside the model range is recorded as agreement
+ok  well and milk: one sampling event in a seasonal medium is flagged
+ok  soil and biosolids are not asked for a seasonal series
+ok  off-farm adult (milk only): got [0.45, 1.15], expected [0.45, 1.15]
+ok  resident adult (milk + water): got [2.51, 3.21], expected [2.51, 3.21]
+ok  infant formula, mean / 95th: got [5.5, 10.22], expected [5.5, 10.22]
+ok  young child, mean / 95th water + milk 0.25: got [4.31, 6.92], expected [4.31, 6.92]
+ok  break-even farm milk for the child (T13): got (0.26, 0.022), expected (0.26, 0.022)
+ok  EFSA four: 2 of 4, lower bound: got (2, ['PFNA', 'PFHxS'], True), expected (2, ['PFNA', 'PFHxS'], True)
+ok  selection / to confirm / left out / gaps / actions / facts (T25–T26): got (98, 16, 15, 88, 14, 11), expected (98, 16, 15, 88, 14, 11)
+ok  first action: consent: got 'consent', expected 'consent'
+ok  card opens with the SYNTHETIC banner
+ok  no compliance or safety wording on the card
+ok  card prints 'green; F1 yellow' for the soil
+```
+
+### T39 — Run record and committed outputs: PASS
+
+```
+ok  skill version = SKILL.md frontmatter: got '0.3.8', expected '0.3.8'
+ok  threshold pack and version: got ('NY-US', '2026-11-05'), expected ('NY-US', '2026-11-05')
+ok  sha256 of every input file is the file's own
+ok  sha256 of every core file is the file's own
+ok  rows used = every row evaluated, plus the TWI: got ['NYUS-01', 'NYUS-02', 'NYUS-03', 'NYUS-04', 'NYUS-07', 'NYUS-08', 'NYUS-10', 'NYUS-14', 'NYUS-16', 'NYUS-27', 'NYUS-28', 'NYUS-31', 'NYUS-32', 'NYUS-33', 'NYUS-34', 'NYUS-35'], expected ['NYUS-01', 'NYUS-02', 'NYUS-03', 'NYUS-04', 'NYUS-07', 'NYUS-08', 'NYUS-10', 'NYUS-14', 'NYUS-16', 'NYUS-27', 'NYUS-28', 'NYUS-31', 'NYUS-32', 'NYUS-33', 'NYUS-34', 'NYUS-35']
+ok  each row used carries its check date and verification mark from the pack
+ok  stale rows on the run date: got [], expected []
+ok  every row used is stale on 2027-06-01 (expiry reaches the passport): got 16, expected 16
+ok  input warnings carried into the run record: got ['basis-not-stated', 'date-not-stated', 'method-not-stated'], expected ['basis-not-stated', 'date-not-stated', 'method-not-stated']
+ok  committed passport.json and answer-card.md equal a fresh run (demo.py --check)
+```
+
+### T40 — Screening matrix: map, pack, units and methods agree: PASS
+
+```
+ok  every row in the map exists in the pack — 20 mappings
+ok  every mapped row is in its parameter's canonical unit (no silent unit mismatch)
+ok  every method in the map is named in references/methods.md — EPA 1633, EPA 533, EPA 537.1, FDA C-010.03, ISO/IEC 17025
+ok  nitrate as NO3 → as N factor = 1 / passport_calc.NO3_PER_N: got 0.225897, expected 0.225897
+ok  soil: one farmland reference per screened parameter
+ok  the map holds row IDs, never values
+ok  core/screening-matrix.md equals a fresh render
+```
+
+### T41 — Status rules through the input folder: group summary, single-result tier, censoring: PASS
+
+```
+ok  F2 PFOS 3.5 above the farmland reference 3.0 (orientation) → summary yellow: got ('yellow', 'NYUS-16'), expected ('yellow', 'NYUS-16')
+ok  biosolids PFOS 55: DMM-7 acts on a single result → red, set by NYUS-08: got ('red', 'NYUS-08'), expected ('red', 'NYUS-08')
+ok  biosolids PFOS 30: above 20, below 50, one result → yellow (not sustained): got 'yellow', expected 'yellow'
+ok  well PFOS '<5' against references 2.7 and 4.0 → the worse bound sets yellow: got 'yellow', expected 'yellow'
+ok  flag 'depends on censored values' raised
+ok  warning: reporting limit not below the lowest reference
+ok  censored PFOS: dose printed as the upper bound, the lower bound kept beside it
+ok  well PFOS reported as 0.0065 µg/L is converted to 6.5 ng/L: same status and reference: got ('yellow', 'NYUS-04', 6.5), expected ('yellow', 'NYUS-04', 6.5)
+ok  well PFOS by EPA 1633 (not a drinking-water method) is printed grey: the colour comes from PFOA only
+ok  milk never measured → grey, with a 'never measured' gap: got ('grey', ['never measured']), expected ('grey', ['never measured'])
+ok  …and the dose names the product as not included (never counted as zero): got ['product'], expected ['product']
+```
+
+Behavioural tests B1–B7 (tests/TESTS.md) are not executable here: pending first live use.

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Farm Environmental Passport — calculation core (v0.2.0).
+Farm Environmental Passport — calculation core (since v0.2.0).
 
 Every number a passport prints is computed here, from inputs that carry a
 class (measured / modelled / never measured) and a provenance line. The core

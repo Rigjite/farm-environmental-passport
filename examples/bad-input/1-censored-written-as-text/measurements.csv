@@ -1,0 +1,5 @@
+object,parameter,sampled,value,qualifier,reporting_limit,detection_limit,unit,uncertainty,method,laboratory,evidence,low,high,source
+WELL,PFOS,2025-10,<2,,,,ng/L,,EPA 533,synthetic,measured,,,illustration
+WELL,PFOA,2025-10,ND,,,,ng/L,,EPA 533,synthetic,measured,,,illustration
+WELL,PFNA,2025-10,,<,,,ng/L,,EPA 533,synthetic,measured,,,illustration
+WELL,PFHxS,2025-10,"3,1",,,,ng/L,,EPA 533,synthetic,measured,,,illustration

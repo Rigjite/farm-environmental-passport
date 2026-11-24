@@ -1,0 +1,303 @@
+{
+  "map": "screening-map",
+  "version": "2026-11-10",
+  "pack": "NY-US",
+  "about": "Which threshold rows apply to which matrix and parameter, in which unit, with which analytical method. Read by scripts/validate_input.py and scripts/demo.py; rendered to core/screening-matrix.md by scripts/render_matrix.py. Values, legal status and dates live only in the packs (core/thresholds/*.json): this file holds row IDs, never numbers. A matrix with 'series' is a medium that varies by season: one sampling event there is flagged with the closing sample. Covers Module 1 (PFAS) and well nitrate for the New York / US federal pack; other modules and the EU pack are not mapped yet.",
+  "fit_legend": {
+    "object": "the row applies to the object directly (default)",
+    "farmland": "a reference written for farmland or rural soil; sets the summary status of a group of fields",
+    "other land use": "a reference written for another land use (e.g. remedial-site soil guidance); sets the status of the individual field, is printed beside the group summary, and does not set the group summary (references/status-rules.md §3a)"
+  },
+  "unit_sets": {
+    "solid_ug_kg": {
+      "canonical": "µg/kg",
+      "basis": "dry weight",
+      "aliases": {
+        "µg/kg": 1,
+        "ug/kg": 1,
+        "ng/g": 1,
+        "ppb": 1,
+        "µg/kg dw": 1,
+        "ug/kg dw": 1,
+        "ng/g dw": 1,
+        "ppb dw": 1
+      },
+      "wet_aliases": [
+        "µg/kg ww",
+        "ug/kg ww",
+        "ng/g ww",
+        "ppb ww"
+      ]
+    },
+    "water_ng_l": {
+      "canonical": "ng/L",
+      "aliases": {
+        "ng/L": 1,
+        "ng/l": 1,
+        "ppt": 1,
+        "µg/L": 1000,
+        "ug/L": 1000,
+        "µg/l": 1000,
+        "ug/l": 1000
+      }
+    },
+    "nitrate_mg_l_n": {
+      "canonical": "mg/L as N",
+      "aliases": {
+        "mg/L as N": 1,
+        "mg/l as N": 1,
+        "mg/L NO3-N": 1,
+        "mg/L as NO3": 0.225897,
+        "mg/l as NO3": 0.225897
+      },
+      "note": "0.225897 = 14.0067 / 62.0049 (nitrate ion to nitrogen); a nitrate result without its basis (as N or as NO3) is refused"
+    }
+  },
+  "matrices": {
+    "biosolids": {
+      "label": "biosolids applied to the fields (sampled at the source)",
+      "parameters": {
+        "PFOS": {
+          "unit_set": "solid_ug_kg",
+          "methods": [
+            "EPA 1633"
+          ],
+          "references": [
+            {
+              "row": "NYUS-07"
+            },
+            {
+              "row": "NYUS-08",
+              "single_result_acts": true
+            }
+          ]
+        },
+        "PFOA": {
+          "unit_set": "solid_ug_kg",
+          "methods": [
+            "EPA 1633"
+          ],
+          "references": [
+            {
+              "row": "NYUS-07"
+            },
+            {
+              "row": "NYUS-08",
+              "single_result_acts": true
+            }
+          ]
+        },
+        "PFNA": {
+          "unit_set": "solid_ug_kg",
+          "methods": [
+            "EPA 1633"
+          ],
+          "references": []
+        },
+        "PFHxS": {
+          "unit_set": "solid_ug_kg",
+          "methods": [
+            "EPA 1633"
+          ],
+          "references": []
+        }
+      }
+    },
+    "soil": {
+      "label": "field soil (state the depth in the object label)",
+      "group": "soil",
+      "parameters": {
+        "PFOS": {
+          "unit_set": "solid_ug_kg",
+          "methods": [
+            "EPA 1633"
+          ],
+          "references": [
+            {
+              "row": "NYUS-16",
+              "fit": "farmland"
+            },
+            {
+              "row": "NYUS-28",
+              "fit": "other land use"
+            },
+            {
+              "row": "NYUS-34",
+              "fit": "other land use"
+            }
+          ]
+        },
+        "PFOA": {
+          "unit_set": "solid_ug_kg",
+          "methods": [
+            "EPA 1633"
+          ],
+          "references": [
+            {
+              "row": "NYUS-35",
+              "fit": "farmland"
+            },
+            {
+              "row": "NYUS-27",
+              "fit": "other land use"
+            },
+            {
+              "row": "NYUS-33",
+              "fit": "other land use"
+            }
+          ]
+        },
+        "PFNA": {
+          "unit_set": "solid_ug_kg",
+          "methods": [
+            "EPA 1633"
+          ],
+          "references": []
+        },
+        "PFHxS": {
+          "unit_set": "solid_ug_kg",
+          "methods": [
+            "EPA 1633"
+          ],
+          "references": []
+        }
+      }
+    },
+    "well-drinking": {
+      "label": "private well used for drinking (people and herd)",
+      "series": {
+        "closing": "a quarterly series for one year, the full EFSA four by EPA 533 or 537.1 (references/methods.md §3, item 2)"
+      },
+      "parameters": {
+        "PFOS": {
+          "unit_set": "water_ng_l",
+          "methods": [
+            "EPA 533",
+            "EPA 537.1"
+          ],
+          "references": [
+            {
+              "row": "NYUS-02"
+            },
+            {
+              "row": "NYUS-04"
+            },
+            {
+              "row": "NYUS-32"
+            }
+          ]
+        },
+        "PFOA": {
+          "unit_set": "water_ng_l",
+          "methods": [
+            "EPA 533",
+            "EPA 537.1"
+          ],
+          "references": [
+            {
+              "row": "NYUS-01"
+            },
+            {
+              "row": "NYUS-03"
+            },
+            {
+              "row": "NYUS-31"
+            }
+          ]
+        },
+        "PFNA": {
+          "unit_set": "water_ng_l",
+          "methods": [
+            "EPA 533",
+            "EPA 537.1"
+          ],
+          "references": [
+            {
+              "row": "NYUS-05"
+            }
+          ]
+        },
+        "PFHxS": {
+          "unit_set": "water_ng_l",
+          "methods": [
+            "EPA 533",
+            "EPA 537.1"
+          ],
+          "references": [
+            {
+              "row": "NYUS-05"
+            }
+          ]
+        },
+        "nitrate (as N)": {
+          "unit_set": "nitrate_mg_l_n",
+          "methods": [],
+          "references": [
+            {
+              "row": "NYUS-06"
+            }
+          ]
+        }
+      }
+    },
+    "milk": {
+      "label": "cow's milk, bulk tank",
+      "series": {
+        "closing": "a repeat bulk-tank sample by an FDA-type food method, repeated where model and measurement disagree (references/methods.md §3, item 3)"
+      },
+      "parameters": {
+        "PFOS": {
+          "unit_set": "water_ng_l",
+          "methods": [
+            "FDA C-010.03",
+            "ISO/IEC 17025"
+          ],
+          "references": [
+            {
+              "row": "NYUS-14"
+            }
+          ]
+        },
+        "PFOA": {
+          "unit_set": "water_ng_l",
+          "methods": [
+            "FDA C-010.03",
+            "ISO/IEC 17025"
+          ],
+          "references": []
+        },
+        "PFNA": {
+          "unit_set": "water_ng_l",
+          "methods": [
+            "FDA C-010.03",
+            "ISO/IEC 17025"
+          ],
+          "references": []
+        },
+        "PFHxS": {
+          "unit_set": "water_ng_l",
+          "methods": [
+            "FDA C-010.03",
+            "ISO/IEC 17025"
+          ],
+          "references": []
+        }
+      }
+    }
+  },
+  "dose": {
+    "twi_row": "NYUS-10",
+    "efsa_four": [
+      "PFOS",
+      "PFOA",
+      "PFNA",
+      "PFHxS"
+    ],
+    "mandatory_roles": [
+      "off_farm_adult",
+      "resident_adult",
+      "infant_formula_well_water",
+      "young_child_resident"
+    ]
+  }
+}

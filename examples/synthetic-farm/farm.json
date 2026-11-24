@@ -1,0 +1,268 @@
+{
+ "passport_input": "farm-environmental-passport/input@1",
+ "farm_id": "SIM-DAIRY-01",
+ "name": "Synthetic dairy farm, Delaware County, New York",
+ "synthetic": true,
+ "about": "The synthetic farm of the worked examples, in the input format of v0.3.8. Every laboratory value is invented and labelled as such; it is copied unchanged from the PFAS example (examples/FARM-PFAS-SIMULATION-2026-10-31-r7.en.md, sections 3–4) and equals tests/fixtures/sim1_pfas.json (checked by a test). Sampling dates, methods and laboratories are written exactly as the example gives them: where the example names none, the cell says 'not stated' or 'synthetic'. No real coordinates.",
+ "jurisdiction": "NY-US",
+ "consent": {
+  "recorded": false,
+  "date": null,
+  "scope": null,
+  "note": "synthetic farm — there is no farm to consent; a real farm needs its written consent (indicator X-07) before anything is computed"
+ },
+ "objects": [
+  {
+   "id": "BIO",
+   "label": "Biosolids — class B, small municipal plants",
+   "matrix": "biosolids"
+  },
+  {
+   "id": "F1",
+   "label": "Field F1 — 10 seasons of biosolids, 0–20 cm",
+   "matrix": "soil"
+  },
+  {
+   "id": "F2",
+   "label": "Field F2 — 7 seasons, 0–20 cm",
+   "matrix": "soil"
+  },
+  {
+   "id": "F3",
+   "label": "Field F3 — 5 seasons, 0–20 cm",
+   "matrix": "soil"
+  },
+  {
+   "id": "F4",
+   "label": "Field F4 — 3 seasons, 0–20 cm",
+   "matrix": "soil"
+  },
+  {
+   "id": "F5",
+   "label": "Field F5 — control, no biosolids, 0–20 cm",
+   "matrix": "soil"
+  },
+  {
+   "id": "WELL",
+   "label": "Well, 35 m, farmstead — people and herd",
+   "matrix": "well-drinking",
+   "dose_role": "drinking_water"
+  },
+  {
+   "id": "MILK",
+   "label": "Milk, bulk tank",
+   "matrix": "milk",
+   "dose_role": "product"
+  }
+ ],
+ "dose_scenarios": [
+  {
+   "role": "off_farm_adult",
+   "label": "Off-farm adult — farm milk only",
+   "bw_kg": 70.0,
+   "cases": [
+    {
+     "label": "milk 0.25 L/day",
+     "milk_l_day": 0.25
+    },
+    {
+     "label": "milk 0.64 L/day",
+     "milk_l_day": 0.64
+    }
+   ],
+   "source": "worked example assumption (examples/FARM-PFAS-SIMULATION-2026-10-31-r7.en.md §4): 70 kg, milk 0.25–0.64 L/day"
+  },
+  {
+   "role": "resident_adult",
+   "label": "Resident adult — farm milk and well water",
+   "bw_kg": 70.0,
+   "cases": [
+    {
+     "label": "milk 0.25 L/day, water 2 L/day",
+     "milk_l_day": 0.25,
+     "water_l_day": 2.0
+    },
+    {
+     "label": "milk 0.64 L/day, water 2 L/day",
+     "milk_l_day": 0.64,
+     "water_l_day": 2.0
+    }
+   ],
+   "source": "worked example: ATSDR 2005 adult default (2 L/day, 70 kg), kept in the example; new cards use ATSDR 2023 (references/dose-scenarios.md)"
+  },
+  {
+   "role": "infant_formula_well_water",
+   "label": "Infant fed formula made with well water",
+   "bw_kg": 7.8,
+   "cases": [
+    {
+     "label": "mean water intake",
+     "water_l_day": 0.595
+    },
+    {
+     "label": "95th percentile",
+     "water_l_day": 1.106
+    }
+   ],
+   "source": "ATSDR (2023), Exposure Dose Guidance for Water Ingestion, Table 1 (EPA EFH 2019): infant under 1 year"
+  },
+  {
+   "role": "young_child_resident",
+   "label": "Young child resident, 1 to under 2 years",
+   "bw_kg": 11.4,
+   "cases": [
+    {
+     "label": "mean water, milk 0.25 L/day",
+     "water_l_day": 0.245,
+     "milk_l_day": 0.25
+    },
+    {
+     "label": "95th percentile water, milk 0.25 L/day",
+     "water_l_day": 0.658,
+     "milk_l_day": 0.25
+    }
+   ],
+   "break_even": true,
+   "source": "ATSDR (2023), Table 1: child 1 to under 2 years; milk 0.25 L/day — worked example assumption"
+  }
+ ],
+ "profile": {
+  "crops": true,
+  "forage": true,
+  "row_crops": "unknown",
+  "vegetables": false,
+  "pesticides": "unknown",
+  "livestock": true,
+  "dairy": true,
+  "beef": false,
+  "pigs": false,
+  "poultry": false,
+  "sheep": false,
+  "grazing": true,
+  "housed": "unknown",
+  "calves": "unknown",
+  "biosolids": true,
+  "manure": "unknown",
+  "irrigation": "unknown",
+  "tile_drains": "unknown",
+  "drinking_well": true,
+  "stream": true,
+  "pond": true,
+  "eutrophic_pond": true,
+  "animal_access_pond": "unknown",
+  "sells_milk": true,
+  "sells_meat": true,
+  "sells_eggs": false,
+  "raw_milk_sales": false,
+  "public_access": false,
+  "purchased_grain": true,
+  "cottonseed": "unknown",
+  "drought_year": "unknown",
+  "heavy_machinery": true,
+  "near_afff": "unknown",
+  "industry_near": "unknown",
+  "geogenic_risk": "unknown",
+  "insect_pollinated": "unknown",
+  "protected_area_near": "unknown",
+  "floodplain": "unknown",
+  "arid": false,
+  "road_salt": "unknown"
+ },
+ "coverage": {
+  "A-01": {
+   "source": "example 1 §1 (field map, crops)"
+  },
+  "A-16": {
+   "source": "example 1 §3.2",
+   "partial": true,
+   "missing": "PFNA, PFHxS and the rest of the method list; depth below 20 cm"
+  },
+  "A-24": {
+   "source": "make_figs2.py (mineral N 600 kg/yr)"
+  },
+  "A-25": {
+   "source": "examples 1–2 (3 dry t/acre; N and P of the product)"
+  },
+  "L-01": {
+   "source": "make_figs2.py (80 cows; culls; heifers sold)"
+  },
+  "L-03": {
+   "source": "make_figs2.py (10 500 kg/cow/yr)"
+  },
+  "L-04": {
+   "source": "examples 1–2 (22 kg DM/day, 60 % own forage)"
+  },
+  "L-05": {
+   "source": "make_figs2.py (feed N and P fractions)"
+  },
+  "L-09": {
+   "source": "example 1 (same well)",
+   "partial": true,
+   "missing": "coliforms, TDS; PFAS panel incomplete"
+  },
+  "L-40": {
+   "source": "example 1 §3.4 (tank milk)",
+   "partial": true,
+   "missing": "PFOA, PFNA, PFHxS in milk; meat of cull cows not tested"
+  },
+  "X-01": {
+   "source": "example 1 §3.1",
+   "partial": true,
+   "missing": "PFNA, PFHxS and the rest of the method list"
+  },
+  "E-01": {
+   "source": "example 1 §3.3 (one sample)",
+   "partial": true,
+   "missing": "PFNA, PFHxS; quarterly series; method EPA 533/537.1"
+  },
+  "E-02": {
+   "source": "example 2 §3.1 (four quarters)",
+   "partial": true,
+   "missing": "nitrite"
+  },
+  "E-05": {
+   "source": "example 2 §3.2 (monthly TP)",
+   "partial": true,
+   "missing": "nitrate, suspended solids"
+  },
+  "E-06": {
+   "source": "example 2 §3.2 (one event sample)",
+   "partial": true,
+   "missing": "seasonal series for geometric mean and percentile"
+  },
+  "E-08": {
+   "source": "example 2 §3.3 (seasonal TP, chl-a)",
+   "partial": true,
+   "missing": "Secchi depth; monthly values"
+  },
+  "E-11": {
+   "source": "example 2 §4.1 (records-derived)"
+  },
+  "E-12": {
+   "source": "example 2 §4.2 (records-derived)"
+  },
+  "E-13": {
+   "source": "example 2 §4.3 (modelled)"
+  },
+  "E-14": {
+   "source": "example 1 §1 (30 m from the farm design)",
+   "partial": true,
+   "missing": "measured width and vegetation condition"
+  }
+ },
+ "pixel_fit": {
+  "E-08": {
+   "area_m2": 2000
+  },
+  "E-14": {
+   "width_m": 30,
+   "length_m": 700
+  },
+  "A-28": {
+   "area_m2": 48562
+  },
+  "A-11": {
+   "area_m2": 48562
+  }
+ }
+}

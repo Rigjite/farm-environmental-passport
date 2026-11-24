@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Executable tests for farm-environmental-passport v0.3.x (T1–T34 in tests/TESTS.md).
+Executable tests for farm-environmental-passport v0.3.x (T1–T41 in tests/TESTS.md).
 
 Expected values come from the two worked examples (the task's key numbers) and from
 hand calculations written next to each check — never from the code under test.
@@ -426,7 +426,7 @@ def t19(c):
 @test("T20", "Package structure; v0.1.0 untouched")
 def t20(c):
     skill = (ROOT / "SKILL.md").read_text(encoding="utf-8")
-    c.true("frontmatter version 0.3.7", re.search(r"^version: 0\.3\.7$", skill, flags=re.M) is not None)
+    c.true("frontmatter version 0.3.8", re.search(r"^version: 0\.3\.8$", skill, flags=re.M) is not None)
     refs = set(re.findall(r"`((?:references|scripts|assets|tests|examples|core)/[^`]+)`", skill)) - {"tests/RUN-LOG.md"}  # output of this run
     def present(p):
         p = p.split(" ")[0]
@@ -685,10 +685,251 @@ def t34(c):
     c.eq("F2 0.65 vs 0.88 -> green", st["status"], "green")
 
 
+# ============================================ v0.3.8: input folder, demo, run record
+import validate_input as vi  # noqa: E402
+import demo  # noqa: E402
+
+RUN_DATE = date(2026, 11, 10)          # the date of the committed outputs in examples/synthetic-farm/
+SYN = ROOT / "examples/synthetic-farm"
+BANNED = ("complies", "compliant", "safe", "unsafe", "violation")
+
+
+def codes(rep, level=None):
+    return sorted(m.code for m in rep.messages if level is None or m.level == level)
+
+
+def farm_copy(tmp, rows_extra=(), replace=None, folder=SYN):
+    """A temporary copy of an input folder, with rows replaced or added (for rule tests)."""
+    dst = Path(tmp) / "farm"
+    shutil.copytree(folder, dst)
+    csvp = dst / "measurements.csv"
+    text = csvp.read_text(encoding="utf-8")
+    for old, new in (replace or {}).items():
+        assert old in text, old
+        text = text.replace(old, new)
+    csvp.write_text(text + "".join(r + "\n" for r in rows_extra), encoding="utf-8")
+    return dst
+
+
+@test("T35", "Input template and format description (v0.3.8)")
+def t35(c):
+    head = (ROOT / "assets/input-template/measurements.csv").read_text(encoding="utf-8").strip().split(",")
+    c.eq("template header = the format's columns", head, vi.COLUMNS)
+    rep = vi.validate(ROOT / "assets/input-template", RUN_DATE)
+    c.eq("empty template: the only error is the missing consent of a real farm", codes(rep), ["consent-missing"])
+    fmt = (ROOT / "references/input-format.md").read_text(encoding="utf-8")
+    table = fmt.split("## 2.")[1].split("## 3.")[0]
+    missing = [col for col in vi.COLUMNS if f"`{col}`" not in table]
+    c.true("every column is described in references/input-format.md", not missing, str(missing) if missing else "")
+    smap = vi.load_map()
+    c.true("every matrix of the screening map is named in the format description",
+           all(f"`{m}`" in fmt for m in smap["matrices"]))
+    rep = vi.validate(SYN, RUN_DATE)
+    c.eq("synthetic farm: no errors", codes(rep, "error"), [])
+    c.eq("synthetic farm: warnings only for what the example does not state",
+         sorted({m.code for m in rep.warnings}), ["basis-not-stated", "date-not-stated", "method-not-stated"])
+    shown = vi.merged(rep.messages)
+    c.true("warnings are merged for display: one message per kind", len(shown) == 3, f"{len(rep.warnings)} row warnings → {len(shown)} messages")
+
+
+@test("T36", "Synthetic farm input equals the worked example (no drift)")
+def t36(c):
+    rep = vi.validate(SYN, RUN_DATE)
+    got = {(r.object, r.parameter, r.evidence): r for r in rep.rows}
+    m = lambda o, p: got[(o, p, "measured")].value
+    c.eq("biosolids PFOS, PFOA", (m("BIO", "PFOS"), m("BIO", "PFOA")), (SIM1["biosolids_ug_kg_dw"]["PFOS"], SIM1["biosolids_ug_kg_dw"]["PFOA"]))
+    soil = {f: (m(f, "PFOS"), m(f, "PFOA")) for f in SIM1["soil_0_20cm_ug_kg"]}
+    c.eq("soil F1–F5 PFOS, PFOA", soil, {f: (v["PFOS"], v["PFOA"]) for f, v in SIM1["soil_0_20cm_ug_kg"].items()})
+    w = SIM1["well_ng_l"]
+    c.eq("well PFOS, PFOA and month", (m("WELL", "PFOS"), m("WELL", "PFOA"), got[("WELL", "PFOS", "measured")].sampled),
+         (w["PFOS"], w["PFOA"], w["date"]))
+    c.eq("milk PFOS", m("MILK", "PFOS"), SIM1["milk_tank_ng_l"]["PFOS"])
+    mm = got[("MILK", "PFOS", "modelled")]
+    c.eq("milk model range", [mm.low, mm.high], SIM1["milk_model_range_ng_l"])
+    sm = got[("F1", "PFOS", "modelled")]
+    c.eq("F1 soil model range", [sm.low, sm.high], SIM1["soil_model_F1_PFOS_range_ug_kg"])
+    c.eq("measured results (15) = values of the example", sum(1 for r in rep.rows if r.evidence == "measured"), 15)
+    farm = json.loads((SYN / "farm.json").read_text(encoding="utf-8"))
+    strip = lambda d: {k: v for k, v in d.items() if not k.startswith("_")}
+    c.true("profile = tests/fixtures/sim_farm_profile.json", farm["profile"] == strip(PROFILE))
+    c.true("coverage = tests/fixtures/sim_measured.json", farm["coverage"] == MEASURED)
+    c.true("pixel_fit = tests/fixtures/sim_objects.json", farm["pixel_fit"] == OBJECTS)
+    sc = {s["role"]: s for s in farm["dose_scenarios"]}
+    a = SIM1["dose_assumptions"]
+    c.eq("resident adult = example assumptions (70 kg, milk 0.25–0.64, water 2)",
+         (sc["resident_adult"]["bw_kg"], [x["milk_l_day"] for x in sc["resident_adult"]["cases"]], sc["resident_adult"]["cases"][0]["water_l_day"]),
+         (a["bw_kg"], a["milk_l_per_day"], a["water_l_per_day"]))
+    c.eq("infant and child = ATSDR 2023 Table 1 as in T13",
+         (sc["infant_formula_well_water"]["bw_kg"], [x["water_l_day"] for x in sc["infant_formula_well_water"]["cases"]],
+          sc["young_child_resident"]["bw_kg"], [x["water_l_day"] for x in sc["young_child_resident"]["cases"]]),
+         (7.8, [0.595, 1.106], 11.4, [0.245, 0.658]))
+    c.true("farm is labelled synthetic; no geometry (no real coordinates)",
+           farm["synthetic"] is True and not any(o.get("geometry") for o in farm["objects"]))
+
+
+@test("T37", "Input check: the three bad-input examples")
+def t37(c):
+    expected = {
+        "1-censored-written-as-text": (["censored-as-text", "censored-as-text", "decimal-comma", "rl-missing"], []),
+        "2-units-and-objects": (["unit-not-accepted", "unit-not-accepted", "unknown-object", "wet-weight"], ["method-not-valid"]),
+        "3-missing-provenance": (["consent-missing", "date-in-future", "date-missing", "dose-scenarios-missing",
+                                  "duplicate-event", "method-missing", "model-range"], []),
+    }
+    readme = (ROOT / "examples/bad-input/README.md").read_text(encoding="utf-8")
+    for folder, (errs, warns) in expected.items():
+        rep = vi.validate(ROOT / "examples/bad-input" / folder, RUN_DATE)
+        c.eq(f"{folder}: errors", codes(rep, "error"), errs)
+        c.eq(f"{folder}: warnings", codes(rep, "warning"), warns)
+        c.true(f"{folder}: every message says how to fix it", all(m.fix for m in rep.messages))
+        c.true(f"{folder}: every row message names its line", all(m.lines for m in rep.messages if m.where == "measurements.csv"))
+        c.true(f"{folder}: every code is named in examples/bad-input/README.md", all(f"`{x}`" in readme for x in errs + warns))
+        rc = subprocess.run([sys.executable, str(ROOT / "scripts/validate_input.py"), str(ROOT / "examples/bad-input" / folder),
+                             "--date", "2026-11-10"], capture_output=True, text=True).returncode
+        c.eq(f"{folder}: command-line exit code", rc, 1)
+        with tempfile.TemporaryDirectory() as tmp:
+            rc = subprocess.run([sys.executable, str(ROOT / "scripts/demo.py"), "--farm", str(ROOT / "examples/bad-input" / folder),
+                                 "--out", tmp, "--date", "2026-11-10"], capture_output=True, text=True).returncode
+            c.true(f"{folder}: demo refuses and writes nothing", rc == 1 and not any(Path(tmp).iterdir()))
+    rc = subprocess.run([sys.executable, str(ROOT / "scripts/validate_input.py"), str(SYN), "--date", "2026-11-10"],
+                        capture_output=True, text=True).returncode
+    c.eq("synthetic farm: exit code 0 (warnings only)", rc, 0)
+
+
+@test("T38", "Demo end to end: the PFAS example's card from the input folder")
+def t38(c):
+    p, rep = demo.build(SYN, RUN_DATE)
+    ob = {o["id"]: o for o in p["objects"]}
+    soil = next(g for g in p["groups"] if g["group"] == "soil")
+    got = {"biosolids": ob["BIO"]["status"], "soil": soil["status"], "well": ob["WELL"]["status"], "milk": ob["MILK"]["status"]}
+    c.eq("statuses = the example (T9)", got, SIM1["expected_from_text"]["statuses"])
+    c.eq("soil: F1 printed beside the summary, set by DEC guidance NYUS-28",
+         [(f["object"], f["status"], f["set_by"][0]["row"]) for f in soil["fields_flagged"]], [("F1", "yellow", "NYUS-28")])
+    c.eq("soil summary set by the farmland reference NYUS-16", soil["set_by"][0]["row"], "NYUS-16")
+    c.eq("well set by the future EPA MCL and the DEC groundwater guidance", [s["row"] for s in ob["WELL"]["set_by"]], ["NYUS-04", "NYUS-32"])
+    kinds = lambda o: sorted({f["kind"] for f in ob[o]["flags"]})
+    c.true("milk: measured 18 outside the model 4–17 is flagged, not smoothed", "model disagrees" in kinds("MILK"))
+    c.true("F1 soil: measurement inside the model range is recorded as agreement", "model agrees" in kinds("F1"))
+    c.true("well and milk: one sampling event in a seasonal medium is flagged", "single event" in kinds("WELL") and "single event" in kinds("MILK"))
+    c.true("soil and biosolids are not asked for a seasonal series", "single event" not in kinds("F1") and "single event" not in kinds("BIO"))
+    d = p["dose"]
+    e = SIM1["expected_from_text"]
+    sc = {s["role"]: [x["dose"] for x in s["cases"]] for s in d["scenarios"]}
+    c.eq("off-farm adult (milk only)", [r(x, 2) for x in sc["off_farm_adult"]], e["milk_only_ng_kg_wk"])
+    c.eq("resident adult (milk + water)", [r(x, 2) for x in sc["resident_adult"]], e["milk_plus_water_ng_kg_wk"])
+    c.eq("infant formula, mean / 95th", [r(x, 2) for x in sc["infant_formula_well_water"]], [5.50, 10.22])
+    c.eq("young child, mean / 95th water + milk 0.25", [r(x, 2) for x in sc["young_child_resident"]], [4.31, 6.92])
+    be = next(s for s in d["scenarios"] if s["role"] == "young_child_resident")["break_even_milk_l_day"]
+    c.eq("break-even farm milk for the child (T13)", (r(be[0]["value"], 2), r(be[1]["value"], 3)), (0.26, 0.022))
+    c.eq("EFSA four: 2 of 4, lower bound", (d["efsa_four"]["measured"], d["efsa_four"]["missing"], d["efsa_four"]["lower_bound"]),
+         (2, ["PFNA", "PFHxS"], True))
+    ind = p["indicators"]
+    c.eq("selection / to confirm / left out / gaps / actions / facts (T25–T26)",
+         (ind["selected"], ind["to_confirm"], len(ind["left_out"]), len(ind["gap_registry"]), len(ind["work_plan"]), len(ind["facts_to_confirm"])),
+         (98, 16, 15, 88, 14, 11))
+    c.eq("first action: consent", ind["work_plan"][0]["action"], "consent")
+    md = (SYN / "answer-card.md").read_text(encoding="utf-8")
+    c.true("card opens with the SYNTHETIC banner", "**SYNTHETIC FARM.**" in md.split("## Status")[0])
+    words = [w for w in BANNED if re.search(rf"\b{w}\b", md, flags=re.I)]
+    c.true("no compliance or safety wording on the card", not words, str(words) if words else "")
+    c.true("card prints 'green; F1 yellow' for the soil", "| green; F1 yellow |" in md)
+
+
+@test("T39", "Run record and committed outputs")
+def t39(c):
+    p, _ = demo.build(SYN, RUN_DATE)
+    rr = p["run_record"]
+    v = re.search(r"^version: (\S+)$", (ROOT / "SKILL.md").read_text(encoding="utf-8"), flags=re.M).group(1)
+    c.eq("skill version = SKILL.md frontmatter", rr["skill_version"], v)
+    c.eq("threshold pack and version", (rr["threshold_pack"]["pack"], rr["threshold_pack"]["version"]), (NYUS["pack"], NYUS["version"]))
+    c.true("sha256 of every input file is the file's own",
+           all(hashlib.sha256((ROOT / x["path"]).read_bytes()).hexdigest() == x["sha256"] for x in rr["inputs"]))
+    c.true("sha256 of every core file is the file's own",
+           all(hashlib.sha256((ROOT / x["path"]).read_bytes()).hexdigest() == x["sha256"] for x in rr["core"]))
+    used = {e["row"] for o in p["objects"] for e in o["references"]} | {"NYUS-10"}
+    c.eq("rows used = every row evaluated, plus the TWI", sorted(x["row"] for x in rr["rows_used"]), sorted(used, key=lambda x: x))
+    c.true("each row used carries its check date and verification mark from the pack",
+           all(x["checked"] == pc.row(NYUS, x["row"])["checked"] and x["verified"] == pc.row(NYUS, x["row"])["verified"] for x in rr["rows_used"]))
+    c.eq("stale rows on the run date", rr["stale_rows"], [])
+    p2, _ = demo.build(SYN, date(2027, 6, 1))
+    c.eq("every row used is stale on 2027-06-01 (expiry reaches the passport)", len(p2["run_record"]["stale_rows"]), len(rr["rows_used"]))
+    c.eq("input warnings carried into the run record", sorted(w["code"] for w in rr["checks"]["warnings"]),
+         ["basis-not-stated", "date-not-stated", "method-not-stated"])
+    rc = subprocess.run([sys.executable, str(ROOT / "scripts/demo.py"), "--check"], capture_output=True, text=True).returncode
+    c.true("committed passport.json and answer-card.md equal a fresh run (demo.py --check)", rc == 0)
+
+
+@test("T40", "Screening matrix: map, pack, units and methods agree")
+def t40(c):
+    smap = vi.load_map()
+    rows = {x["id"]: x for x in NYUS["rows"]}
+    ids = [e["row"] for m in smap["matrices"].values() for p_ in m["parameters"].values() for e in p_["references"]]
+    c.true("every row in the map exists in the pack", all(i in rows for i in ids), f"{len(ids)} mappings")
+    bad = [(i, rows[i]["unit"]) for m in smap["matrices"].values() for p_ in m["parameters"].values() for e in p_["references"]
+           for i in [e["row"]] if not rows[i]["unit"].startswith(smap["unit_sets"][p_["unit_set"]]["canonical"])]
+    c.true("every mapped row is in its parameter's canonical unit (no silent unit mismatch)", not bad, str(bad) if bad else "")
+    meth = (ROOT / "references/methods.md").read_text(encoding="utf-8")
+    ms = sorted({x for m in smap["matrices"].values() for p_ in m["parameters"].values() for x in p_["methods"]})
+    c.true("every method in the map is named in references/methods.md", all(x in meth for x in ms), ", ".join(ms))
+    c.eq("nitrate as NO3 → as N factor = 1 / passport_calc.NO3_PER_N",
+         round(smap["unit_sets"]["nitrate_mg_l_n"]["aliases"]["mg/L as NO3"], 6), round(1 / pc.NO3_PER_N, 6))
+    c.true("soil: one farmland reference per screened parameter",
+           all(sum(e.get("fit") == "farmland" for e in p_["references"]) == 1
+               for p_ in smap["matrices"]["soil"]["parameters"].values() if p_["references"]))
+    c.true("the map holds row IDs, never values", not re.search(r'"value"\s*:', (ROOT / "core/screening-map.json").read_text(encoding="utf-8")))
+    rc = subprocess.run([sys.executable, str(ROOT / "scripts/render_matrix.py"), "--check"]).returncode
+    c.true("core/screening-matrix.md equals a fresh render", rc == 0)
+
+
+@test("T41", "Status rules through the input folder: group summary, single-result tier, censoring")
+def t41(c):
+    with tempfile.TemporaryDirectory() as tmp:
+        f = farm_copy(tmp, replace={"F2,PFOS,not stated,0.65,": "F2,PFOS,not stated,3.5,"})
+        p, _ = demo.build(f, RUN_DATE)
+        g = next(x for x in p["groups"] if x["group"] == "soil")
+        c.eq("F2 PFOS 3.5 above the farmland reference 3.0 (orientation) → summary yellow", (g["status"], g["set_by"][0]["row"]), ("yellow", "NYUS-16"))
+    with tempfile.TemporaryDirectory() as tmp:
+        f = farm_copy(tmp, replace={"BIO,PFOS,not stated,12,": "BIO,PFOS,not stated,55,"})
+        p, _ = demo.build(f, RUN_DATE)
+        b = next(o for o in p["objects"] if o["id"] == "BIO")
+        c.eq("biosolids PFOS 55: DMM-7 acts on a single result → red, set by NYUS-08", (b["status"], b["set_by"][0]["row"]), ("red", "NYUS-08"))
+    with tempfile.TemporaryDirectory() as tmp:
+        f = farm_copy(tmp, replace={"BIO,PFOS,not stated,12,": "BIO,PFOS,not stated,30,"})
+        p, _ = demo.build(f, RUN_DATE)
+        b = next(o for o in p["objects"] if o["id"] == "BIO")
+        c.eq("biosolids PFOS 30: above 20, below 50, one result → yellow (not sustained)", b["status"], "yellow")
+    with tempfile.TemporaryDirectory() as tmp:
+        f = farm_copy(tmp, replace={"WELL,PFOS,2025-10,6.5,,,,": "WELL,PFOS,2025-10,,<,5,,"})
+        p, rep = demo.build(f, RUN_DATE)
+        w = next(o for o in p["objects"] if o["id"] == "WELL")
+        c.eq("well PFOS '<5' against references 2.7 and 4.0 → the worse bound sets yellow", w["status"], "yellow")
+        c.true("flag 'depends on censored values' raised", any(x["kind"] == "depends on censored values" for x in w["flags"]))
+        c.true("warning: reporting limit not below the lowest reference", "rl-above-reference" in codes(rep, "warning"))
+        res = next(s for s in p["dose"]["scenarios"] if s["role"] == "infant_formula_well_water")["cases"][0]
+        c.true("censored PFOS: dose printed as the upper bound, the lower bound kept beside it", res["dose"] > res["dose_censored_lower"])
+    with tempfile.TemporaryDirectory() as tmp:
+        f = farm_copy(tmp, replace={"WELL,PFOS,2025-10,6.5,,,,ng/L,": "WELL,PFOS,2025-10,0.0065,,,,µg/L,"})
+        p, _ = demo.build(f, RUN_DATE)
+        w = next(o for o in p["objects"] if o["id"] == "WELL")
+        c.eq("well PFOS reported as 0.0065 µg/L is converted to 6.5 ng/L: same status and reference", (w["status"], w["set_by"][0]["row"], r(w["set_by"][0]["max"], 4)), ("yellow", "NYUS-04", 6.5))
+    with tempfile.TemporaryDirectory() as tmp:
+        f = farm_copy(tmp, replace={"WELL,PFOS,2025-10,6.5,,,,ng/L,,not stated,": "WELL,PFOS,2025-10,6.5,,,,ng/L,,EPA 1633,"})
+        p, _ = demo.build(f, RUN_DATE)
+        w = next(o for o in p["objects"] if o["id"] == "WELL")
+        c.true("well PFOS by EPA 1633 (not a drinking-water method) is printed grey: the colour comes from PFOA only",
+               all(e["parameter"] == "PFOA" for e in w["references"]) and any(x["kind"] == "method not valid" for x in w["flags"]))
+    with tempfile.TemporaryDirectory() as tmp:
+        f = farm_copy(tmp, replace={"MILK,PFOS,not stated,18,,,,ng/L,,not stated,synthetic,measured,,,PFAS example §3.4 (synthetic; bulk tank)\n": ""})
+        p, _ = demo.build(f, RUN_DATE)
+        m = next(o for o in p["objects"] if o["id"] == "MILK")
+        ra = next(s for s in p["dose"]["scenarios"] if s["role"] == "resident_adult")["cases"][0]
+        c.eq("milk never measured → grey, with a 'never measured' gap", (m["status"], [x["kind"] for x in m["flags"]]), ("grey", ["never measured"]))
+        c.eq("…and the dose names the product as not included (never counted as zero)", ra["not_included"], ["product"])
+
+
 # =================================================================== protocol
 def main() -> int:
     passed = sum(1 for *_, ok, _ in RESULTS if ok)
-    head = [f"# Test run — farm-environmental-passport v0.3.7", "",
+    head = [f"# Test run — farm-environmental-passport v0.3.8", "",
             f"Date: {TODAY.isoformat()}  ·  Python {sys.version.split()[0]}  ·  runner: tests/run_tests.py", "",
             f"**Result: {passed} / {len(RESULTS)} PASS**" + ("" if passed == len(RESULTS) else " — FAILURES BELOW"), "",
             "| Test | Title | Result |", "|---|---|---|"]
@@ -696,7 +937,7 @@ def main() -> int:
     body = ["", "## Detail", ""]
     for tid, title, ok, lines in RESULTS:
         body += [f"### {tid} — {title}: {'PASS' if ok else 'FAIL'}", "", "```"] + lines + ["```", ""]
-    body += ["Behavioural tests B1–B5 (tests/TESTS.md) are not executable here: pending first live use."]
+    body += ["Behavioural tests B1–B7 (tests/TESTS.md) are not executable here: pending first live use."]
     text = "\n".join(head + body) + "\n"
     (ROOT / "tests/RUN-LOG.md").write_text(text, encoding="utf-8")
     for tid, title, ok, lines in RESULTS:

@@ -1,5 +1,16 @@
 # farm-environmental-passport — Changelog
 
+## v0.3.8 — 2026-11-10 — ready for the pilot: input template, input check, one command, machine-readable passport
+
+- **Input template** (`assets/input-template/`): one folder per farm — `farm.json` (the farm, its objects, consent, the four dose scenarios with ATSDR 2023 exposure factors, optional GeoJSON geometry) and `measurements.csv` in long format (object × parameter × date × value × qualifier × reporting and detection limits × unit × uncertainty × method × laboratory × evidence class × model range × source). Field descriptions: `references/input-format.md`.
+- **Input check** (`scripts/validate_input.py`): errors stop the run, warnings are carried into the run record; every message names the file, line and column and says how to fix it. Censored results written as text, decimal commas, units that cannot be compared, wet-weight solids, nitrate without its basis, dates in the future, two results for one event, series without dates, model rows without their range, missing method or laboratory, and — for a real farm — missing consent, dates or methods are refused. Three folders with deliberate errors: `examples/bad-input/`.
+- **One command** (`scripts/demo.py`): input folder → `passport.json` and `answer-card.md`. The synthetic farm of the worked examples is now also an input folder (`examples/synthetic-farm/`, Module 1 values unchanged); the command reproduces the statuses and doses of the PFAS example. A medium that enters a dose but was never measured is named, never counted as zero.
+- **Machine-readable passport** (`passport.json`, format `passport@1`): status per object with the reference rows that set it, flags with the closing sample (partial EFSA panel, one sampling event in a seasonal medium, model against measurement, method not valid for the matrix, depends on censored values, never measured), the dose block, indicator selection, work plan and gap registry — intended as the observation layer a digital twin can read later (a plan; nothing in the Ecosystem Digital Twin is changed).
+- **Run record** in every passport: skill version, run date and command, threshold pack and version, every row used with its check date and verification mark, rows stale on the run date, sha256 of every input and core file, the input-check warnings.
+- **Screening matrix** — parameter → reference row → unit → method: `core/screening-map.json` (row IDs only, no values) rendered by `scripts/render_matrix.py` to `core/screening-matrix.md`. New rule written down from the worked example: a group of fields takes its summary status from references written for farmland; a field above a reference written for another land use is named beside it (`references/status-rules.md` §3a).
+- Version marks in module headers now mean "since": `passport_calc.py` (since v0.2.0), `indicator_select.py` (since v0.3.0); the answer-card template no longer prints a fixed version.
+- Tests: 41/41 (T35–T41 new); mutation check of the new tests recorded in `tests/TESTS.md`.
+
 ## After v0.3.7 (no new version)
 
 - Zenodo DOI of the skill added to the READMEs and `CITATION.cff`: concept DOI 10.5281/zenodo.24023493 (all versions), version 0.3.7 — 10.5281/zenodo.24023494. The methods note stays the preferred citation.

@@ -1,0 +1,18 @@
+object,parameter,sampled,value,qualifier,reporting_limit,detection_limit,unit,uncertainty,method,laboratory,evidence,low,high,source
+BIO,PFOS,not stated,12,,,,µg/kg dw,,EPA 1633,synthetic,measured,,,PFAS example §3.1 (synthetic)
+BIO,PFOA,not stated,5,,,,µg/kg dw,,EPA 1633,synthetic,measured,,,PFAS example §3.1 (synthetic)
+F1,PFOS,not stated,0.90,,,,µg/kg,,EPA 1633,synthetic,measured,,,PFAS example §3.2 (synthetic)
+F1,PFOA,not stated,0.40,,,,µg/kg,,EPA 1633,synthetic,measured,,,PFAS example §3.2 (synthetic)
+F2,PFOS,not stated,0.65,,,,µg/kg,,EPA 1633,synthetic,measured,,,PFAS example §3.2 (synthetic)
+F2,PFOA,not stated,0.30,,,,µg/kg,,EPA 1633,synthetic,measured,,,PFAS example §3.2 (synthetic)
+F3,PFOS,not stated,0.50,,,,µg/kg,,EPA 1633,synthetic,measured,,,PFAS example §3.2 (synthetic)
+F3,PFOA,not stated,0.22,,,,µg/kg,,EPA 1633,synthetic,measured,,,PFAS example §3.2 (synthetic)
+F4,PFOS,not stated,0.35,,,,µg/kg,,EPA 1633,synthetic,measured,,,PFAS example §3.2 (synthetic)
+F4,PFOA,not stated,0.18,,,,µg/kg,,EPA 1633,synthetic,measured,,,PFAS example §3.2 (synthetic)
+F5,PFOS,not stated,0.15,,,,µg/kg,,EPA 1633,synthetic,measured,,,PFAS example §3.2 (synthetic)
+F5,PFOA,not stated,0.08,,,,µg/kg,,EPA 1633,synthetic,measured,,,PFAS example §3.2 (synthetic)
+F1,PFOS,,,,,,µg/kg,,,,modelled,0.3,1.1,PFAS example §3.2 — accumulation model for 10 seasons
+WELL,PFOS,2025-10,6.5,,,,ng/L,,not stated,synthetic,measured,,,PFAS example §3.3 (synthetic; one sample)
+WELL,PFOA,2025-10,3.8,,,,ng/L,,not stated,synthetic,measured,,,PFAS example §3.3 (synthetic; one sample)
+MILK,PFOS,not stated,18,,,,ng/L,,not stated,synthetic,measured,,,PFAS example §3.4 (synthetic; bulk tank)
+MILK,PFOS,,,,,,ng/L,,,,modelled,4,17,examples/reconstruct.py — soil → forage → cow model at the extreme TF values; PFAS example §2

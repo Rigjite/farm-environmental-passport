@@ -1,0 +1,21 @@
+{
+ "passport_input": "farm-environmental-passport/input@1",
+ "farm_id": "BAD-1",
+ "name": "Illustration of input errors — not a farm",
+ "synthetic": true,
+ "about": "Censored results written as text, a censored result without its limit, a decimal comma. Expected: errors censored-as-text (twice), rl-missing, decimal-comma.",
+ "jurisdiction": "NY-US",
+ "consent": {
+  "recorded": false,
+  "date": null,
+  "scope": null,
+  "note": "illustration of input errors — not a farm"
+ },
+ "objects": [
+  {
+   "id": "WELL",
+   "label": "Well",
+   "matrix": "well-drinking"
+  }
+ ]
+}
