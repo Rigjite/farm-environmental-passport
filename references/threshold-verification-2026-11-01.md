@@ -84,3 +84,17 @@ Checked 2026-11-05 against reproductions of the issuing body's documents (the DE
 | NYUS-34 soil (protection of groundwater) PFOS | 1.0 µg/kg | same table | verified-secondary |
 | NYUS-35 soil (rural background, proposed) PFOA | 1.5 µg/kg (surface; subsurface 1.2) | NYSDEC Rural Soil Background Study, proposed background concentrations (Lippes Mathias summary, January 2026) | verified-secondary |
 | NYUS-36 soil (rural background, proposed) PFOS | 3.0 µg/kg (surface; subsurface 0.801) | same study | verified-secondary |
+
+### Supplement 2026-11-23 — re-check of status-sensitive and provisional rows
+
+Values unchanged. Checked 2026-11-23 against the sources named in each row.
+
+| Row | Result | Source |
+|---|---|---|
+| NYUS-01, 02 | value and status confirmed; pending bill S3207B (4 ppt PFOA/PFOS) passed both chambers, not signed as of 2026-11-18 | NYSDOH; NY Senate / LegiScan; press report 2026-11-18 (secondary) |
+| NYUS-03, 04, 05 | 2024 rule applies as written; both 2026 EPA proposals not final as of 2026-11-21 | Federal Register 2026-10085, 2026-10086; EPA hearing overview |
+| NYUS-14, 15 | confirmed; 210 ng/L is the 1–2-year age-group level | Maine CDC; Maine DACF |
+| NYUS-16, 35, 36 | verified: DEC proposed rural soil background (95-95 UTL) PFOS 3.0, PFOA 1.5 µg/kg | NYSDEC PFAS site-cleanup page |
+| NYUS-27–34 | verified against the April 2023 NYSDEC PDF (errata 2023-03-28 set protection of groundwater to 0.8 / 1.0) | NYSDEC |
+| NYUS-37, 38 | new rows | Maine DACF / DEP |
+| EU-04, 05, 06 | groundwater sum of 4 PFAS 0.0044 µg/L; sum of 20 aligned with the DWD; surface water sum of 25 PFAS 0.0044 µg/L PFOA-eq | EP Legislative Observatory, 2022/0344(COD), final act |

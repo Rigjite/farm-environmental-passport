@@ -2630,7 +2630,7 @@
    "legal_status": "in_force",
    "matrix": "drinking water (public systems)",
    "analyte": "PFOA",
-   "checked": "2026-11-01",
+   "checked": "2026-11-23",
    "verified": "verified",
    "source": "NYS Department of Health"
   },
@@ -2641,7 +2641,7 @@
    "legal_status": "in_force",
    "matrix": "drinking water (public systems)",
    "analyte": "PFOS",
-   "checked": "2026-11-01",
+   "checked": "2026-11-23",
    "verified": "verified",
    "source": "NYS Department of Health"
   },
@@ -2652,7 +2652,7 @@
    "legal_status": "future",
    "matrix": "drinking water (public systems)",
    "analyte": "PFOA",
-   "checked": "2026-11-01",
+   "checked": "2026-11-23",
    "verified": "corrected",
    "source": "US EPA"
   },
@@ -2663,7 +2663,7 @@
    "legal_status": "future",
    "matrix": "drinking water (public systems)",
    "analyte": "PFOS",
-   "checked": "2026-11-01",
+   "checked": "2026-11-23",
    "verified": "corrected",
    "source": "US EPA"
   },
@@ -2707,7 +2707,7 @@
    "legal_status": "in_force",
    "matrix": "cow's milk",
    "analyte": "PFOS",
-   "checked": "2026-11-01",
+   "checked": "2026-11-23",
    "verified": "verified",
    "source": "Maine CDC / Maine DACF"
   },
@@ -2718,9 +2718,9 @@
    "legal_status": "orientation",
    "matrix": "agricultural / rural soil",
    "analyte": "PFOS (PFOA 1.5)",
-   "checked": "2026-11-01",
-   "verified": "verified-secondary",
-   "source": "NYS DEC (via secondary)"
+   "checked": "2026-11-23",
+   "verified": "verified",
+   "source": "NYS DEC"
   },
   {
    "row": "NYUS-27",
@@ -2729,7 +2729,7 @@
    "legal_status": "guidance",
    "matrix": "soil (unrestricted use)",
    "analyte": "PFOA",
-   "checked": "2026-11-05",
+   "checked": "2026-11-23",
    "verified": "verified",
    "source": "NYS DEC"
   },
@@ -2740,7 +2740,7 @@
    "legal_status": "guidance",
    "matrix": "soil (unrestricted use)",
    "analyte": "PFOS",
-   "checked": "2026-11-05",
+   "checked": "2026-11-23",
    "verified": "verified",
    "source": "NYS DEC"
   },
@@ -2751,7 +2751,7 @@
    "legal_status": "guidance",
    "matrix": "groundwater (Class GA)",
    "analyte": "PFOA",
-   "checked": "2026-11-05",
+   "checked": "2026-11-23",
    "verified": "verified",
    "source": "NYS DEC Division of Water"
   },
@@ -2762,7 +2762,7 @@
    "legal_status": "guidance",
    "matrix": "groundwater (Class GA)",
    "analyte": "PFOS",
-   "checked": "2026-11-05",
+   "checked": "2026-11-23",
    "verified": "verified",
    "source": "NYS DEC Division of Water"
   },
@@ -2773,9 +2773,9 @@
    "legal_status": "guidance",
    "matrix": "soil (protection of groundwater)",
    "analyte": "PFOA",
-   "checked": "2026-11-05",
-   "verified": "verified-secondary",
-   "source": "NYS DEC (via reproductions of its table)"
+   "checked": "2026-11-23",
+   "verified": "verified",
+   "source": "NYS DEC"
   },
   {
    "row": "NYUS-34",
@@ -2784,9 +2784,9 @@
    "legal_status": "guidance",
    "matrix": "soil (protection of groundwater)",
    "analyte": "PFOS",
-   "checked": "2026-11-05",
-   "verified": "verified-secondary",
-   "source": "NYS DEC (via reproductions of its table)"
+   "checked": "2026-11-23",
+   "verified": "verified",
+   "source": "NYS DEC"
   },
   {
    "row": "NYUS-35",
@@ -2795,21 +2795,21 @@
    "legal_status": "proposed",
    "matrix": "soil (rural background — proposed)",
    "analyte": "PFOA",
-   "checked": "2026-11-05",
-   "verified": "verified-secondary",
-   "source": "NYS DEC (study, via secondary summary)"
+   "checked": "2026-11-23",
+   "verified": "verified",
+   "source": "NYS DEC"
   }
  ],
  "limits": "Screening and expert opinion — not a compliance determination, a laboratory report or medical advice. Only measured values carry a colour; red only for a sustained exceedance of an in-force reference under its own rule.",
  "run_record": {
   "skill": "farm-environmental-passport",
   "skill_version": "0.3.8",
-  "run_date": "2026-11-10",
-  "command": "python3 scripts/demo.py --farm examples/synthetic-farm --date 2026-11-10",
+  "run_date": "2026-11-23",
+  "command": "python3 scripts/demo.py --farm examples/synthetic-farm --date 2026-11-23",
   "python": "3.13.18",
   "threshold_pack": {
    "pack": "NY-US",
-   "version": "2026-11-05",
+   "version": "2026-11-23",
    "max_age_days": 183
   },
   "screening_map": {
@@ -2818,22 +2818,22 @@
   "rows_used": [
    {
     "row": "NYUS-01",
-    "checked": "2026-11-01",
+    "checked": "2026-11-23",
     "verified": "verified"
    },
    {
     "row": "NYUS-02",
-    "checked": "2026-11-01",
+    "checked": "2026-11-23",
     "verified": "verified"
    },
    {
     "row": "NYUS-03",
-    "checked": "2026-11-01",
+    "checked": "2026-11-23",
     "verified": "corrected"
    },
    {
     "row": "NYUS-04",
-    "checked": "2026-11-01",
+    "checked": "2026-11-23",
     "verified": "corrected"
    },
    {
@@ -2853,48 +2853,48 @@
    },
    {
     "row": "NYUS-14",
-    "checked": "2026-11-01",
+    "checked": "2026-11-23",
     "verified": "verified"
    },
    {
     "row": "NYUS-16",
-    "checked": "2026-11-01",
-    "verified": "verified-secondary"
+    "checked": "2026-11-23",
+    "verified": "verified"
    },
    {
     "row": "NYUS-27",
-    "checked": "2026-11-05",
+    "checked": "2026-11-23",
     "verified": "verified"
    },
    {
     "row": "NYUS-28",
-    "checked": "2026-11-05",
+    "checked": "2026-11-23",
     "verified": "verified"
    },
    {
     "row": "NYUS-31",
-    "checked": "2026-11-05",
+    "checked": "2026-11-23",
     "verified": "verified"
    },
    {
     "row": "NYUS-32",
-    "checked": "2026-11-05",
+    "checked": "2026-11-23",
     "verified": "verified"
    },
    {
     "row": "NYUS-33",
-    "checked": "2026-11-05",
-    "verified": "verified-secondary"
+    "checked": "2026-11-23",
+    "verified": "verified"
    },
    {
     "row": "NYUS-34",
-    "checked": "2026-11-05",
-    "verified": "verified-secondary"
+    "checked": "2026-11-23",
+    "verified": "verified"
    },
    {
     "row": "NYUS-35",
-    "checked": "2026-11-05",
-    "verified": "verified-secondary"
+    "checked": "2026-11-23",
+    "verified": "verified"
    }
   ],
   "stale_rows": [],
@@ -2911,7 +2911,7 @@
   "core": [
    {
     "path": "core/thresholds/ny-us.json",
-    "sha256": "8a84087f87798dedcba0de1400744a83444d8c5c9575edb69056e4acfe6e4ff9"
+    "sha256": "c8ec9396e65a9d0fcecdf2ea93eaaeb0d609b5114795b437f1e98eabe27160ca"
    },
    {
     "path": "core/screening-map.json",

@@ -1,7 +1,7 @@
 {
  "pack": "EU",
  "title": "European Union threshold pack (drinking water, groundwater, nitrates, sewage sludge and soil, food, EFSA, bathing water)",
- "version": "2026-11-01",
+ "version": "2026-11-23",
  "max_age_days": 183,
  "legend": "Same fields and vocabulary as ny-us.json. Member States transpose directives and may set stricter national values; a farm passport in a Member State must add the national pack (not covered here).",
  "rows": [
@@ -67,11 +67,11 @@
    "applicability": "groundwater quality standard (Directive 2006/118/EC Annex I as amended)",
    "determination_rule": "groundwater chemical status assessment under the WFD/GWD; good status by 22 Dec 2039",
    "source_doc": "Directive (EU) 2026/805 (OJ L 20.4.2026) amending Directives 2000/60/EC, 2006/118/EC, 2008/105/EC",
-   "source_org": "European Union (value via secondary)",
-   "url": "https://www.cehtra.com/post/focus-on-directive-eu-2026-805-revision-of-water-quality-standards-and-monitoring-mechanisms",
-   "checked": "2026-11-01",
-   "verified": "verified-secondary",
-   "note": "EUR-Lex text read: recital 17 confirms a four-PFAS standard based on the EFSA value; the annex number itself was not in the retrieved text. Dates per Fieldfisher (in force 11 May 2026; PFAS standards apply from 22 Dec 2027)."
+   "source_org": "European Union (EP Legislative Observatory, summary of the final act)",
+   "url": "https://oeil.europarl.europa.eu/oeil/en/document-summary?id=1898288",
+   "checked": "2026-11-23",
+   "verified": "verified",
+   "note": "Quality standard 0.0044 µg/L for the sum of 4 PFAS (PFHxS, PFOS, PFOA, PFNA) in groundwater — EP Legislative Observatory, procedure 2022/0344(COD). Transposition deadline 22 Dec 2027. Annex text not opened."
   },
   {
    "id": "EU-05",
@@ -86,26 +86,26 @@
    "source_doc": "Directive (EU) 2026/805, recital 17 and amended Annex I of 2006/118/EC",
    "source_org": "European Union",
    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ%3AL_202600805",
-   "checked": "2026-11-01",
+   "checked": "2026-11-23",
    "verified": "verified-secondary",
-   "note": "Alignment confirmed in the recital; numeric value via the DWD."
+   "note": "Alignment confirmed in the recital; numeric value via the DWD. Re-checked 2026-11-23: dynamic alignment with the DWD sum of 20 PFAS confirmed (EP Legislative Observatory)."
   },
   {
    "id": "EU-06",
    "matrix": "surface water",
    "analyte": "sum of 25 PFAS (PFOA equivalents, incl. TFA)",
-   "value": null,
-   "unit": "µg/L PFOA-eq",
+   "value": 0.0044,
+   "unit": "µg/L PFOA-equivalents",
    "legal_status": "future",
    "applies_from": "2027-12-22",
    "applicability": "environmental quality standard (EQSD Annex I as amended)",
    "determination_rule": "annual average EQS",
    "source_doc": "Directive (EU) 2026/805",
-   "source_org": "European Union",
-   "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ%3AL_202600805",
-   "checked": "2026-11-01",
-   "verified": "not-verified",
-   "note": "Value not retrieved in this check — row kept as a named gap of the pack."
+   "source_org": "European Union (EP Legislative Observatory, summary of the final act)",
+   "url": "https://oeil.europarl.europa.eu/oeil/en/document-summary?id=1898288",
+   "checked": "2026-11-23",
+   "verified": "verified-secondary",
+   "note": "Sum of 24 PFAS plus TFA (sum of 25), 0.0044 µg/L in PFOA equivalents — per the EP summary of the final act; annex text not opened. Biota standard 0.077 µg/kg PFOA-eq (secondary). Named gap closed 2026-11-23."
   },
   {
    "id": "EU-07",

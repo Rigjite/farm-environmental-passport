@@ -1,7 +1,7 @@
 # Screening matrix — parameter → reference → unit → method
 
 Generated from `core/screening-map.json` and `core/thresholds/ny-us.json` by `scripts/render_matrix.py`. Do not edit by hand.
-Map version 2026-11-10; pack NY-US version 2026-11-05 (a row older than 183 days must be re-checked before use).
+Map version 2026-11-10; pack NY-US version 2026-11-23 (a row older than 183 days must be re-checked before use).
 
 Which reference rows a measured result is compared with, in which unit it must arrive and which analytical methods are validated for it. Values, legal status and dates come from the pack; the map holds row IDs only. A result by a method not listed for its matrix is printed grey (`references/methods.md`). Status rules: `references/status-rules.md`.
 
@@ -24,12 +24,12 @@ Objects of this matrix form the group **soil**: the card prints one summary line
 
 | Parameter | Unit (canonical) | Validated methods | Reference row | Value | Legal status | Fit | Verification | Checked |
 |---|---|---|---|---|---|---|---|---|
-| PFOS | µg/kg | EPA 1633 | NYUS-16 — agricultural / rural soil, PFOS (PFOA 1.5) | 3.0 µg/kg | orientation | farmland | verified via secondary [provisional] | 2026-11-01 |
-| PFOS | µg/kg | EPA 1633 | NYUS-28 — soil (unrestricted use), PFOS | 0.88 µg/kg | guidance | other land use | verified | 2026-11-05 |
-| PFOS | µg/kg | EPA 1633 | NYUS-34 — soil (protection of groundwater), PFOS | 1.0 µg/kg | guidance | other land use | verified via secondary [provisional] | 2026-11-05 |
-| PFOA | µg/kg | EPA 1633 | NYUS-35 — soil (rural background — proposed), PFOA | 1.5 µg/kg | proposed | farmland | verified via secondary [provisional] | 2026-11-05 |
-| PFOA | µg/kg | EPA 1633 | NYUS-27 — soil (unrestricted use), PFOA | 0.66 µg/kg | guidance | other land use | verified | 2026-11-05 |
-| PFOA | µg/kg | EPA 1633 | NYUS-33 — soil (protection of groundwater), PFOA | 0.8 µg/kg | guidance | other land use | verified via secondary [provisional] | 2026-11-05 |
+| PFOS | µg/kg | EPA 1633 | NYUS-16 — agricultural / rural soil, PFOS (PFOA 1.5) | 3.0 µg/kg | orientation | farmland | verified | 2026-11-23 |
+| PFOS | µg/kg | EPA 1633 | NYUS-28 — soil (unrestricted use), PFOS | 0.88 µg/kg | guidance | other land use | verified | 2026-11-23 |
+| PFOS | µg/kg | EPA 1633 | NYUS-34 — soil (protection of groundwater), PFOS | 1.0 µg/kg | guidance | other land use | verified | 2026-11-23 |
+| PFOA | µg/kg | EPA 1633 | NYUS-35 — soil (rural background — proposed), PFOA | 1.5 µg/kg | proposed | farmland | verified | 2026-11-23 |
+| PFOA | µg/kg | EPA 1633 | NYUS-27 — soil (unrestricted use), PFOA | 0.66 µg/kg | guidance | other land use | verified | 2026-11-23 |
+| PFOA | µg/kg | EPA 1633 | NYUS-33 — soil (protection of groundwater), PFOA | 0.8 µg/kg | guidance | other land use | verified | 2026-11-23 |
 | PFNA | µg/kg | EPA 1633 | — no reference in this pack: reported, not coloured | — | — | — | — | — |
 | PFHxS | µg/kg | EPA 1633 | — no reference in this pack: reported, not coloured | — | — | — | — | — |
 
@@ -39,14 +39,14 @@ Varies by season: one sampling event is flagged; closing sample — a quarterly 
 
 | Parameter | Unit (canonical) | Validated methods | Reference row | Value | Legal status | Fit | Verification | Checked |
 |---|---|---|---|---|---|---|---|---|
-| PFOS | ng/L | EPA 533, EPA 537.1 | NYUS-02 — drinking water (public systems), PFOS | 10 ng/L | in force | object | verified | 2026-11-01 |
-| PFOS | ng/L | EPA 533, EPA 537.1 | NYUS-04 — drinking water (public systems), PFOS | 4.0 ng/L | future (adopted, applies from a date) | object | corrected vs v0.1 | 2026-11-01 |
-| PFOS | ng/L | EPA 533, EPA 537.1 | NYUS-32 — groundwater (Class GA), PFOS | 2.7 ng/L | guidance | object | verified | 2026-11-05 |
-| PFOA | ng/L | EPA 533, EPA 537.1 | NYUS-01 — drinking water (public systems), PFOA | 10 ng/L | in force | object | verified | 2026-11-01 |
-| PFOA | ng/L | EPA 533, EPA 537.1 | NYUS-03 — drinking water (public systems), PFOA | 4.0 ng/L | future (adopted, applies from a date) | object | corrected vs v0.1 | 2026-11-01 |
-| PFOA | ng/L | EPA 533, EPA 537.1 | NYUS-31 — groundwater (Class GA), PFOA | 6.7 ng/L | guidance | object | verified | 2026-11-05 |
-| PFNA | ng/L | EPA 533, EPA 537.1 | NYUS-05 — drinking water (public systems), PFHxS; PFNA; HFPO-DA (each); Hazard Index mixture | 10 ng/L (HI unitless) | future (adopted, applies from a date) | object | verified via secondary [provisional] | 2026-11-01 |
-| PFHxS | ng/L | EPA 533, EPA 537.1 | NYUS-05 — drinking water (public systems), PFHxS; PFNA; HFPO-DA (each); Hazard Index mixture | 10 ng/L (HI unitless) | future (adopted, applies from a date) | object | verified via secondary [provisional] | 2026-11-01 |
+| PFOS | ng/L | EPA 533, EPA 537.1 | NYUS-02 — drinking water (public systems), PFOS | 10 ng/L | in force | object | verified | 2026-11-23 |
+| PFOS | ng/L | EPA 533, EPA 537.1 | NYUS-04 — drinking water (public systems), PFOS | 4.0 ng/L | future (adopted, applies from a date) | object | corrected vs v0.1 | 2026-11-23 |
+| PFOS | ng/L | EPA 533, EPA 537.1 | NYUS-32 — groundwater (Class GA), PFOS | 2.7 ng/L | guidance | object | verified | 2026-11-23 |
+| PFOA | ng/L | EPA 533, EPA 537.1 | NYUS-01 — drinking water (public systems), PFOA | 10 ng/L | in force | object | verified | 2026-11-23 |
+| PFOA | ng/L | EPA 533, EPA 537.1 | NYUS-03 — drinking water (public systems), PFOA | 4.0 ng/L | future (adopted, applies from a date) | object | corrected vs v0.1 | 2026-11-23 |
+| PFOA | ng/L | EPA 533, EPA 537.1 | NYUS-31 — groundwater (Class GA), PFOA | 6.7 ng/L | guidance | object | verified | 2026-11-23 |
+| PFNA | ng/L | EPA 533, EPA 537.1 | NYUS-05 — drinking water (public systems), PFHxS; PFNA; HFPO-DA (each); Hazard Index mixture | 10 ng/L (HI unitless) | future (adopted, applies from a date) | object | verified | 2026-11-23 |
+| PFHxS | ng/L | EPA 533, EPA 537.1 | NYUS-05 — drinking water (public systems), PFHxS; PFNA; HFPO-DA (each); Hazard Index mixture | 10 ng/L (HI unitless) | future (adopted, applies from a date) | object | verified | 2026-11-23 |
 | nitrate (as N) | mg/L as N | any (none listed in references/methods.md) | NYUS-06 — drinking water, nitrate (as N) | 10 mg/L as N | in force | object | verified | 2026-11-01 |
 
 ## `milk` — cow's milk, bulk tank
@@ -55,7 +55,7 @@ Varies by season: one sampling event is flagged; closing sample — a repeat bul
 
 | Parameter | Unit (canonical) | Validated methods | Reference row | Value | Legal status | Fit | Verification | Checked |
 |---|---|---|---|---|---|---|---|---|
-| PFOS | ng/L | FDA C-010.03, ISO/IEC 17025 | NYUS-14 — cow's milk, PFOS | 210 ng/L (ppt) | in force | object | verified | 2026-11-01 |
+| PFOS | ng/L | FDA C-010.03, ISO/IEC 17025 | NYUS-14 — cow's milk, PFOS | 210 ng/L (ppt) | in force | object | verified | 2026-11-23 |
 | PFOA | ng/L | FDA C-010.03, ISO/IEC 17025 | — no reference in this pack: reported, not coloured | — | — | — | — | — |
 | PFNA | ng/L | FDA C-010.03, ISO/IEC 17025 | — no reference in this pack: reported, not coloured | — | — | — | — | — |
 | PFHxS | ng/L | FDA C-010.03, ISO/IEC 17025 | — no reference in this pack: reported, not coloured | — | — | — | — | — |

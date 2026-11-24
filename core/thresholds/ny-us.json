@@ -1,7 +1,7 @@
 {
  "pack": "NY-US",
  "title": "New York State / US federal threshold pack (with EFSA dose reference and the Maine milk line)",
- "version": "2026-11-05",
+ "version": "2026-11-23",
  "max_age_days": 183,
  "legend": {
   "legal_status": "in_force | future (adopted, compliance or application date ahead) | guidance (official non-binding value, benchmark or recommendation) | orientation (classification or literature criterion, not a norm) | superseded | requirement (procedure, no number) | proposed (proposed by the issuing body, not adopted)",
@@ -21,10 +21,10 @@
    "source_doc": "10 NYCRR Subpart 5-1; NYSDOH fact sheet 'Public Water Systems and NYS Drinking Water Standards for PFOA, PFOS and 1,4-Dioxane'",
    "source_org": "NYS Department of Health",
    "url": "https://healthweb-back.health.ny.gov/environmental/water/drinking/docs/water_supplier_fact_sheet_new_mcls.pdf",
-   "checked": "2026-11-01",
+   "checked": "2026-11-23",
    "verified": "verified",
    "v01_line": "Drinking water, New York State: PFOA and PFOS, MCL 10 ng/L each (in force since 2020)",
-   "note": "Adopted 26 Aug 2020."
+   "note": "Adopted 26 Aug 2020. Pending: NY bill S3207B (MCL no higher than 4 ppt for PFOA and PFOS; 10 ppt for PFNA, PFHxS, HFPO-DA) passed the Senate on 2026-05-28 and the Assembly on 2026-06-03; not signed into law as of 2026-11-18 — re-check monthly."
   },
   {
    "id": "NYUS-02",
@@ -39,10 +39,10 @@
    "source_doc": "10 NYCRR Subpart 5-1; NYSDOH fact sheet",
    "source_org": "NYS Department of Health",
    "url": "https://healthweb-back.health.ny.gov/environmental/water/drinking/docs/water_supplier_fact_sheet_new_mcls.pdf",
-   "checked": "2026-11-01",
+   "checked": "2026-11-23",
    "verified": "verified",
    "v01_line": "same as NYUS-01",
-   "note": ""
+   "note": " Pending: NY bill S3207B (MCL no higher than 4 ppt for PFOA and PFOS; 10 ppt for PFNA, PFHxS, HFPO-DA) passed the Senate on 2026-05-28 and the Assembly on 2026-06-03; not signed into law as of 2026-11-18 — re-check monthly."
   },
   {
    "id": "NYUS-03",
@@ -57,10 +57,10 @@
    "source_doc": "PFAS NPDWR (final 10 Apr 2024); proposed rule 'Extending the Compliance Deadline for the PFOA and PFOS MCLs', Federal Register 20 May 2026",
    "source_org": "US EPA",
    "url": "https://www.epa.gov/sdwa/proposed-pfoa-and-pfos-compliance-extension-rule",
-   "checked": "2026-11-01",
+   "checked": "2026-11-23",
    "verified": "corrected",
    "v01_line": "Drinking water, US EPA: PFOA and PFOS, MCL 4.0 ng/L each; mandatory compliance from 2029",
-   "note": "MCL value unchanged. Compliance date in the 2024 rule: 26 Apr 2029. EPA proposed (18 May 2026) a federal exemption letting eligible systems comply by 26 Apr 2031 — proposed, not final at the check date. Before compliance, comparisons are screening only (status max yellow)."
+   "note": "MCL value unchanged. Compliance date in the 2024 rule: 26 Apr 2029. EPA proposed (18 May 2026) a federal exemption letting eligible systems comply by 26 Apr 2031 — proposed, not final at the check date. Before compliance, comparisons are screening only (status max yellow). Re-checked 2026-11-23: neither 2026 EPA proposal (FR 2026-10085, 2026-10086) was final as of 2026-11-21; the 2024 rule applies as written."
   },
   {
    "id": "NYUS-04",
@@ -75,10 +75,10 @@
    "source_doc": "as NYUS-03",
    "source_org": "US EPA",
    "url": "https://www.federalregister.gov/documents/2026/05/20/2026-10086/extending-the-compliance-deadline-for-the-pfoa-and-pfos-maximum-contaminant-levels",
-   "checked": "2026-11-01",
+   "checked": "2026-11-23",
    "verified": "corrected",
    "v01_line": "as NYUS-03",
-   "note": "See NYUS-03."
+   "note": "See NYUS-03. Re-checked 2026-11-23: neither 2026 EPA proposal (FR 2026-10085, 2026-10086) was final as of 2026-11-21; the 2024 rule applies as written."
   },
   {
    "id": "NYUS-05",
@@ -90,11 +90,11 @@
    "applies_from": "2029-04-26",
    "applicability": "as NYUS-03",
    "determination_rule": "RAA",
-   "source_doc": "PFAS NPDWR 2024; EPA proposal of 18 May 2026 to rescind these determinations and MCLs",
-   "source_org": "US EPA (value via secondary)",
-   "url": "https://bbklaw.com/resources/la-051525-epa-announces-plan-to-modify-pfas-drinking-water-rule-and-extend-compliance-deadline",
-   "checked": "2026-11-01",
-   "verified": "verified-secondary",
+   "source_doc": "PFAS NPDWR 2024 (values as listed in EPA's 2026 public-hearing overview); proposed rescission — Federal Register 2026-10085, 91 FR 29413 (20 May 2026), not final as of 2026-11-21",
+   "source_org": "US EPA",
+   "url": "https://www.federalregister.gov/documents/2026/05/20/2026-10085/rescission-of-regulatory-determinations-and-removal-of-related-provisions-for-four-pfas-substances",
+   "checked": "2026-11-23",
+   "verified": "verified",
    "v01_line": "(not in v0.1)",
    "note": "Added because PFNA and PFHxS are half of the EFSA sum. Proposed for rescission — use as orientation only until EPA decides."
   },
@@ -255,10 +255,10 @@
    "source_doc": "Maine CDC, 'PFAS and Agriculture' — Action Level for PFOS in Cow's Milk (memorandum to DACF, 2017)",
    "source_org": "Maine CDC / Maine DACF",
    "url": "https://www.maine.gov/dhhs/mecdc/healthy-living/health-and-safety/pfas-in-maine/pfas-and-agriculture",
-   "checked": "2026-11-01",
+   "checked": "2026-11-23",
    "verified": "verified",
    "v01_line": "(task line) Maine action level for PFOS in milk 210 ng/L — if confirmed",
-   "note": "Confirmed. Maine also set 3.4 ng/g (µg/kg) PFOS in beef (2020), row NYUS-15."
+   "note": "Confirmed. Maine also set 3.4 ng/g (µg/kg) PFOS in beef (2020), row NYUS-15. 210 ng/L is the action level for children aged 1–2, the most protective age group in the Maine CDC 2017 derivation."
   },
   {
    "id": "NYUS-15",
@@ -273,7 +273,7 @@
    "source_doc": "Maine CDC Action Level for PFOS in Beef (2020)",
    "source_org": "Maine CDC",
    "url": "https://www3.maine.gov/dhhs/mecdc/healthy-living/health-and-safety/pfas-in-maine/pfas-and-agriculture",
-   "checked": "2026-11-01",
+   "checked": "2026-11-23",
    "verified": "verified",
    "v01_line": "(not in v0.1)",
    "note": ""
@@ -288,13 +288,13 @@
    "applies_from": "2023",
    "applicability": "NYS DEC rural background concentration — a background reference, not a limit",
    "determination_rule": "comparison with background only",
-   "source_doc": "NYS DEC rural soil background study (548 samples, 116 properties), as summarised by the Rockefeller Institute of Government",
-   "source_org": "NYS DEC (via secondary)",
-   "url": "https://www.rockinst.org/blog/emerging-state-regulations-of-pfas-for-biosolids/",
-   "checked": "2026-11-01",
-   "verified": "verified-secondary",
+   "source_doc": "NYSDEC PFAS (site cleanup) page: rural soil background study — DEC proposes background concentrations (95-95 UTL) of 3.0 µg/kg PFOS and 1.5 µg/kg PFOA",
+   "source_org": "NYS DEC",
+   "url": "https://dec.ny.gov/environmental-protection/site-cleanup/pfas",
+   "checked": "2026-11-23",
+   "verified": "verified",
    "v01_line": "(simulation 1) 'DEC draft for agricultural soils, maximum PFOS 3.0 µg/kg, not adopted'",
-   "note": "The simulation's wording is NOT confirmed: 3.0 µg/kg is DEC's rural BACKGROUND value for PFOS, not a draft maximum. DEC soil guidance values (CP-51 draft) were not retrieved."
+   "note": "3.0 µg/kg is DEC's proposed rural BACKGROUND value for PFOS, not a draft maximum. Same value as NYUS-36 (proposed, surface soil); this row is kept as the orientation anchor for agricultural soil used by the worked example."
   },
   {
    "id": "NYUS-17",
@@ -348,7 +348,7 @@
    "checked": "2026-11-01",
    "verified": "verified-secondary",
    "v01_line": "OECD boundaries for total phosphorus",
-   "note": "Primary OECD (1982) report not opened."
+   "note": "Primary OECD (1982) report not opened. Primary source of the boundary table: OECD (1982), Vollenweider R.A., Kerekes J., 'Eutrophication of Waters: Monitoring, Assessment and Control' — by bibliography, not opened."
   },
   {
    "id": "NYUS-20",
@@ -366,7 +366,7 @@
    "checked": "2026-11-01",
    "verified": "verified-secondary",
    "v01_line": "OECD boundaries for chlorophyll-a",
-   "note": ""
+   "note": " Primary source of the boundary table: OECD (1982), Vollenweider R.A., Kerekes J., 'Eutrophication of Waters: Monitoring, Assessment and Control' — by bibliography, not opened."
   },
   {
    "id": "NYUS-21",
@@ -486,10 +486,10 @@
    "applies_from": "2023-04",
    "applicability": "NYSDEC Part 375 remedial programs — unrestricted use soil guidance value (UUGV); screening reference for farm soils",
    "determination_rule": "single guidance value for unrestricted use",
-   "source_doc": "NYSDEC, 'Sampling, Analysis, and Assessment of PFAS Under NYSDEC's Part 375 Remedial Programs' (April 2023); applied in DEC Decision Document, 1099 Webster Ave Redevelopment Site C203167 (2025-09-19)",
+   "source_doc": "NYSDEC, 'Sampling, Analysis, and Assessment of Per- and Polyfluoroalkyl Substances (PFAS) Under NYSDEC's Part 375 Remedial Programs' (April 2023; errata through 2023-03-28), soil and groundwater guidance values",
    "source_org": "NYS DEC",
-   "url": "https://extapps.dec.ny.gov/data/DecDocs/C203167/Decision%20Document.BCP.C203167.2025-09-19.DD.pdf",
-   "checked": "2026-11-05",
+   "url": "https://extapps.dec.ny.gov/docs/remediation_hudson_pdf/pfassampanaly.pdf",
+   "checked": "2026-11-23",
    "verified": "verified",
    "v01_line": "(new 2026-11-05 — DEC soil rows)",
    "note": "Guidance value, not a Part 375-6.8 SCO: PFAS SCOs are not yet in effect; DEC directs the use of these guidance values in the interim. Fills the gap noted at NYUS-16."
@@ -504,10 +504,10 @@
    "applies_from": "2023-04",
    "applicability": "NYSDEC Part 375 remedial programs — unrestricted use soil guidance value (UUGV); screening reference for farm soils",
    "determination_rule": "single guidance value for unrestricted use",
-   "source_doc": "NYSDEC, 'Sampling, Analysis, and Assessment of PFAS Under NYSDEC's Part 375 Remedial Programs' (April 2023); applied in DEC Decision Document, 1099 Webster Ave Redevelopment Site C203167 (2025-09-19)",
+   "source_doc": "NYSDEC, 'Sampling, Analysis, and Assessment of Per- and Polyfluoroalkyl Substances (PFAS) Under NYSDEC's Part 375 Remedial Programs' (April 2023; errata through 2023-03-28), soil and groundwater guidance values",
    "source_org": "NYS DEC",
-   "url": "https://extapps.dec.ny.gov/data/DecDocs/C203167/Decision%20Document.BCP.C203167.2025-09-19.DD.pdf",
-   "checked": "2026-11-05",
+   "url": "https://extapps.dec.ny.gov/docs/remediation_hudson_pdf/pfassampanaly.pdf",
+   "checked": "2026-11-23",
    "verified": "verified",
    "v01_line": "(new 2026-11-05 — DEC soil rows)",
    "note": "Guidance value, not a Part 375-6.8 SCO; see NYUS-27."
@@ -519,16 +519,16 @@
    "value": 6.6,
    "unit": "µg/kg",
    "legal_status": "guidance",
-   "applies_from": "2021-01",
+   "applies_from": "2023-04",
    "applicability": "NYSDEC PFAS guidance land-use table — residential anticipated site use",
    "determination_rule": "single guidance value for residential use",
-   "source_doc": "NYSDEC PFAS guidance (January 2021) land-use table, as reproduced in DEC Site Characterization Report, Chili Fire Department Site P828219 (2025-09-18)",
-   "source_org": "NYS DEC (via DEC site report)",
-   "url": "https://extapps.dec.ny.gov/data/DecDocs/828219/Report.HW.828219.2025-09-18.DRAFT-SC%20Report%20Text%20Tables%20and%20Figures%20Only.pdf",
-   "checked": "2026-11-05",
-   "verified": "verified-secondary",
+   "source_doc": "NYSDEC, 'Sampling, Analysis, and Assessment of Per- and Polyfluoroalkyl Substances (PFAS) Under NYSDEC's Part 375 Remedial Programs' (April 2023; errata through 2023-03-28), soil and groundwater guidance values",
+   "source_org": "NYS DEC",
+   "url": "https://extapps.dec.ny.gov/docs/remediation_hudson_pdf/pfassampanaly.pdf",
+   "checked": "2026-11-23",
+   "verified": "verified",
    "v01_line": "(new 2026-11-05 — DEC soil rows)",
-   "note": "Land-use guidance tier above the unrestricted value (NYUS-27)."
+   "note": "Land-use guidance tier above the unrestricted value (NYUS-27). Same value in the April 2023 table (earlier attribution to the January 2021 table replaced)."
   },
   {
    "id": "NYUS-30",
@@ -537,16 +537,16 @@
    "value": 8.8,
    "unit": "µg/kg",
    "legal_status": "guidance",
-   "applies_from": "2021-01",
+   "applies_from": "2023-04",
    "applicability": "NYSDEC PFAS guidance land-use table — residential anticipated site use",
    "determination_rule": "single guidance value for residential use",
-   "source_doc": "NYSDEC PFAS guidance (January 2021) land-use table, as reproduced in DEC Site Characterization Report, Chili Fire Department Site P828219 (2025-09-18)",
-   "source_org": "NYS DEC (via DEC site report)",
-   "url": "https://extapps.dec.ny.gov/data/DecDocs/828219/Report.HW.828219.2025-09-18.DRAFT-SC%20Report%20Text%20Tables%20and%20Figures%20Only.pdf",
-   "checked": "2026-11-05",
-   "verified": "verified-secondary",
+   "source_doc": "NYSDEC, 'Sampling, Analysis, and Assessment of Per- and Polyfluoroalkyl Substances (PFAS) Under NYSDEC's Part 375 Remedial Programs' (April 2023; errata through 2023-03-28), soil and groundwater guidance values",
+   "source_org": "NYS DEC",
+   "url": "https://extapps.dec.ny.gov/docs/remediation_hudson_pdf/pfassampanaly.pdf",
+   "checked": "2026-11-23",
+   "verified": "verified",
    "v01_line": "(new 2026-11-05 — DEC soil rows)",
-   "note": "Land-use guidance tier above the unrestricted value (NYUS-28)."
+   "note": "Land-use guidance tier above the unrestricted value (NYUS-28). Same value in the April 2023 table (earlier attribution to the January 2021 table replaced)."
   },
   {
    "id": "NYUS-31",
@@ -561,7 +561,7 @@
    "source_doc": "NYSDEC Division of Water, TOGS 1.1.1 addendum for PFOA, PFOS and 1,4-dioxane (final, 2023-03-15); DEC 'Water Quality Standards and Classifications' page, table of finalised guidance values",
    "source_org": "NYS DEC Division of Water",
    "url": "http://dec.ny.gov/environmental-protection/water/water-quality/standards-classifications",
-   "checked": "2026-11-05",
+   "checked": "2026-11-23",
    "verified": "verified",
    "v01_line": "(new 2026-11-05 — DEC groundwater rows)",
    "note": "Guidance value, not a Part 703.5 standard. The NYSDOH drinking-water MCL of 10 ng/L is NYUS-01."
@@ -579,7 +579,7 @@
    "source_doc": "NYSDEC Division of Water, TOGS 1.1.1 addendum for PFOA, PFOS and 1,4-dioxane (final, 2023-03-15); DEC 'Water Quality Standards and Classifications' page, table of finalised guidance values",
    "source_org": "NYS DEC Division of Water",
    "url": "http://dec.ny.gov/environmental-protection/water/water-quality/standards-classifications",
-   "checked": "2026-11-05",
+   "checked": "2026-11-23",
    "verified": "verified",
    "v01_line": "(new 2026-11-05 — DEC groundwater rows)",
    "note": "Guidance value, not a Part 703.5 standard. The NYSDOH drinking-water MCL of 10 ng/L is NYUS-02."
@@ -594,11 +594,11 @@
    "applies_from": "2023-04",
    "applicability": "soil guidance value protective of groundwater (NYSDEC with NYSDOH); screening reference for farm soils above Class GA groundwater",
    "determination_rule": "single guidance value",
-   "source_doc": "NYSDEC, 'Sampling, Analysis, and Assessment of PFAS Under NYSDEC's Part 375 Remedial Programs' (April 2023), soil guidance values table (protection of groundwater column), as reproduced in NEWMOA webinar materials (Dec 2024) and summarised in Lippes Mathias client alert on the NYSDEC PFAS programme (2026)",
-   "source_org": "NYS DEC (via reproductions of its table)",
-   "url": "https://www.newmoa.org/wp-content/uploads/2024/09/RosensteinSoilBackgroundDec2024.pdf",
-   "checked": "2026-11-05",
-   "verified": "verified-secondary",
+   "source_doc": "NYSDEC, 'Sampling, Analysis, and Assessment of Per- and Polyfluoroalkyl Substances (PFAS) Under NYSDEC's Part 375 Remedial Programs' (April 2023; errata through 2023-03-28), soil and groundwater guidance values",
+   "source_org": "NYS DEC",
+   "url": "https://extapps.dec.ny.gov/docs/remediation_hudson_pdf/pfassampanaly.pdf",
+   "checked": "2026-11-23",
+   "verified": "verified",
    "v01_line": "(new 2026-11-05 — DEC rows, second group)",
    "note": "Earlier guidance values (PFOA 1.1) were replaced by the April 2023 table. Primary DEC PDF not opened in this check; the value is confirmed by two independent reproductions of the DEC table."
   },
@@ -612,11 +612,11 @@
    "applies_from": "2023-04",
    "applicability": "soil guidance value protective of groundwater (NYSDEC with NYSDOH); screening reference for farm soils above Class GA groundwater",
    "determination_rule": "single guidance value",
-   "source_doc": "NYSDEC, 'Sampling, Analysis, and Assessment of PFAS Under NYSDEC's Part 375 Remedial Programs' (April 2023), soil guidance values table (protection of groundwater column), as reproduced in NEWMOA webinar materials (Dec 2024) and summarised in Lippes Mathias client alert on the NYSDEC PFAS programme (2026)",
-   "source_org": "NYS DEC (via reproductions of its table)",
-   "url": "https://www.newmoa.org/wp-content/uploads/2024/09/RosensteinSoilBackgroundDec2024.pdf",
-   "checked": "2026-11-05",
-   "verified": "verified-secondary",
+   "source_doc": "NYSDEC, 'Sampling, Analysis, and Assessment of Per- and Polyfluoroalkyl Substances (PFAS) Under NYSDEC's Part 375 Remedial Programs' (April 2023; errata through 2023-03-28), soil and groundwater guidance values",
+   "source_org": "NYS DEC",
+   "url": "https://extapps.dec.ny.gov/docs/remediation_hudson_pdf/pfassampanaly.pdf",
+   "checked": "2026-11-23",
+   "verified": "verified",
    "v01_line": "(new 2026-11-05 — DEC rows, second group)",
    "note": "Field F1 of the worked example (PFOS 0.90 µg/kg) stands at 90 % of this value. Earlier guidance value (PFOS 3.7) replaced by the April 2023 table. Primary DEC PDF not opened; see NYUS-33."
   },
@@ -630,11 +630,11 @@
    "applies_from": "2026-01",
    "applicability": "proposed background concentration for rural SURFACE soils; DEC will consider these values when developing soil cleanup standards",
    "determination_rule": "background reference, not a limit",
-   "source_doc": "NYSDEC Rural Soil Background Study (released with the NYSDEC PFAS web hub, January 2026), proposed background concentrations for rural soils",
-   "source_org": "NYS DEC (study, via secondary summary)",
-   "url": "https://www.lippes.com/insights/new-nysdec-pfas-website-centralizes-guidance-rules-and-updates",
-   "checked": "2026-11-05",
-   "verified": "verified-secondary",
+   "source_doc": "NYSDEC PFAS (site cleanup) page: rural soil background study, proposed background concentrations (95-95 UTL) for use in a planned update of 6 NYCRR Part 375",
+   "source_org": "NYS DEC",
+   "url": "https://dec.ny.gov/environmental-protection/site-cleanup/pfas",
+   "checked": "2026-11-23",
+   "verified": "verified",
    "v01_line": "(new 2026-11-05 — DEC rows, second group)",
    "note": "Subsurface proposed background: 1.2 µg/kg. Companion to NYUS-16 (same study); this pair carries the proposed status and the surface/subsurface split."
   },
@@ -648,13 +648,49 @@
    "applies_from": "2026-01",
    "applicability": "proposed background concentration for rural SURFACE soils; DEC will consider these values when developing soil cleanup standards",
    "determination_rule": "background reference, not a limit",
-   "source_doc": "NYSDEC Rural Soil Background Study (released with the NYSDEC PFAS web hub, January 2026), proposed background concentrations for rural soils",
-   "source_org": "NYS DEC (study, via secondary summary)",
-   "url": "https://www.lippes.com/insights/new-nysdec-pfas-website-centralizes-guidance-rules-and-updates",
-   "checked": "2026-11-05",
-   "verified": "verified-secondary",
+   "source_doc": "NYSDEC PFAS (site cleanup) page: rural soil background study, proposed background concentrations (95-95 UTL) for use in a planned update of 6 NYCRR Part 375",
+   "source_org": "NYS DEC",
+   "url": "https://dec.ny.gov/environmental-protection/site-cleanup/pfas",
+   "checked": "2026-11-23",
+   "verified": "verified",
    "v01_line": "(new 2026-11-05 — DEC rows, second group)",
    "note": "Subsurface proposed background: 0.801 µg/kg. Companion to NYUS-16 (same study)."
+  },
+  {
+   "id": "NYUS-37",
+   "matrix": "chicken eggs",
+   "analyte": "PFOS",
+   "value": 4.7,
+   "unit": "µg/kg (ng/g, ppb)",
+   "legal_status": "in_force",
+   "applies_from": "2025-06-24",
+   "applicability": "Maine DACF action level for PFOS in chicken eggs (out-of-state reference for a NY farm, as NYUS-14 and NYUS-15)",
+   "determination_rule": "single result vs action level",
+   "source_doc": "Maine DACF / Maine CDC, 'PFOS Action Level for Chicken Eggs' (June 2025), derived from the 2020 beef action level",
+   "source_org": "Maine DACF / Maine CDC",
+   "url": "https://www.maine.gov/dep/spills/topics/pfas/PFOS%20Action%20Level%20for%20Chicken%20Eggs%20June%202025.pdf",
+   "checked": "2026-11-23",
+   "verified": "verified",
+   "v01_line": "(new 2026-11-23)",
+   "note": "Compare EU-18 (eggs, PFOS 1.0 µg/kg, EU maximum level)."
+  },
+  {
+   "id": "NYUS-38",
+   "matrix": "agricultural soil — dairy forage (soil → hay and corn silage → milk), grass-based farm",
+   "analyte": "PFOS",
+   "value": 6.4,
+   "unit": "µg/kg dw (ng/g)",
+   "legal_status": "guidance",
+   "applies_from": "—",
+   "applicability": "Maine soil screening level for the agronomic pathway to the milk action level (NYUS-14); average Maine farm 11.0",
+   "determination_rule": "screening only; links soil to NYUS-14",
+   "source_doc": "Maine DEP, 'Maine PFAS Screening Levels' (Rev. 3), dairy crop-specific soil screening levels; Maine DACF 'Essential Recommendations for Cattle Producers'",
+   "source_org": "Maine DEP / Maine DACF (primary table seen in excerpt, not opened in full)",
+   "url": "https://www.maine.gov/dep/spills/topics/pfas/Maine%20PFAS%20Screening%20Levels_Rev3.pdf",
+   "checked": "2026-11-23",
+   "verified": "verified-secondary",
+   "v01_line": "(new 2026-11-23)",
+   "note": "Soil → hay → milk 6.8; soil → corn silage → milk 120.0; both crops 6.4 (grass-based farm). Orientation for a NY farm, not a NY norm."
   }
  ]
 }

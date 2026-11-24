@@ -1,6 +1,6 @@
 # Test run — farm-environmental-passport v0.3.8
 
-Date: 2026-11-10  ·  Python 3.13.18  ·  runner: tests/run_tests.py
+Date: 2026-11-23  ·  Python 3.13.18  ·  runner: tests/run_tests.py
 
 **Result: 41 / 41 PASS**
 
@@ -203,11 +203,11 @@ ok  same object, two packs, different binding reference — both printed
 ### T15 — Threshold packs: structure, rendered table in sync, freshness: PASS
 
 ```
-ok  NY-US: all 36 rows complete, vocabulary valid
-ok  NY-US: stale rows on 2026-11-10: got [], expected []
+ok  NY-US: all 38 rows complete, vocabulary valid
+ok  NY-US: stale rows on 2026-11-23: got [], expected []
 ok  NY-US: every row stale on 2027-06-01 (mechanism works)
 ok  EU: all 30 rows complete, vocabulary valid
-ok  EU: stale rows on 2026-11-10: got [], expected []
+ok  EU: stale rows on 2026-11-23: got [], expected []
 ok  EU: every row stale on 2027-06-01 (mechanism works)
 ok  core/thresholds.md equals a fresh render of the JSON packs
 ok  EU pack covers drinking water, EFSA, soil
@@ -221,7 +221,7 @@ ok  threshold lines in v0.1.0: got 6, expected 6
 ok  rows in the verification table (6 lines, nitrate/E. coli split): got 7, expected 7
 ok  each row carries a result mark
 ok  items in the unconfirmed / corrected list: got 11, expected 11
-ok  pack marks counted — corrected: 5, not-verified: 2, verified: 35, verified-secondary: 24
+ok  pack marks counted — corrected: 5, not-verified: 1, verified: 45, verified-secondary: 17
 ```
 
 ### T17 — Analytical method by matrix: PASS
@@ -520,7 +520,7 @@ ok  card prints 'green; F1 yellow' for the soil
 
 ```
 ok  skill version = SKILL.md frontmatter: got '0.3.8', expected '0.3.8'
-ok  threshold pack and version: got ('NY-US', '2026-11-05'), expected ('NY-US', '2026-11-05')
+ok  threshold pack and version: got ('NY-US', '2026-11-23'), expected ('NY-US', '2026-11-23')
 ok  sha256 of every input file is the file's own
 ok  sha256 of every core file is the file's own
 ok  rows used = every row evaluated, plus the TWI: got ['NYUS-01', 'NYUS-02', 'NYUS-03', 'NYUS-04', 'NYUS-07', 'NYUS-08', 'NYUS-10', 'NYUS-14', 'NYUS-16', 'NYUS-27', 'NYUS-28', 'NYUS-31', 'NYUS-32', 'NYUS-33', 'NYUS-34', 'NYUS-35'], expected ['NYUS-01', 'NYUS-02', 'NYUS-03', 'NYUS-04', 'NYUS-07', 'NYUS-08', 'NYUS-10', 'NYUS-14', 'NYUS-16', 'NYUS-27', 'NYUS-28', 'NYUS-31', 'NYUS-32', 'NYUS-33', 'NYUS-34', 'NYUS-35']
