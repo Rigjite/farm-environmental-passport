@@ -1,6 +1,6 @@
 # farm-environmental-passport — Changelog
 
-## v0.3.8 — 2026-11-10 — ready for the pilot: input template, input check, one command, machine-readable passport
+## v0.3.8 — 2026-11-25 — ready for the pilot: input template, input check, one command, machine-readable passport
 
 - **Threshold packs re-checked 2026-11-23** (NY-US and EU, version 2026-11-23; values unchanged; details in `references/threshold-verification-2026-11-01.md`, supplement 2026-11-23): status of the 2026 EPA proposals (not final as of 2026-11-21) and of NY bill S3207B (passed both chambers, not signed) noted on NYUS-01–05; NYUS-16, 29, 30, 33–36 now verified against NYSDEC's own documents; NYUS-14 notes the age group of the Maine milk action level; EU-04 verified; EU-06 named gap closed (0.0044 µg/L PFOA-eq for the sum of 25 PFAS in surface water, via the EP summary). Two rows added: NYUS-37 (PFOS in chicken eggs, Maine, 4.7 µg/kg) and NYUS-38 (PFOS in soil for dairy forage, Maine screening level, 6.4 µg/kg dw). Synthetic-farm outputs regenerated: statuses and doses unchanged.
 

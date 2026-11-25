@@ -3,7 +3,7 @@ message: "If you use this skill, please cite it and the methods note."
 title: "Farm Environmental Passport"
 type: software
 version: "0.3.8"
-date-released: "2026-11-10"
+date-released: "2026-11-25"
 doi: "10.5281/zenodo.24023493"
 identifiers:
   - type: doi
