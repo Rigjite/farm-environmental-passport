@@ -18,7 +18,7 @@
 
 **手法論文:** Baldanova R. (2026). *Farm Environmental Passport: a status-and-gap method for screening the environmental pathways of a single farm, with PFAS as the first module.* Methods note. Zenodo. https://doi.org/10.5281/zenodo.24017216
 
-**スキル:** Baldanova R. (2026). *Farm Environmental Passport — agent skill (preview)*, v0.3.8. Zenodo. https://doi.org/10.5281/zenodo.24023493
+**スキル:** Baldanova R. (2026). *Farm Environmental Passport — agent skill (preview)*, v0.3.8. Zenodo. https://doi.org/10.5281/zenodo.24023493（全バージョン）；このバージョン: https://doi.org/10.5281/zenodo.24545495
 
 ## 概要 — 架空の農場
 

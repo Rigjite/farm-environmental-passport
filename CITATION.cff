@@ -12,6 +12,9 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.24023494"
     description: "DOI of version 0.3.7"
+  - type: doi
+    value: "10.5281/zenodo.24545495"
+    description: "DOI of version 0.3.8"
 authors:
   - family-names: "Baldanova"
     given-names: "Rigjita"

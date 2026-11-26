@@ -13,6 +13,10 @@
 - Version marks in module headers now mean "since": `passport_calc.py` (since v0.2.0), `indicator_select.py` (since v0.3.0); the answer-card template no longer prints a fixed version.
 - Tests: 41/41 (T35–T41 new); mutation check of the new tests recorded in `tests/TESTS.md`.
 
+## After v0.3.8 (no new version)
+
+- Zenodo DOI of version 0.3.8 added to the READMEs and `CITATION.cff`: 10.5281/zenodo.24545495 (concept DOI unchanged: 10.5281/zenodo.24023493).
+
 ## After v0.3.7 (no new version)
 
 - Zenodo DOI of the skill added to the READMEs and `CITATION.cff`: concept DOI 10.5281/zenodo.24023493 (all versions), version 0.3.7 — 10.5281/zenodo.24023494. The methods note stays the preferred citation.
